@@ -1,0 +1,6 @@
+data.json
+*.txt
+img/
+node_modules/
+oc/
+pic/
