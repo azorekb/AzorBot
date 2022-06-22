@@ -15,6 +15,7 @@ const commands = [
 	new SlashCommandBuilder().setName('queue').setDescription('create queue message'),
 	new SlashCommandBuilder().setName('roll').setDescription('roll a number').addIntegerOption(option => option.setName('max').setDescription('max number').setRequired(true)).addIntegerOption(option => option.setName('count').setDescription('number or rolls')),
 	new SlashCommandBuilder().setName('activelevel').setDescription('set/change leveling channel - it actives leveling in server').addChannelOption(option => option.setName('channel').setDescription('channel when i message about level up will be sent')),
+	new SlashCommandBuilder().setName('connectchannel').setDescription('set/check connection channel').addStringOption(option => option.setName('code').setDescription('connection code. must be the same in 2 or more channels to make connection')),
 	new SlashCommandBuilder().setName('level').setDescription('show actual level'),
 
 ].map(command => command.toJSON());

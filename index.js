@@ -8,17 +8,9 @@ const fs = require('fs');
 const path = require('path');
 const fsPromises = fs.promises;
 const DATA = TheTest ? require('./testdata.json') : require('./data.json');
-const ChannlesList = require('./jsony/channels.json');
+const POKEMON_TYPES = require('./jsony/pokemontypes.json');
 const mysql = require('mysql');
 const EMOJIS = require('./jsony/emoji.json');
-const POKEMON_TYPES = require('./jsony/pokemontypes.json');
-
-const AzorModules =
-{
-    PMDRP: require('./azormodule/pmdrp'),
-    stuffs: require('./azormodule/stuffs'),
-    extras: require('./azormodule/extras')
-}
 
 class QueueMessages
 {
@@ -305,8 +297,86 @@ class BweClass
             _message.delete();
         }
     }
+
+    theError(error, aMessage, interaction)
+    {
+        if(interaction){interaction.reply('some error happens ' + EMOJIS.blush);}else{aMessage.message.channel.send('some error happens ' + EMOJIS.blush);}
+        client.channels.cache.get('946830760839610460').send('error: ' + error);
+        console.log(error);
+    }
 }
 client.bwe = new BweClass();
+
+const NAMES = require('./jsony/names.json');
+function tellName(_message)
+{
+    
+    let id = _message.author.id;
+    for(let i = 0; i < NAMES.names.length; i++)
+    {
+        if(NAMES.names[i].id == id){return NAMES.names[i].name}
+    }
+
+    return _message.member.displayName;
+}
+
+let map = [
+    [3,18,24,13,18,20,19,29],
+    [31,18,25,22,18,25,23,5],
+    [19,20,23,24,29,23,25,0],
+    [30,17,17,22,29,30,22,20],
+    [19,26,26,20,19,6,18,25],
+    [23,20,10,21,17,0,2,30],
+    [22,21,17,19,21,31,27,29],
+    [3,18,26,26,18,18,21,1],
+]
+
+let mapElements = 
+[
+    '<:000:934896972308029490>',
+    '<:001:934894604409503784>',
+    '<:002:934894604409511986>',
+    '<:003:934894604422115400>',
+    '<:004:934894604472442911>',
+    '<:005:934894604631826564>',
+    '<:006:934894604547915837>',
+    '<:007:934894604652777504>',
+    '<:008:934894604703109140>',
+    '<:009:934894604526944266>',
+    '<:010:934894604451475577>',
+    '<:011:934894604384337931>',
+    '<:012:934894604564717668>',
+    '<:013:934894604321439836>',
+    '<:014:934894604652785724>',
+    '<:015:934894604661194772>',
+    '<:016:934894604602458192>',
+    '<:017:934894604438884393>',
+    '<:018:934894605013508146>',
+    '<:019:934894604304658524>',
+    '<:020:934894604686356491>',
+    '<:021:934894604711501915>',
+    '<:022:934894604338200627>',
+    '<:023:934894604703105035>',
+    '<:024:934894604401135647>',
+    '<:025:934894604992532530>',
+    '<:026:934894604694745168>',
+    '<:027:934894604719910922>',
+    '<:028:934901491381190786>',
+    '<:029:934901491406356520>',
+    '<:030:934901491460870234>',
+    '<:031:934901491452477451>'
+]
+
+function getPokemonNumberByName(_name, pokemonList)
+{
+    for(let i = 0; i < pokemonList.length; i++)
+    {
+        if(pokemonList[i].name == _name){return i;}
+    }
+
+    return -1;
+}
+
 
 // -------------------------------- variable ------------------------------
 let con = mysql.createConnection({host:'localhost', user: 'root', password: '', database: 'azorbot'});
@@ -355,6 +425,7 @@ client.on('messageCreate', async (message) =>
     try
     {
         if(message.author.bot && message.author.id != '951074944660410400'){return false;}
+        if(message.guild == null){return false;}
 
         const permissions = message.channel.permissionsFor(message.guild.me).toArray();
         if(permissions.indexOf('SEND_MESSAGES') == -1){return}
@@ -438,8 +509,6 @@ client.on('messageCreate', async (message) =>
                 }
             });
         }
-
-        if(message.guild == null){return false;}
         
         if(!TheTest)//experience
         {
@@ -603,242 +672,760 @@ client.on('messageCreate', async (message) =>
                 console.log(e);
         }
 
+        let pokemonList = client.bwe.pokemonList;
+
         switch(aMessage.command.toLowerCase())
         {
-
-            case 'powiedz':
-                if(arguments[1] != undefined)
+            
+            case 'poll':
+                const USAGE = 'right usage:\nbwe!pool #optional-channel-mention\ntopic\n:emoji-1: option 1\n:emoji-2: option 2\n:optional anoter emojis: optional another options.';
+                let lines = message.content.split('\n');
+                const theChannel = message.mentions.channels.first()? message.mentions.channels.first(): message.channel;
+                if(lines.length < 4)
                 {
-                    text = arguments[1];
-                    for(let i = 2; i < arguments.length; i++)
-                    {
-                        text += ' ' + arguments[i];
-                    }
-                    if(message.mentions.channels.first())
-                    {
-                        message.mentions.channels.first().send(text);
-                        client.bwe.deleteMessage(message);
-                    }
-                    else if(arguments[0] == 'here')
-                    {
-                        message.channel.send(text);
-                        client.bwe.deleteMessage(message);
-                    }
-                    else if(ChannlesList[arguments[0]] == undefined)
-                    {
-                        message.channel.send('i don\'t know this channel');
-                    }
-                    else
-                    {
-                        client.channels.cache.get(ChannlesList[arguments[0]]).send(text);
-                        client.bwe.deleteMessage(message);
-                    }
-
-                }
-            break;
-            case 'admin':
-                if(client.bwe.isItAdmin(message))
-                {
-                    if(arguments[0] == undefined){arguments[0] = ''}
-                    if(arguments[1] == undefined){arguments[1] = ''}
-                    switch(arguments[0].toLowerCase())
-                    {
-                        case 'add':
-                            switch(arguments[1].toLowerCase())
-                            {
-                                case 'pokemon': 
-                                    if(arguments.length == 14)
-                                    {
-                                        client.bwe.addNewPokemon(arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8], arguments[9], arguments[10], arguments[11], arguments[12], arguments[13], message);
-                                    }
-                                    else
-                                    {
-                                        message.channel.send('Wrong number of arguments: add pokemon [name] [type1] [type2] [ability1] [ability2] [hp] [attack] [defence] [special attack] [special defence] [speed] [female chance]');
-                                    }
-                                break;
-
-                                default: message.channel.send('Wrong command.\nAvailable add: pokemon');
-                            }
-                        break;
-                        case 'edit':
-                            switch(arguments[1].toLowerCase())
-                            {
-                                case 'pokemon':
-                                    if(arguments[4] == undefined)
-                                    {
-
-                                    }
-                                    else
-                                    {
-                                        const PKMN = client.bwe.getPokemonNumberByName(arguments[2]);
-                                        if(PKMN == -1)
-                                        {
-                                            message.channel.send('There is no pokemon with name "' + arguments[2] + '" in my database.');
-                                        }
-                                        else
-                                        {
-                                            let stuffs = '';
-                                            switch(arguments[3])
-                                            {
-                                                case 'name': 
-                                                    if(client.bwe.getPokemonNumberByName(arguments[4]) == -1)
-                                                    {
-                                                        stuffs = 'name = "' + arguments[4] + '"';
-                                                        client.bwe.pokemonList[PKMN].name = arguments[4];
-                                                    }
-                                                    else
-                                                    {
-                                                        message.channel.send('This name is used by another pokemon.');
-                                                    }
-                                                break;
-                                                case 'types':
-                                                    allIsOk = true;
-                                                    const types = [client.bwe.getTypeNumberByName(arguments[4]),client.bwe.getTypeNumberByName(arguments[5])]
-                                                    if(arguments[4] == arguments[5]){message.channel.send('Pokemon can\'t have both the same type, if you want to make pokemon single type write - as second type'); allIsOk = false;}
-                                                    if(types[0] == -1){message.channel.send('there is no "' + arguments[4] + '" type'); allIsOk = false;}
-                                                    if(types[1] == -1){message.channel.send('there is no "' + arguments[5] + '" type'); allIsOk = false;}
-                                                    if(allIsOk)
-                                                    {
-                                                        stuffs = 'types = "' + types[0] + ',' + types[1] + '"';
-                                                        client.bwe.pokemonList[PKMN].types = [types[0],types[1]];
-                                                    }
-                                                break;
-                                                case 'abilities':
-                                                    allIsOk = true;
-                                                    const abilities = [arguments[4],arguments[5]]
-                                                    if(arguments[4] == arguments[5]){message.channel.send('Pokemon can\'t have both the same abilities, if you want to make pokemon with one write - as second ability'); allIsOk = false;}
-                                                    if(allIsOk)
-                                                    {
-                                                        stuffs = 'ability1 = "' + abilities[0] + '", ability2 = "' + abilities[1] + '"';
-                                                        client.bwe.pokemonList[PKMN].abilities = [abilities[0],abilities[1]];
-                                                    }
-                                                break;
-                                                case 'hp': case 'attack': case 'defence': case 'specialdefence': case 'specialattack': case 'speed':
-                                                    VALUE = arguments[4] * 1;
-                                                    if(isNaN(VALUE)){message.channel.send('Please write number as value.');}
-                                                    else if(VALUE < 1){message.channel.send('value of stats must be not less than 1');}
-                                                    else if(VALUE > 256){message.channel.send('value of stats must be not more than 256');}
-                                                    else
-                                                    {
-                                                        stuffs = arguments[3] + ' = ' + VALUE;
-                                                        let stat = arguments[3];
-                                                        if(arguments[3] == 'specialattack'){stat = 'spAttack';}
-                                                        if(arguments[3] == 'specialdefence'){stat = 'spDefence';}
-                                                        client.bwe.pokemonList[PKMN][stat] = VALUE;
-                                                    }
-                                                break;
-                                                case 'femalechance': case 'femalerate':
-                                                    VALUE = arguments[4] * 1;
-                                                    if(isNaN(VALUE)){message.channel.send('Please write number as value.');}
-                                                    else if(VALUE < -1){message.channel.send('chance must be not less than -1');}
-                                                    else if(VALUE > 100){message.channel.send('chance must be not more than 100');}
-                                                    else
-                                                    {
-                                                        stuffs = 'femalechance = ' + VALUE;
-                                                        client.bwe.pokemonList[PKMN].femaleChance = VALUE;
-                                                    }
-                                                break;
-                                                
-                                                default: message.channel.send('There is no property with name "' + arguments[3] + '" in my database.');
-                                            }
-
-                                            if(stuffs != '')
-                                            {
-                                                con.query('update pokemonList set ' + stuffs + ' where name = "' + arguments[2] + '"', (err,row) => {
-                                                    if(err == null)
-                                                    {
-                                                        message.channel.send('Done.');
-                                                    }
-                                                    else
-                                                    {
-                                                        message.channel.send('error: ' + err);
-                                                    }
-                                                });
-                                            }
-                                        }
-                                    }
-                                break;
-                                default: message.channel.send('Wrong command.\nAvailable edit: pokemon');
-                            }
-                        break;
-
-                        default: message.channel.send('Avaliable admin function: add, edit');
-                    }
-                }
-                else{message.channel.send('Sorry, you don\'t have permission to use this command');}
-            break;
-            case 'connectchannel': 
-            {
-                if(arguments[0] == undefined)
-                {
-                    con.query('select code from connect_channel where channel = "' + message.channel.id + '";', (error, result) => 
-                    {
-                        if(error == null) 
-                        {
-                            if(result[0] == undefined)
-                            {
-                                message.channel.send('Send connection code 1 - 100 symbols ' + EMOJIS.sip);
-                            }
-                            else
-                            {
-                                message.channel.send('Your connection code is ' + result[0].code + ' ' + EMOJIS.sip);
-                            }
-                        }
-                        else 
-                        {
-                            message.channel.send('error: ' + error);
-                        }
-                    });
-                
+                    message.channel.send(USAGE);
                     return false;
                 }
-                if(arguments[0].length > 100)
+
+                let theText = '';
+                for(let i = 2; i < lines.length; i++)
                 {
-                    message.channel.send('Your connection code is too long (max 100) ' + EMOJIS.hide);
-                    return false;
-                }
-                con.query('select code from connect_channel where channel = "' + message.channel.id + '";', (error, result) => 
-                {
-                    if(error == null) 
+                    theText += lines[i] + '\n';
+                    if(emotes(lines[i]) == null)
                     {
-                        if(result[0] == undefined)
+                        message.channel.send(USAGE);
+                        return false;
+                    }
+                    else if(client.emojis.cache.get(emotes(lines[i])[0].slice(-19,-1)) == undefined)
+                    {
+                        message.channel.send('I can\'t use that emoji...');
+                        return false;
+                    }
+                }
+
+                const embedMSG = new MessageEmbed()
+                .setColor(client.AzorDefaultColor)
+                .setTitle(lines[1])
+                .setDescription(theText);
+
+                const theMessage = await theChannel.send({ embeds: [embedMSG] });
+
+                for(let i = 2; i < lines.length; i++)
+                {
+                    theMessage.react(emotes(lines[i])[0]);
+                }
+            break;
+            case 'nonsense':
+                con.query('select date, now() as now from nonsense where guild = "' + message.guild.id + '"', (err, row) =>
+                {
+                    if(err == null)
+                    {
+                        if(row.length == 0)
                         {
-                            con.query('insert into connect_channel(channel, code) values ("' + message.channel.id + '","' + arguments[0] + '");', (e) => 
+                            con.query('insert into nonsense (guild,date) values ("' + message.guild.id + '", now())', (error, _) =>
                             {
-                                if(e == null){message.channel.send('Code set ' + EMOJIS.vibbing)}
-                                else{message.channel.send('error: ' + e);}
+                                if(error == null)
+                                {
+                                    message.channel.send('I start to count the days ' + EMOJIS.vibbing);
+                                }
+                                else
+                                {
+                                    message.channel.send('error: ' + error);
+                                }
                             });
                         }
                         else
                         {
-                            con.query('update connect_channel set code = "' + arguments[0] + '" where channel = "' + message.channel.id + '";', (e) => 
+                            con.query('update nonsense set date = now() where guild = "' + message.guild.id + '"', (error, _) =>
                             {
-                                if(e == null){message.channel.send('Code set ' + EMOJIS.vibbing)}
-                                else{message.channel.send('error: ' + e);}
+                                if(error == null)
+                                {
+                                    const difference = Math.floor((row[0].now - row[0].date) / 86400000);
+                                    message.channel.send('And something happend, it was ' + difference + ' days without nonsense ' + EMOJIS.hide);
+                                }
+                                else
+                                {
+                                    message.channel.send('error: ' + error);
+                                }
                             });
                         }
                     }
-                    else 
+                    else
                     {
-                        message.channel.send('error: ' + error);
+                        message.channel.send('error: ' + err);
                     }
                 });
-            }
             break;
-            case 'stoptest':
-                if(TheTest)
+            case 'playlist':
+                if(arguments[0] == undefined){arguments[0] = '';}
+                switch(arguments[0].toLowerCase())
                 {
-                    await message.channel.send('Test stop!');
-                    client.user.setActivity({name: AzorActivity, type: 2});
-                    process.exit();
+                    case 'create':
+                        if(arguments[1] == undefined || arguments[1] == '')
+                        {
+                            message.channel.send('Please set name of playlist. (use _ instead of spaces) ' + EMOJIS.sip);
+                        }
+                        else if(arguments[1].length > 50)
+                        {
+                            message.channel.send('The name of playlist is too long. ' + EMOJIS.hide);
+                        }
+                        else
+                        {
+                            con.query('select owner from playlists where name = "' + arguments[1] + '"', (err, row) =>
+                            {
+                                if(err == null)
+                                {
+                                    if(row.length == 0)
+                                    {
+                                        con.query('insert into playlists (name, owner) values ("' + arguments[1] + '", "' + message.author.id + '")', (err, row) =>
+                                        {
+                                            if(err == null)
+                                            {
+                                                message.channel.send('Playlist added. ' + EMOJIS.sit);
+                                            }
+                                            else
+                                            {
+                                                message.channel.send('error:  ' + err);
+                                            }
+                                        });
+                                    }
+                                    else
+                                    {
+                                        message.channel.send('I\'m sorry, there is playlist with that name. ' + EMOJIS.dunno);
+                                    }
+                                }
+                                else
+                                {
+                                    message.channel.send('error:  ' + err);
+                                }
+                            });
+                        }
+    
+                    break;                    
+                    case 'add':
+                        if(message.member.voice.channel == null)
+                        {
+                            message.channel.send('You must be in the Voice Channel first. ' + EMOJIS.dunno);
+                            return false;
+                        }
+                        text = '';
+                        for(let i = 2; i < arguments.length; i++)
+                        {
+                            text += arguments[i] + ' ';
+                        }
+                        text = text.trim();
+                        
+                        if(arguments[2] == undefined)
+                        {
+                            message.channel.send('usage: playlist add [playlist_name] [url / name of song] ' + EMOJIS.sit);
+                        }
+                        else
+                        {
+                            con.query('select owner from playlists where name = "' + arguments[1] + '"', async (err,row) =>
+                            {
+                                if(err == null)
+                                {
+                                    if(row.length == 0)
+                                    {
+                                        message.channel.send('I couldn\'t find that playlist. ' + EMOJIS.hide);
+                                    }
+                                    else
+                                    {
+                                        if(row[0].owner == message.author.id)
+                                        {
+                                            client.bwe.deleteMessage(message);
+                                            const messageToEdit = await message.channel.send('Looking for song... ' + EMOJIS.lagging);
+                                            let queue = client.player.createQueue(message.guild.id);
+                                            await queue.join(message.member.voice.channel);
+                                            let song = await queue.play(text).catch(_ => 
+                                                {
+                                                    if(!guildQueue){queue.stop();}
+                                                });
+                                                if(song == undefined)
+                                                {
+                                                    messageToEdit.edit('Sorry, i couldn\'t find this song... ' + EMOJIS.hide);
+                                                    setTimeout(() => messageToEdit.delete(), 2500);
+                                                }
+                                                else
+                                                {
+                                                    let finalName = song.name;
+                                                    while(finalName.indexOf('"') > -1)
+                                                    {
+                                                        finalName = finalName.replace('"',"'");
+                                                    }
+                                                    con.query('insert into songs (playlist, url, name) values ("' + arguments[1] + '", "' + song.url + '", "' + finalName + '")', async (err, row) =>
+                                                    {
+                                                        if(err == null)
+                                                        {
+                                                            messageToEdit.edit('Song "' + song.name + '" added to playlist. ' + EMOJIS.sit);
+                                                            setTimeout(() => messageToEdit.delete(), 2500);
+
+                                                            let queueMessage = client.queueMessages.get(message.guild.id);
+                                                            if(queueMessage == null)
+                                                            {
+                                                                const run = require('./commands/queue');
+                                                                run(aMessage, client, con);
+                                                                delete require.cache[require.resolve('./commands/queue')];
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            messageToEdit.edit("error :" + err);
+                                                        }
+                                                    });
+                                                }
+                                            }
+                                            else
+                                            {
+                                                message.channel.send('Only creator of the playlist can edit it. ' + EMOJIS.hide);
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        message.channel.send('Error: ' + err);
+                                    }
+                                });
+                            }
+                    break;
+                    case 'play': 
+                        if(message.member.voice.channel == null)
+                        {
+                            message.channel.send('You must be in the Voice Channel first. ' + EMOJIS.dunno);
+                            return false;
+                        }
+                        if(arguments[1] == undefined)
+                        {
+                            message.channel.send('tell me what playlist i can play for you. ' + EMOJIS.sip);
+                        }
+                        else
+                        {
+                            let query = 'select url from songs where playlist = "' + arguments[1] + '"';
+                            if(arguments[1] == 'it' && arguments[2] == 'all')
+                                query = 'select url from songs inner join playlists on playlist = playlists.name where owner = "' + message.author.id + '"';
+                            con.query(query, async (err, rows) =>
+                            {
+                                if(err == null)
+                                {
+                                    if(rows.length == 0)
+                                    {
+                                        message.channel.send('The playlist is empty or doesn\'t exist. ' + EMOJIS.hide);
+                                    }
+                                    else
+                                    {
+                                        client.bwe.deleteMessage(message);
+                                        let azorro = await message.channel.send(EMOJIS.lagging);
+                                        for(let i = 0; i < rows.length; i++)
+                                        {
+                                            let queue = client.player.createQueue(message.guild.id);
+                                            await queue.join(message.member.voice.channel);
+                                            let song = await queue.play(rows[i].url).catch(_ => {if(!guildQueue){queue.stop();}});
+                                            if(song == undefined)
+                                            {
+                                                message.channel.send('something went wrong with one song ' + EMOJIS.hide); 
+                                            }
+                                        }
+
+                                        const theQueueMessage = client.queueMessages.get(message.guild.id);
+                                        if(theQueueMessage == null)
+                                        {
+                                            const run = require('./commands/queue');
+                                            run(aMessage, client, con);
+                                            delete require.cache[require.resolve('./commands/queue')];
+                                        }
+                                        azorro.edit('Playlist loaded!' + EMOJIS.vibbing);
+                                        setTimeout(() => {azorro.delete()}, 5000);
+                                        
+                                    }
+                                }
+                                else
+                                {
+                                    message.channel.send('Error: ' + err);
+                                }
+                            });
+                        }
+                    break;
+                    case 'delete':
+                        switch(arguments[1])
+                        {
+                            case 'song': 
+                            if(arguments[3] == undefined)
+                            {
+                                message.channel.send('usage: playlist delete song [playlist_name] [number_of_song]');
+                            }
+                            else
+                            {
+                                con.query('select owner from playlists where name = "' + arguments[2] + '"', (err, rows) =>
+                                {
+                                    if(err == null)
+                                    {
+                                        if(rows.length == 0)
+                                        {
+                                            message.channel.send('There is no Playlist with the name. ' + EMOJIS.hide);
+                                        }
+                                        else if(rows[0].owner == message.author.id)
+                                        {
+                                            if(isNaN(arguments[3] * 1)){message.channel.send('Number of song must be... hmm... a number ' + EMOJIS.dunno);}
+                                            con.query('select id from songs where playlist = "' + arguments[2] + '"', (error, rows_2) =>
+                                            {
+                                                if(error == null)
+                                                {
+                                                    if(arguments[3] * 1 < 1 || arguments[3] * 1 > rows_2.length)
+                                                    {
+                                                        message.channel.send('There is no song with that number ' + EMOJIS.hide);
+                                                    }
+                                                    else
+                                                    {
+                                                        con.query('delete from songs where id = ' + rows_2[arguments[3] - 1].id, (errors) => 
+                                                        {
+                                                            if(errors == null)
+                                                            {
+                                                                message.channel.send('Song deleted from playlist. ' + EMOJIS.sit);
+                                                            }
+                                                            else
+                                                            {
+                                                                message.channel.send('Error: ' + errors);
+                                                            }
+                                                        });
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    message.channel.send('Error: ' + error);
+                                                }
+                                            });
+                                        }
+                                        else
+                                        {
+                                            message.channel.send('Only creator of the Playlist can edit it. ' + EMOJIS.dunno);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        message.channel.send('Error: ' + err);
+                                    }
+                                });
+                            }
+                        break;
+                            case 'playlist':
+                                if(arguments[2] == undefined)
+                                {
+                                    message.channel.send('usage: playlist delete playlist [playlist_name]');
+                                }
+                                else
+                                {
+                                    con.query('select owner from playlists where name = "' + arguments[2] + '"', (err, rows) =>
+                                    {
+                                        if(err == null)
+                                        {
+                                            if(rows.length == 0)
+                                            {
+                                                message.channel.send('There is no Playlist with the name. ' + EMOJIS.hide);
+                                            }
+                                            else if(rows[0].owner == message.author.id)
+                                            {
+                                                if(arguments[3] == 'sure')
+                                                {                                                    
+                                                    con.query('delete from songs where playlist = "' + arguments[2] + '"', (errors) => 
+                                                    {
+                                                        if(errors == null)
+                                                        {
+                                                            con.query('delete from playlists where name = "' + arguments[2] + '"', (someErrors) =>{
+                                                                if(someErrors == null)
+                                                                {
+                                                                    message.channel.send('Playlist deleted. ' + EMOJIS.sit);
+                                                                }
+                                                                else
+                                                                {
+                                                                    message.channel.send('Error: ' + someErrors);
+                                                                    
+                                                                }
+                                                            });
+                                                        }
+                                                        else
+                                                        {
+                                                            message.channel.send('Error: ' + errors);
+                                                        }
+                                                    });
+                                                }
+                                                else{message.channel.send('You\'re sure you want to delete whole playlist? (write \'sure\' as another argument) ' + EMOJIS.hide);}
+                                            }
+                                            else
+                                            {
+                                                message.channel.send('Only creator of the Playlist can edit it. ' + EMOJIS.dunno);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            message.channel.send('Error: ' + err);
+                                        }
+                                    });
+                                }
+                            break;
+                            
+                            default: message.channel.send('I can delete **song** or **playlist** ' + EMOJIS.sip);
+                        }
+                    break;                
+                    case 'show':
+                        if(arguments[1] == undefined)
+                        {
+                            con.query('select name from playlists', (err, row) =>
+                            {
+                                if(err == null)
+                                {
+                                    text = 'List of Playlists:';
+                                    for(let i = 0; i < row.length; i++)
+                                    {
+                                        text += '\n' + (i + 1) + '. ' + row[i].name;
+                                    }
+                                    message.channel.send(text);
+                                }
+                                else
+                                {
+                                    message.channel.send('Error: ' + err);
+                                }
+                            });
+                        }
+                        else
+                        {
+                            con.query('select name from songs where playlist = "' + arguments[1] + '"', (err, row) =>
+                            {
+                                if(err == null)
+                                {
+                                    text = 'List of songs:'
+                                    for(let i = 0; i < row.length; i++)
+                                    {
+                                        text += '\n' + (i + 1) + '. ' + row[i].name;
+                                    }
+                                    if(row.length == 0)
+                                    {
+                                        message.channel.send('The playlist is empty or doesn\'t exist. ' + EMOJIS.hide);
+                                    }
+                                    else
+                                    {
+                                        message.channel.send(text);
+                                    }
+                                }
+                                else
+                                {
+                                    message.channel.send(err);
+                                }
+                            });
+                        }
+                    break;
+                }
+                                    
+            break; 
+            case 'count': case 'calculate':
+            try
+            {
+                let text = '';
+                if(arguments[0] == undefined){message.channel.send('tell me what to calculate. ' + EMOJIS.sip); return false;}
+                for(let i = 0; i < arguments.length; i++){text += arguments[i];}
+
+
+                text = changeCalculationString(text);
+                if(text == '2+2*2'){message.channel.send('8 ' + EMOJIS.run + ' ||jk 6||'); return false;}
+                if(text == '9+10'){message.channel.send('21 ' + EMOJIS.think + ' ||jk 19||'); return false;}
+                if(text == '0/0'){message.channel.send('<a:AzorExplode:982055237378519081>'); return false;}
+
+                if(text.indexOf('±') > -1 || text.indexOf('∓') > -1)
+                {
+                    let texts = [text,text];
+                    texts[0] = texts[0].replace(/±/g, '+');
+                    texts[0] = texts[0].replace(/∓/g, '-');
+                    texts[1] = texts[1].replace(/±/g, '-');
+                    texts[1] = texts[1].replace(/∓/g, '+');
+                    text = '';
+                    for(let i = 0; i < 2; i++)
+                    {
+                        text += (i + 1) + ': ';
+                        const node = math.parse(texts[i]);
+                        const calculation = math.evaluate(node.toString());
+                        if(calculation == Infinity){text += '<a:FA_Sparkles:977507221166518322> **INFINITY** <a:FA_Sparkles:977507221166518322>';}
+                        else{text += calculation.toString();}
+                        text += '\n';
+                    }
+                    message.channel.send(text);
+                    return false;
                 }
 
-            default:
-                let canWeGoAhaed = false;
-                await AzorModules.extras(aMessage, client).then(result => {canWeGoAhaed = result}); if(!canWeGoAhaed){return false;}
-                await AzorModules.stuffs(aMessage, client, con).then(result => {canWeGoAhaed = result}); if(!canWeGoAhaed){return false;}
-                await AzorModules.PMDRP(aMessage, client, con).then(result => {canWeGoAhaed = result}); if(!canWeGoAhaed){return false;}
-                message.channel.send('use ' + DATA.prefix + 'help or ' + DATA.mention + ' help or /help to check the command list');
+                const node = math.parse(text);
+                const calculation = math.evaluate(node.toString());
+                if(calculation == Infinity){message.channel.send('<a:FA_Sparkles:977507221166518322> **INFINITY** <a:FA_Sparkles:977507221166518322>'); return false;}
+                message.channel.send(calculation.toString());
+                
+            }
+            catch(e)
+            {
+                // console.log(e);
+                message.channel.send('Something isn\'t right ' + EMOJIS.hide);
+            }
+            break;
+            
+
+            case 'start':
+                if(!client.bwe.isItTester(message)) 
+                {
+                    message.channel.send('Sorry, you must be tester to use this command.');
+                    return false;
+                }
+    
+                if(arguments.length == 10 || arguments.length == 11)
+                {
+                    const _nickname = arguments[0];
+                    const _specie = arguments[1];
+                    _gender = arguments[2];
+                    const _ability = arguments[3];
+                    const _IV = [arguments[4],arguments[5],arguments[6],arguments[7], arguments[8], arguments[9]];
+                    const _confirm = arguments[10] ? arguments[10] : '';
+                    
+                    const SERVER_ID = message.guild.id;
+                    let allIsOk = true;
+                    
+                    let error = 'Errors:';
+                    if(_nickname.length < 1){error += '\nNickname is too short'; allIsOk = false;}
+                    if(_nickname.length > 30){error += '\nNickname is too long'; allIsOk = false;}
+                    PKMN = getPokemonNumberByName(_specie, pokemonList);
+                    if(PKMN == -1){error += '\ni don\'t have that pokemon in my database'; allIsOk = false;}
+                    else if(pokemonList[PKMN].abilities[0] != _ability && pokemonList[PKMN].abilities[1] != _ability){error += '\nthat pokemon can\'t have that ability'; allIsOk = false;}
+                    switch(_gender.toLowerCase())
+                    {
+                        case 'f': case 'female': case 'girl': case 'woman': case 'she': case 'her': case 'lady': case 'princess': _gender = 'F'; break;
+                        case 'm': case 'male': case 'boy': case 'man': case 'he': case 'him': case 'his': case 'gentleman': case 'prince': _gender = 'M'; break;
+                        case 'n': case 'no': case 'non': case 'genderless': case 'without': _gender = 'N'; break;
+                        default: error += '\nthis gender isn\'t available'; allIsOk = false;
+                    }
+                    let sumIV = 0;
+                    let IVtext = '';
+                    for(let i = 0; i < _IV.length; i++)
+                    {
+                        if(isNaN(_IV[i] * 1)){error += '\none of IV is not a number'; allIsOk = false;}
+                        else
+                        {
+                            if(_IV[i] * 1 > 5){error += '\none of IV is too high'; allIsOk = false;}
+                            if(_IV[i] * 1 < 0){error += '\none of IV is too low'; allIsOk = false;}
+                            
+                        } 
+                        
+                        if(i > 0){IVtext += ',';}
+                        IVtext += _IV[i];
+                        sumIV += _IV[i] * 1;
+                    }
+                    if(!isNaN(sumIV))
+                    {
+                        if(sumIV > 12 && allIsOk){error += '\nSum of IV\'s are too big'; allIsOk = false;}
+                        if(sumIV < 12 && allIsOk && _confirm != 'sure'){error += '\nSum of IV\'s are too low, but if you want to play with lower IV write "sure" as the last argument'; allIsOk = false;}
+                    }
+                    
+                    if(allIsOk)
+                    {
+                        con.query('select id from players where user = ' + message.author.id + ' and server = ' + SERVER_ID, (err, row) => 
+                        {
+                            if(err == null)
+                            {
+                                if(row.length == 0)
+                                {
+                                    con.query('insert into players (name, specie, gender, IV, ability, user, server) values ("' + _nickname + '","' + _specie + '","' + _gender + '","' + IVtext + '","' + _ability + '","' + message.author.id + '" + "' + SERVER_ID + '")', (error,rows) =>
+                                    {
+                                        if(error == null)
+                                        {
+                                            message.channel.send('Success! [a very nice text welcoming a person or something]');
+                                        }
+                                        else
+                                        {
+                                            message.channel.send('error:\n' + error);
+                                        }
+                                    });
+                                }
+                                else
+                                {
+                                    message.channel.send('You already have account on this server. [here will be info how to delete account]');
+                                }
+                            }
+                            else
+                            {
+                                message.channel.send('You already have account. [here will be info how to delete account]');
+                            }
+                        });
+                    }
+                    else
+                    {
+                        message.channel.send(error);
+                    }
+                    
+                }
+                else
+                {
+                    message.channel.send('number of arguments are wrong\nusage: start [nickname] [pokemon] [gender] [ability] [IV]\nnickname: 1-30 characters, replace space with _\npokemon: make sure if it\'s available\ngender: F - Female, M - Male, N - No gender (genderless)\nability: choose one of available ability of your pokemon\nIV (individual value): write 6 numbers separating them with space in order: HP, attack, defence, special attack, special defence, speed. max 5 per stat and max 12 at sum\nexample:\n' + DATA.prefix + 'start Azor umbreon M synchronize 2 5 3 0 1 1');
+                }
+            break;
+            case 'pokedex':
+                if(arguments[0] == undefined)
+                {
+                    // text = 'Pokemon in my Pokedex:\n' + pokemonList[0].name;
+                    // for(let i = 1; i < pokemonList.length; i++)
+                    // {
+                    //     text += ', ' + pokemonList[i].name;
+                    // }
+                    // message.channel.send(text);
+                    message.channel.send('Number of pokemon in pokedex: ' + pokemonList.length);
+                }
+                else
+                {
+                    const PKMN = getPokemonNumberByName(arguments[0], pokemonList);
+                    if(PKMN == -1)
+                    {
+                        message.channel.send('there is no pokemon with name ' + arguments[0] + ' in my database.')
+                    }
+                    else
+                    {
+                        const pokemon = pokemonList[PKMN];
+                        message.channel.send('**' + pokemon.name + '**\nTypes: ' + POKEMON_TYPES[pokemon.types[0]].english + '/' +  POKEMON_TYPES[pokemon.types[1]].english + '\nAbilities: ' + pokemon.abilities + '\nBase HP: ' + pokemon.hp + '\nBase Attack: ' + pokemon.attack + '\nBase Defence: ' + pokemon.defence + '\nBase Special Attack: ' + pokemon.spAttack + '\nBase Special Defence: ' + pokemon.spDefence + '\nBase Speed: ' + pokemon.speed + '\nFemale Rate: ' + pokemon.femaleChance + '%');
+                    }
+                }
+            break;
+            case 'map':
+                let snow = 0;
+                text = '';
+                for(let itrain = 0; itrain < 2; itrain++)
+                for(let i = 0; i < 8; i++)
+                {
+                    for(let itsnow = 0; itsnow < 2; itsnow++)
+                    {
+    
+                        for(let j = 0; j < 8; j++)
+                        {
+                            text += mapElements[map[i][j]];
+                        }
+                    }
+                    
+                    if(snow == 3)
+                    {
+                        snow = 0;
+                        message.channel.send(text);
+                        text = '';
+                    }
+                    else
+                    {
+                        text += '\n';
+                        snow++;
+                    }
+                }
+            break;
+            case 'createteam':
+                if(!isItAdminorTester) 
+                {
+                    message.channel.send('Sorry, you must be tester to use this command.');
+                    return false;
+                }
+                con.query('select id from players where server = "' + message.guild.id + '" and user = "' + message.author.id + '"', (err, row) =>
+                {
+                    if(err == null)
+                    {
+                        if(row.length == 0)
+                        {
+                            message.channel.send('You don\'t have character here yet. ' + EMOJIS.hide);
+                        }
+                        else
+                        {
+                            if(arguments[0] == undefined)
+                            {
+    
+                            }
+                            else if(arguments[1] == undefined)
+                            {
+    
+                            }
+                            else
+                            {
+    
+                            }
+                        }
+                    }
+                    else
+                    {
+                        message.channel.send('error: ' + err)
+                    }
+                });
+            break;
+    
+
+            case 'hi': case 'hello': message.channel.send('hello ' + tellName(message)); break;
+            case 'goodmornig': message.channel.send('Goodmorning ' + tellName(message)); break;
+            case 'goodnight': message.channel.send('Goodnight ' + tellName(message)); break;
+            case 'apple': message.channel.send(':apple:'); break;
+            case 'orange': message.channel.send('<a:annoyingOrange:939130262942547979>'); break;
+            case 'strawberry': message.channel.send(':strawberry:'); break;
+            case 'tangerine': message.channel.send(':tangerine:'); break;
+            case 'banana': message.channel.send(':banana:'); break;
+            case 'watermelon': message.channel.send(':watermelon:'); break;
+            case 'blueberries': message.channel.send(':blueberries:'); break;
+            case 'melon': message.channel.send(':melon:'); break;
+            case 'cherries': message.channel.send(':cherries:'); break;
+            case 'peach': message.channel.send(':peach:'); break;
+            case 'wakeuperic':
+                if(client.bwe.isItAdmin(message))
+                {
+                    client.users.cache.get('490576799164530717').send('wake up mousie~');
+                }
+                else
+                {
+                    message.channel.send('<@!490576799164530717> wake up mousie~');
+                }
+            break;
+            case 'wakeupszibi':
+                if(client.bwe.isItAdmin(message))
+                {
+                    client.users.cache.get('303821168245342218').send('wake up pixie~');
+                }
+                else
+                {
+                    message.channel.send('<@!303821168245342218> wake up pixie~');
+                }
+            break;
+            case 'amiadmin':
+                if(client.bwe.isItAdmin(message)){message.channel.send('Yes');}
+                else{message.channel.send('No')}
+            break;
+            case 'commission':
+                if(message.guild.members.cache.get('951074944660410400'))
+                {
+                    message.channel.send('Maybe you should ask <@!951074944660410400>?');
+                    let msg = "";
+                    for(let i = 0; i < arguments.length; i++){msg += ' ' + arguments[i];}
+                    message.channel.send('sylv!pictures' + msg);
+                    break;
+                }
+            case 'do': case 'don\'t': case 'what': case 'you': case 'shut': case 'prepare': case 'how': case 'be':
+                let isThatAll = true;
+                let ask = aMessage.command.toLowerCase();
+                for(let i = 0; i < arguments.length; i++)
+                {
+                    ask += ' ' + arguments[i].toLowerCase();
+                }
+                while(ask[ask.length - 1] == '!' || ask[ask.length - 1] == '?' || ask[ask.length - 1] == ' ')
+                {
+                    ask = ask.slice(0,-1);
+                }
+                switch(ask)
+                {
+                    case 'don\'t spam': message.channel.send('I\'m sorry, i will try to be good bwe'); break;
+                    case 'don\'t sleep': message.channel.send('me nu sleep...'); break;
+                    case 'what a dog': case 'what a doggo': message.channel.send('Woof, woof!'); break;
+                    case 'what you can do': case 'what can you do': case 'what do you can': message.channel.send('I can serve you with all my power.'); break;
+                    case 'you a dog': case 'you a doggo': case 'you dog': case 'you you doggo': case 'you are dog': case 'you are doggo': case 'you are a dog': case 'you are a doggo': message.channel.send('Woof, woof!'); break;
+                    case 'shut up': case 'shut the fuck up': case 'shut the f up':case 'shut the f*ck up': message.channel.send('<:breSad:936268509200142416>'); break;
+                    case 'prepare for trouble': message.channel.send('And make it double ' + EMOJIS.vibbing); break;
+                    case 'do you like <@951074944660410400>': case 'do you like stewwabot <@!951074944660410400>': case 'do you like stewwabot': message.channel.send(EMOJIS.blush); break;
+                    case 'how dare you': message.channel.send('I\'m sorry, i-i just do my job ' + EMOJIS.please); break;
+                    case 'be ready': message.channel.send('I\'m ready waiting for orders ' + EMOJIS.sit); break;
+                    default: isThatAll = false;
+                }
+                // <@!951074944660410400>
+            if(isThatAll){break;}
+
+            default: message.channel.send('use ' + DATA.prefix + 'help or ' + DATA.mention + ' help or /help to check the command list');
         }
     }
     catch(error)
@@ -1013,23 +1600,21 @@ client.on('interactionCreate', async interaction => {
     {
         try
         {
-            let permissions = interaction.channel.permissionsFor(interaction.guild.me).toArray();
-            if(permissions.indexOf('SEND_MESSAGES') == -1)
+            if(interaction.guild)
             {
-                interaction.reply({content: 'Sorry, i can\'t send messages here ' + EMOJIS.hide, ephemeral: true,});
-                return;
+                let permissions = interaction.channel.permissionsFor(interaction.guild.me).toArray();
+                if(permissions.indexOf('SEND_MESSAGES') == -1)
+                {
+                    interaction.reply({content: 'Sorry, i can\'t send messages here ' + EMOJIS.hide, ephemeral: true,});
+                    return;
+                }
             }
             const run = require('./commands/' + interaction.commandName);
             run(null, client, con, interaction);
             delete require.cache[require.resolve('./commands/' + interaction.commandName)];
 
         }
-        catch(error)
-        {
-            interaction.reply('Some error happened. ' + EMOJIS.blush);
-            client.channels.cache.get('946830760839610460').send('error: ' + error);
-            console.log(error);
-        }
+        catch(error){client.bwe.theError(error, null, interaction)}
     }
 
     if(interaction.isButton())
