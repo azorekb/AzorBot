@@ -2,7 +2,7 @@
 const TheTest = process.argv[2] == 'test';
 const AzorActivity = 'bweeing';
 const Discord = require('discord.js');
-const client = new Discord.Client({intents: 32767, partials: ['CHANNEL']});
+const client = new Discord.Client({intents: 32767, partials: ['CHANNEL'], allowedMentions: {parse: ['users']}, repliedUser: true});
 const { MessageEmbed } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
@@ -258,7 +258,7 @@ class BweClass
     {
         for(let i = 0; i < POKEMON_TYPES.length; i++)
         {
-            if(POKEMON_TYPES[i].english == _name){return i}
+            if(POKEMON_TYPES[i].english == _name.toLowerCase()){return i}
         }
 
         return -1;
@@ -381,33 +381,12 @@ function getPokemonNumberByName(_name, pokemonList)
 // -------------------------------- variable ------------------------------
 let con = mysql.createConnection({host:'localhost', user: 'root', password: '', database: 'azorbot'});
 let allIsOk = true;
-let VALUE;
 
 // -------------------------------- client on -------------------------------------------
 client.on('ready', () => 
 {
     if(TheTest){console.log('The test is working');}
     else{console.log('It\'s working');}
-
-    con.query('select * from pokemonList', (err, row) => 
-    {
-        for(let i = 0; i < row.length; i++)
-        {
-            client.bwe.pokemonList[i] =
-            {
-                name: row[i]['name'],
-                types: row[i]['types'].split(','),
-                abilities: [row[i]['ability1'], row[i]['ability2']],
-                hp: row[i]['hp'],
-                attack: row[i]['attack'],
-                defence: row[i]['defence'],
-                spAttack: row[i]['specialattack'],
-                spDefence: row[i]['specialdefence'],
-                speed: row[i]['speed'],
-                femaleChance: row[i]['femalechance']
-            }
-        }
-    });
 
     client.user.setStatus('online');
     if(TheTest){client.user.setActivity({name: 'testing', type: 0});}

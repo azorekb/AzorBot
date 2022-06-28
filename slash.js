@@ -7,7 +7,7 @@ const clientId = '934774688419282984';
 const commands = [
 	new SlashCommandBuilder().setName('help').setDescription('Shows list of commands or info about the command').addStringOption(option => option.setName('command').setDescription('Write command to check info about it.')),
 	new SlashCommandBuilder().setName('welcomechannel').setDescription('set/change/check welcome channel').addChannelOption(option => option.setName('channel').setDescription('channel when message will be sent')),
-	new SlashCommandBuilder().setName('test').setDescription('test'),
+	new SlashCommandBuilder().setName('test').setDescription('test').addIntegerOption(option => option.setName('number').setDescription('number of example character').setRequired(true)),
 	new SlashCommandBuilder().setName('oc').setDescription('shows the picture of Szibi\'s or Fairy\'s OC').addStringOption(option => option.setName('name').setDescription('name of OC')),
 	new SlashCommandBuilder().setName('pic').setDescription('shows the picture of pokemon').addStringOption(option => option.setName('name').setDescription('name of Pokemon')),
 	new SlashCommandBuilder().setName('play').setDescription('play music').addStringOption(option => option.setName('song').setDescription('name of song, author or link').setRequired(true)),

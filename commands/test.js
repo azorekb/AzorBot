@@ -1,11 +1,9 @@
 module.exports = async (aMessage, client, con, interaction = null) => 
 {
+    const reply = (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return aMessage.message.channel.send(stuffs);}}
     try
     {
-        // if(interaction && interaction.guild == null){interaction.reply('It can\'t be used in DM'); return;}
-        const reply = (stuffs) => {if(interaction){interaction.reply(stuffs);}else{aMessage.message.reply(stuffs);}}
-        
-        reply({content: 'Test', ephemeral: true});
+        reply('there is nothing to test atm');
     }
     catch(error){client.bwe.theError(error, aMessage, interaction)}
 }
