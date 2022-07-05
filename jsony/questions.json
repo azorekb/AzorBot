@@ -1,0 +1,212 @@
+{
+    "list":
+    [
+        {
+            "question": "905*18=?",
+            "answers":[
+                {"text": "16290", "changes": ["+luck", "-hp"]},
+                {"text": "5", "changes": ["+attack", "-luck"]},
+                {"text": "165834324351618398904759302747534591188205718994140625 ", "changes": ["+sp.def", "-luck"]},
+                {"text": "?", "changes": ["+sp.atk", "-luck"]}
+            ]
+        },
+        {
+            "question": "what would you choose?",
+            "answers":[
+                {"text": "authority", "changes":["+sp.atk", "-hp"]},
+                {"text": "money", "changes":["+sp.atk", "-defence"]},
+                {"text": "family", "changes":["+sp.def", "-sp.atk"]},
+                {"text": "knowledge", "changes":["+sp.atk", "-attack"]}
+            ]
+        },
+        {
+            "question": "what would you loose the fastest?",
+            "answers":[
+                {"text": "family", "changes":["-sp.def", "+sp.atk"]},
+                {"text": "friends", "changes":["-sp.atk", "-attack"]},
+                {"text": "luck", "changes":["-sp.atk", "-luck"]},
+                {"text": "life", "changes":["-hp", "+sp.atk"]}
+            ]
+        },
+        {
+            "question": "how do you feel?",
+            "answers":[
+                {"text": "excellent", "changes":["+hp", "-attack"]},
+                {"text": "good", "changes":["+hp", "-sp.atk"]},
+                {"text": "bad", "changes":["+defence", "-hp"]},
+                {"text": "i don't know...", "changes":["-sp.def", "-hp"]}
+            ]
+        },
+        {
+            "question": "are you afraid of death?",
+            "answers":[
+                {"text": "yes", "changes":["+defence", "-attack"]},
+                {"text": "i don't know", "changes":["+attack", "-attack"]},
+                {"text": "no", "changes":["+attack", "-defence"]},
+                {"text": "...", "changes":["+defence", "-defence"]}
+            ]
+        },
+        {
+            "question": "are you afraid that someone from your family/friends or anyone important for you would die?",
+            "answers":[
+                {"text": "yes", "changes":["+sp.def", "-sp.atk"]},
+                {"text": "i don't know", "changes":["+sp.atk", "-sp.atk"]},
+                {"text": "no", "changes":["+sp.atk", "-sp.def"]},
+                {"text": "why would i be afraid", "changes":["-sp.def", "-sp.atk"]}
+            ]
+        },
+        {
+            "question": "did yoy/will you answer honestly?",
+            "answers":[
+                {"text": "yes", "changes":["+attack", "-sp.def"]},
+                {"text": "no", "changes":["+defence", "-sp.atk"]},
+                {"text": "lol, nope", "changes":["+luck", "-sp.def"]},
+                {"text": "ok.", "changes":["+luck", "-defence"]}
+            ]
+        },
+        {
+            "question": "what position in footbal would you choose?",
+            "answers":[
+                {"text": "attacker", "changes":["+attack", "-hp"]},
+                {"text": "support", "changes":["+sp.atk", "-hp"]},
+                {"text": "defender", "changes":["+hp", "-sp.atk"]},
+                {"text": "goalkeeper", "changes":["+hp", "-attack"]}
+            ]
+        },
+        {
+            "question": "do you feel everything is ok in the place you are?",
+            "answers":[
+                {"text": "yes", "changes":["+luck", "+hp"]},
+                {"text": "dunno", "changes":["+luck", "-luck"]},
+                {"text": "no", "changes":["-luck", "+hp"]},
+                {"text": "...", "changes":["+hp", "-hp"]}
+            ]
+        },
+        {
+            "question": "what word from those describe you the most?",
+            "answers":[
+                {"text": "cunning", "changes":["+speed", "+sp.atk"]},
+                {"text": "wisdom", "changes":["+attack", "+defence"]},
+                {"text": "luck", "changes":["+speed", "+hp"]},
+                {"text": "calmness", "changes":["+sp.def", "+defence"]}
+            ]
+        },
+        {
+            "question": "what word from those doesn't describe you at all?",
+            "answers":[
+                {"text": "dance", "changes":["-speed", "-sp.atk"]},
+                {"text": "school", "changes":["-defence", "-attack"]},
+                {"text": "food", "changes":["+speed", "-hp"]},
+                {"text": "light", "changes":["-luck", "-luck"]}
+            ]
+        },
+        {
+            "question": "do you think the world should change?",
+            "answers":[
+                {"text": "yes", "changes":["+attack", "+speed"]},
+                {"text": "i don't know", "changes":["+attack", "-attack"]},
+                {"text": "no", "changes":["+defence", "+sp.atk"]},
+                {"text": "i'm not here to decide about it", "changes":["+luck", "+hp"]}
+            ]
+        },
+        {
+            "question": "what appeals to you the most?",
+            "answers":[
+                {"text": "nature", "changes":["+hp", "+speed"]},
+                {"text": "technology", "changes":["+speed", "-luck"]},
+                {"text": "calm", "changes":["-sp.atk", "-attack"]},
+                {"text": "beauty", "changes":["+luck", "-attack"]}
+            ]
+        },
+        {
+            "question": "where you prefer to live",
+            "answers":[
+                {"text": "in the palace", "changes":["+luck", "+luck"]},
+                {"text": "in the house", "changes":["-sp.atk", "-sp.atk"]},
+                {"text": "in the hut", "changes":["+hp", "+speed"]},
+                {"text": "in the treehouse", "changes":["+speed", "-sp.def"]}
+            ]
+        },
+        {
+            "question": "what you feel when you're in the forest",
+            "answers":[
+                {"text": "peace", "changes":["+luck", "-defence"]},
+                {"text": "fear", "changes":["+sp.def", "-attack"]},
+                {"text": "harmony", "changes":["+luck", "-attack"]},
+                {"text": "just nice", "changes":["+speed", "+luck"]}
+            ]
+        },
+        {
+            "question": "what do you feel when you're in the city",
+            "answers":[
+                {"text": "fear", "changes":["+sp.def", "-attack"]},
+                {"text": "comfort", "changes":["+speed", "+hp"]},
+                {"text": "discomfort", "changes":["+defence", "-luck"]},
+                {"text": "nothing", "changes":["+hp", "-hp"]}
+            ]
+        },
+        {
+            "question": "what you feel when you're in the mountain",
+            "answers":[
+                {"text": "fear", "changes":["-sp.atk", "-attack"]},
+                {"text": "discomfort", "changes":["+sp.def", "-attack"]},
+                {"text": "fascination", "changes":["+speed", "+sp.atk"]},
+                {"text": "i've never been", "changes":["+speed", "-luck"]}
+            ]
+        },
+        {
+            "question": "what you feel when you're by the sea",
+            "answers":[
+                {"text": "pleasantly", "changes":["+luck", "-defence"]},
+                {"text": "happiness", "changes":["+luck", "+speed"]},
+                {"text": "anxiety", "changes":["+defence", "-attack"]},
+                {"text": "boredness", "changes":["-speed", "-speed"]}
+            ]
+        },
+        {
+            "question": "what you feel when you're in cave",
+            "answers":[
+                {"text": "fear", "changes":["-hp", "-speed"]},
+                {"text": "discomfort", "changes":["+speed", "-hp"]},
+                {"text": "good", "changes":["+hp", "-speed"]},
+                {"text": "i don't know", "changes":["+hp", "-hp"]}
+            ]
+        },
+        {
+            "question": "what element suits you the most",
+            "answers":[
+                {"text": "water", "changes":["+hp", "+sp.atk"]},
+                {"text": "wind", "changes":["+speed", "+sp.atk"]},
+                {"text": "fire", "changes":["+sp.atk", "-attack"]},
+                {"text": "ground", "changes":["+defence", "+sp.def"]}
+            ]
+        },
+        {
+            "question": "",
+            "answers":[
+                {"text": "", "changes":["", ""]},
+                {"text": "", "changes":["", ""]},
+                {"text": "", "changes":["", ""]},
+                {"text": "", "changes":["", ""]}
+            ]
+        },
+        {
+            "question": "",
+            "answers":[
+                {"text": "", "changes":["", ""]},
+                {"text": "", "changes":["", ""]},
+                {"text": "", "changes":["", ""]},
+                {"text": "", "changes":["", ""]}
+            ]
+        },
+        {
+            "question": "",
+            "answers":[
+                {"text": "", "changes":["", ""]},
+                {"text": "", "changes":["", ""]},
+                {"text": "", "changes":["", ""]},
+                {"text": "", "changes":["", ""]}
+            ]
+        }
+    ]
+}
