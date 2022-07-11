@@ -1,0 +1,26 @@
+{
+    "newCharacter": 
+    {
+        "stop": "Creating stop",
+        "steps":
+        [
+            "Please choose your specie. Write name of pokemon or number in pokedex.",
+            "Please choose your form: regular",
+            "Please choose your gender:\nM - male, F - female, N - no gender.",
+            "Please write your nickname (please don't use any custom character, cus there could be a problem with dispaly it) max 20 characters.",
+            "Please Send your pfp here.",
+            "Now please choose your base stats. You can choose 35 points (for HP 1 point means 25hp)\nWrite in one message 7 values separate with space: [HP] [attack] [defence] [special attack] [special defence] [speed] [luck]",
+            "Now I will ask you few questions to specify your nature.\nQuestion number "
+        ],
+        "errors": 
+        [
+            "Wrong number or name, try again.",
+            "Wrong form, try again.",
+            "wrong gender, try again.",
+            "Nickname is too long, please try include it in 20 characters max.",
+            "no image in message.",
+            "wrong sum of arguments",
+            "Wrong number of arguments"
+        ]
+    }
+}

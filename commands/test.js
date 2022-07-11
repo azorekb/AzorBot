@@ -1,7 +1,10 @@
+const { MessageEmbed } = require('discord.js');
+const TEXTS = require('../jsony/texts.json').newCharacter;
 module.exports = async (aMessage, client, con, interaction = null) => 
 {
     const reply = (stuffs) => {if(interaction){return interaction.channel.send(stuffs);}else{return aMessage.message.channel.send(stuffs);}}
-    const author = interaction ? interaction.member.id : aMessage.message.author.id;
+        const member = interaction ? interaction.member : aMessage.message.member;
+        const author = interaction ? interaction.member.id : aMessage.message.author.id;
     try
     {
         let index = client.bwe.creatingCharacter.find(author);
@@ -13,7 +16,11 @@ module.exports = async (aMessage, client, con, interaction = null) =>
                 interaction.deleteReply();
             }
 
-            const theMessage = await reply('Please choose your specie. Write name of pokemon or number in pokedex.');
+            const embed = new MessageEmbed().setColor(client.bwe.AzorDefaultColor).setTitle('Creating pokemon character for da Game:')
+            .setAuthor({name: member.displayName, iconURL: member.displayAvatarURL()})
+            .setDescription('Step 1: ' + TEXTS.steps[0]);
+
+            const theMessage = await reply({embeds: [embed]});
             client.bwe.creatingCharacter.add(theMessage, author, theMessage.channel.id);
         }
     }

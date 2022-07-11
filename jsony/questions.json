@@ -189,24 +189,6 @@
                 {"text": "", "changes":["", ""]},
                 {"text": "", "changes":["", ""]}
             ]
-        },
-        {
-            "question": "",
-            "answers":[
-                {"text": "", "changes":["", ""]},
-                {"text": "", "changes":["", ""]},
-                {"text": "", "changes":["", ""]},
-                {"text": "", "changes":["", ""]}
-            ]
-        },
-        {
-            "question": "",
-            "answers":[
-                {"text": "", "changes":["", ""]},
-                {"text": "", "changes":["", ""]},
-                {"text": "", "changes":["", ""]},
-                {"text": "", "changes":["", ""]}
-            ]
         }
     ]
 }

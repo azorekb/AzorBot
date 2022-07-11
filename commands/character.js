@@ -80,10 +80,10 @@ module.exports = async (aMessage, client, con, interaction = null) =>
                         const typeDuo = await Canvas.loadImage('./img/types/' + TYPES[1].toLowerCase() + '.png');
                         context.drawImage(typeDuo, 555, 495, 125, 125);
                     }
-                    const POKMEON_HP = Math.ceil(Math.random() * 1000);
+                    const POKMEON_HP = result[0].hp;
                     for(let i = 0; i < 4; i++)
                     {
-                        if(POKMEON_HP > i * 250)
+                        if(POKMEON_HP > i * 50)
                         {
                             let x; 
                             let y;
@@ -95,7 +95,7 @@ module.exports = async (aMessage, client, con, interaction = null) =>
                                 case 3: x = 1196; y = 519; break;
                             }
                             let max = 135;
-                            if(POKMEON_HP <= 250 * (i + 1)){max = Math.ceil(135 * (POKMEON_HP - i * 250) / 250);}
+                            if(POKMEON_HP <= 250 * (i + 1)){max = Math.ceil(135 * (POKMEON_HP - i * 50) / 50);}
                             context.beginPath();
                             context.moveTo(x, y);
                             context.lineTo(x + max, y);
@@ -109,9 +109,9 @@ module.exports = async (aMessage, client, con, interaction = null) =>
                     context.fillStyle = bgc;
                     context.font = '50px comic Sans MS';
                     context.textAlign = 'center';
-                    context.fillText(POKMEON_HP, 800, 570);
+                    context.fillText(POKMEON_HP * 25, 800, 570);
 
-                    const VALUES = [[Math.ceil(Math.random() * 100), Math.ceil(Math.random() * 100)], [Math.ceil(Math.random() * 100), Math.ceil(Math.random() * 100)], [Math.ceil(Math.random() * 100), Math.ceil(Math.random() * 100)]];
+                    const VALUES = [[result[0].attack, result[0].spAtk], [result[0].defence, result[0].spDef], [result[0].speed, result[0].luck]];
                     const IMGline = await Canvas.loadImage('./img/line.png');
                     const emptyline = await Canvas.loadImage('./img/emptyline.png');
                     for(let i = 0; i < 3; i++)
