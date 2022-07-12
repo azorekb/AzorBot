@@ -4,6 +4,15 @@ const QUESTIONS = require('./jsony/questions.json').list;
 const TEXTS = require('./jsony/texts.json').newCharacter;
 const { MessageEmbed } = require('discord.js');
 
+const showInLanguage = (language, object) =>
+{
+    if(object[language])
+        return object[language];
+    if(object.english)
+        return object.english;
+    return '';
+}
+
 const getPokemonNumberByName = (_name) =>
 {
     for(let i = 0; i < POKEMON.list.length; i++)
@@ -14,42 +23,41 @@ const getPokemonNumberByName = (_name) =>
     return -1;
 }
 
-function sendData(progress, con, pokemonDispaly)
+function sendData(progress, con)
 {
-    progress.message.edit(pokemonDispaly + '\n\nokie. now i will send it to Database...');
-    con.query('select * from players where user = "' + message.author.id + '";', (error, row) =>
+    con.query('select * from players where user = "' + progress.author + '";', (error, row) =>
     {
         if(error)
         {
-            message.channel.send('error: ' + error);
+            progress.message.channel.send('error: ' + error);
         }
         else
         {
             if(row.length)
             {
-                con.query('update players set name = "' + progress.data.nickname + '", specie = "' + progress.data.pokemon + '", form = "' + progress.data.form + '", gender = "' + progress.data.gender + '", imgURL = "' + progress.data.img + '" where user = "' + message.author.id + '";', (err, nothing) =>{
+                con.query('update players set name = "' + progress.data.nickname + '", specie = "' + progress.data.pokemon + '", form = "' + progress.data.form + '", gender = "' + progress.data.gender + '", imgURL = "' + progress.data.img + '" where user = "' + progress.author + '";', (err, nothing) =>{
                     if(err)
                     {
-                        message.channel.send('error: ' + err);
+                        progress.message.message.channel.send('error: ' + err);
                     }
                     else
                     {
-                        progress.message.edit(pokemonDispaly + '\n\nYour character has been updated!');
-                        client.bwe.creatingCharacter.delete(message.author.id);
+                        progress.message.message.channel.send('Your character has been updated!');
+                        client.bwe.creatingCharacter.delete(progress.author);
                     }
                 });
             }
             else
             {
-                con.query('insert into players (user, name, specie, form, gender, imgURL) values ("' + message.author.id + '", "' + progress.data.nickname + '", "' + progress.data.pokemon + '", "' + progress.data.form + '", "' + progress.data.gender + '", "' + progress.data.img + '");', (err, nothing) =>{
+                con.query('insert into players (user, name, specie, form, gender, imgURL) values ("' + progress.author + '", "' + progress.data.nickname + '", "' + progress.data.pokemon + '", "' + progress.data.form + '", "' + progress.data.gender + '", "' + progress.data.img + '");', (err, nothing) =>{
                     if(err)
                     {
-                        message.channel.send('error: ' + err);
+                        progress.message.channel.send('error: ' + err);
                     }
                     else
                     {
-                        progress.message.edit(pokemonDispaly + '\n\nYour character has been created!');
-                        client.bwe.creatingCharacter.delete(message.author.id);
+                        progress.message.channel.send('Your character has been created!');
+                        client.bwe.creatingCharacter.delete(progress.author);
                     }
                 });
             }
@@ -293,9 +301,8 @@ module.exports = async (message, client, con) =>
             if(progress.channel != message.channel.id){return}
             if(message.content.toLowerCase() == 'cancel')
             {
-                console.log(TEXTS);
                 client.bwe.creatingCharacter.delete(message.author.id);
-                message.channel.send(TEXTS.stop);
+                message.channel.send(showInLanguage(progress.language, TEXTS.stop));
                 return;
             }
 
@@ -304,6 +311,10 @@ module.exports = async (message, client, con) =>
             switch(progress.step)
             {
                 case 0:
+                    progress.language = message.content.toLowerCase();
+                    progress.step = 1;
+                break;
+                case 1:
                 {
                     if(getPokemonNumberByName(message.content) > -1 || (!isNaN(message.content * 1) && message.content * 1 > 0 && message.content * 1 < POKEMON.list.length))
                     {
@@ -312,23 +323,23 @@ module.exports = async (message, client, con) =>
                         if(POKEMON.forms[getPokemonNumberByName(pokemon) + 1] == undefined)
                         {
                             progress.data.form = 'regular';
-                            progress.step = 2;
+                            progress.step = 3;
                         }
                         else
                         {
                             additionalText = 'forms';
-                            progress.step = 1;
+                            progress.step = 2;
                         }
                     }
                     else{error = 1;}
                 } 
                 break;
-                case 1:
+                case 2:
                 {
                     if(POKEMON.forms[getPokemonNumberByName(progress.data.pokemon) + 1][message.content.toLowerCase()] || message.content.toLowerCase() == 'regular')
                     {
                         progress.data.form = message.content.toLowerCase();
-                        progress.step = 2;
+                        progress.step = 3;
                     }
                     else
                     {
@@ -337,7 +348,7 @@ module.exports = async (message, client, con) =>
                     }
                 } 
                 break;
-                case 2:
+                case 3:
                 {
                     switch(message.content.toLowerCase())
                     {
@@ -347,18 +358,18 @@ module.exports = async (message, client, con) =>
                         
                         default: progress.data.gender = 'u';
                     }
-                    if(progress.data.gender == 'u'){error = 3;}else{progress.step = 3;}
+                    if(progress.data.gender == 'u'){error = 3;}else{progress.step = 4;}
                 } 
                 break;
-                case 3:
+                case 4:
                     if(message.content.length > 20){error = 4;}
                     else
                     {
                         progress.data.nickname = message.content;
-                        progress.step = 4;
+                        progress.step = 5;
                     }
                 break;
-                case 4:
+                case 5:
                     if(message.attachments.firstKey())
                     {
                         let img = null;
@@ -371,18 +382,23 @@ module.exports = async (message, client, con) =>
                         if(img)
                         {
                             progress.data.img = img;
-                            progress.step = 5;
+                            progress.step = 6;
                         }
                         else{error = 5;}
                     }
                     else{error = 5;}
                 break;
-                case 5:
+                case 6:
                     const points = message.content.split(' ');
                     if(points.length == 7)
                     {
                         let sum = 0;
-                        for(let i = 0; i < 7; i++){sum += points[i] * 1;}
+                        let noMinuses = true;
+                        for(let i = 0; i < 7; i++)
+                        {
+                            sum += points[i] * 1;
+                            if(points[i] * 1 < 0){sum = NaN;}
+                        }
                         if(sum == 35)
                         {
                             progress.stats = [];
@@ -395,13 +411,13 @@ module.exports = async (message, client, con) =>
                             }
                             progress.questions = [Math.floor(Math.random() * QUESTIONS.length)];
                             additionalText = 'question';
-                            progress.step = 6;
+                            progress.step = 7;
                         }
                         else{error = 6;}        
                     }
                     else{error = 7;}
                 break;
-                case 6:
+                case 7:
                     const answer = message.content * 1
                     additionalText = 'question';
                     if(!isNaN(answer) && answer > 0 && answer < 5)
@@ -439,7 +455,7 @@ module.exports = async (message, client, con) =>
                                 }
                             }
                             additionalText = '';
-                            progress.step = 7;
+                            progress.step = 8;
                         }
                         else
                         {
@@ -458,12 +474,16 @@ module.exports = async (message, client, con) =>
                         }
                     }
                 break;
+                case 8:
+                    progress.data.ability = message.content.toLowerCase();
+                    sendData(progress, con);
+                break;
             }
             await client.bwe.deleteMessage(message);
             
             let embedFields = [];
             if(progress.data)
-            {
+            { // tu language wszędzie
                 if(progress.data.pokemon){embedFields.push({name: 'specie', value: progress.data.pokemon, inline: true});}
                 if(progress.data.form){embedFields.push({name: 'form', value: progress.data.form, inline: true});}
                 if(progress.data.gender == 'm'){embedFields.push({name: 'gender', value: 'male', inline: true});}
@@ -486,19 +506,19 @@ module.exports = async (message, client, con) =>
                 case 'question':
                     const questionNum = progress.questions.length;
                     const theQuestion = progress.questions[questionNum - 1];
-                    additionalText = questionNum + ':\n' + QUESTIONS[theQuestion].question;
+                    additionalText = questionNum + ':\n' + showInLanguage(progress.language, QUESTIONS[theQuestion].question);
                     for(let i = 0; i < 4; i++)
                     {
-                        additionalText += '\n' + (i + 1) + ')' + QUESTIONS[theQuestion].answers[i].text;
+                        additionalText += '\n' + (i + 1) + ')' + showInLanguage(progress.language, QUESTIONS[theQuestion].answers[i]);
                     }
-                    additionalText += '\n\nAnswer with number 1 - 4';
+                    additionalText += '\n\nAnswer with number 1 - 4'; // tu language
                 break;
             }
-            if(error){error = TEXTS.errors[error - 1];}else{error = '';}
+            if(error){error = showInLanguage(progress.language, TEXTS.errors[error - 1]);}else{error = '';}
             
-            const embed = new MessageEmbed().setColor(client.bwe.AzorDefaultColor).setTitle('Creating pokemon character for da Game:')
+            const embed = new MessageEmbed().setColor(client.bwe.AzorDefaultColor).setTitle(showInLanguage(progress.language, TEXTS.title))
             .setAuthor({name: message.member.displayName, iconURL: message.member.displayAvatarURL()})
-            .setDescription('Step ' + progress.step + ': ' + TEXTS.steps[progress.step] + additionalText);
+            .setDescription('Step ' + progress.step + ': ' + showInLanguage(progress.language, TEXTS.steps[progress.step]) + additionalText);
             if(progress.data)
             {
                 embed.addFields(embedFields);

@@ -16,9 +16,9 @@ module.exports = async (aMessage, client, con, interaction = null) =>
                 interaction.deleteReply();
             }
 
-            const embed = new MessageEmbed().setColor(client.bwe.AzorDefaultColor).setTitle('Creating pokemon character for da Game:')
+            const embed = new MessageEmbed().setColor(client.bwe.AzorDefaultColor).setTitle(TEXTS.title.english)
             .setAuthor({name: member.displayName, iconURL: member.displayAvatarURL()})
-            .setDescription('Step 1: ' + TEXTS.steps[0]);
+            .setDescription('Step 1: ' + TEXTS.steps[0].english);
 
             const theMessage = await reply({embeds: [embed]});
             client.bwe.creatingCharacter.add(theMessage, author, theMessage.channel.id);

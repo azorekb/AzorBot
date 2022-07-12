@@ -1,26 +1,117 @@
 {
     "newCharacter": 
     {
-        "stop": "Creating stop",
+        "stop": 
+        {
+            "english": "Creating stop",
+            "polski": "Tworzenie przerwane.",
+            "italiano": "Creazione fermata",
+            "deutsch": "Erstellung abgebrochen"
+            
+        },
+        "title":
+        {
+            "english": "Creating pokemon character for Pokemon Adventure:",
+            "polski": "Tworzenie postaci Pokemona dla Pokemon Adventure:",
+            "italiano": "Creazione del personaggio Pokemon per Pokemon Adventure:",
+            "deutsch": "Erstelle einen Pokémon Charakter für Pokemon Adventure:"
+        },
         "steps":
         [
-            "Please choose your specie. Write name of pokemon or number in pokedex.",
-            "Please choose your form: regular",
-            "Please choose your gender:\nM - male, F - female, N - no gender.",
-            "Please write your nickname (please don't use any custom character, cus there could be a problem with dispaly it) max 20 characters.",
-            "Please Send your pfp here.",
-            "Now please choose your base stats. You can choose 35 points (for HP 1 point means 25hp)\nWrite in one message 7 values separate with space: [HP] [attack] [defence] [special attack] [special defence] [speed] [luck]",
-            "Now I will ask you few questions to specify your nature.\nQuestion number "
+            {"english": "choose your language: english, polski, deutsch, espanol, francais, italiano"},
+            {
+                "english": "Please choose your specie. Write name of pokemon or number in pokedex.",
+                "polski": "Proszę wybrać gatunek. Napisz nazwę pokemona lub jego numer w pokedexie.",
+                "deutsch": "Bitte wähle deine Spezies. Schreibe den Namen des Pokémon oder die Pokédexnummer.",
+                "italiano": "Perfavore scegli la tua specie. Scrivi il nome del pokemon o il numero nel pokedex."
+            },
+            {
+                "english": "Please choose your form: regular",
+                "polski": "Proszę wybrać formę: regular",
+                "deutsch": "Bitte wähle deine Form: regular",
+                "italiano": "Perfavore scegli la tua forma: regular"
+            },
+            {
+                "english": "Please choose your gender:\nM - male, F - female, N - no gender.",
+                "polski": "Proszę wybrać płeć:\nM - samiec, F - samica, N - bezpłciowiec.",
+                "deutsch": "Bitte wähle dein Geschlecht:\nM - männlich, F - weiblich, N - kein Geschlecht.",
+                "italiano": "Perfavore scegli il tuo genere: \nM - maschio, F - femmina, N - nessun genere."
+            },
+            {
+                "english": "Please write your nickname (please don't use any custom character, cus there could be a problem with dispaly it) max 20 characters.",
+                "polski": "Proszę wpisać imię/nick (proszę nie używać niestandartowych symboli, gdyż mógłby wystąpić problem z ich wyświetleniem) max 20 znaków.",
+                "deutsch": "Bitte schreibe deinen Nicknamen (Bitte nutze keine Sonderzeichen, da es zu Probelmen bei der Anzeige führen kann) max 20 Zeichen.",
+                "italiano": "Perfavore scrivi il tuo nickname (perfavore non usare caratteri speciali, perchè potrebbe esserci un problema nel proiettarli) massimo 20 caratteri."
+            },
+            {
+                "english": "Please Send your pfp here.",
+                "polski": "Proszę wysłać zdjęcie profilowe.",
+                "deutsch": "Bitte sende dein Profilbild.",
+                "italiano": "Perfavore manda la foto profilo qui."
+            },
+            {
+                "english": "Now please choose your base stats. You can choose 35 points (for HP 1 point means 25hp)\nWrite in one message 7 values separate with space: [HP] [attack] [defence] [special attack] [special defence] [speed] [luck]",
+                "polski": "Teraz proszę wybrać podstawowe statystyki. Możesz wybrać 35 punktów (dla życia 1 punkt to 25punktów życia)\nWypisz 7 wartości w jednej wiadomości oddzielając spacją: [życie] [atak] [obrona] [specjalny atak] [specjalna obrona] [szybkość] [szczęście]",
+                "deutsch": "Bitta wähle deine Statuswerte. Du kannst 35 Punkte wählen (1 KP entspricht 25KP)\nSchreibe 7 Werte getrennt mit Leerzeichen: [KP] [Angriff] [Verteidigung] [Spezial-Angriff] [Spezial-Verteidigung] [Initiative] [Glück]",
+                "italiano": "Adesso scegli le tue statistiche di base. Puoi scegliere 35 punti (per I PV, 1 punto vale 25 PV)\nScrivi in un messaggio, 7 valori separati da uno spazio: [PV] [attacco] [difesa] [attacco speciale] [difesa speciale] [velocità] [fortuna]"
+            },
+            {
+                "english": "Now I will ask you few questions to specify your nature.\nQuestion number ",
+                "polski": "Teraz zadam kilka pytań dla określenia natury.\nPytanie numer ",
+                "deutsch": "Jetzt werde ich dir ein paar Fragen stellen um dein Wesen zu bestimmen.\nFrage nummer ",
+                "italiano": "Adesso ti farò qualche domanda in maniera da specificare la tua natura. \nDomanda numero "
+            },
+            {
+                "english": "Please choose your ability (write name of it).",
+                "polski": "Proszę wybrać umiejętność (wpisz jej nazwę w języku angielskim).",
+                "deutsch": "Bitte wähle deine Fähigkeit (schreibe den Namen).",
+                "italiano": "Perfavore scegli la tua abilità (Scrivi il suo nome)."
+            }
         ],
         "errors": 
         [
-            "Wrong number or name, try again.",
-            "Wrong form, try again.",
-            "wrong gender, try again.",
-            "Nickname is too long, please try include it in 20 characters max.",
-            "no image in message.",
-            "wrong sum of arguments",
-            "Wrong number of arguments"
+            {
+                "english": "Wrong number or name, try again.",
+                "deutsch": "Falsche Nummer oder Name, versuche es erneut.",
+                "polski": "Nieprawidłowa nazwa będź liczba.",
+                "italiano": "Numero o nome sbagliato, riprova"
+            },
+            {
+                "english": "Wrong form, try again.",
+                "deutsch": "Falsche Form, versuche es erneut.",
+                "polski": "Nieprawidłowa forma, spróbuj ponownie.",
+                "italiano": "Forma non valida, riprova."
+            },
+            {
+                "english": "wrong gender, try again.",
+                "deutsch": "Falsches Geschlecht, versuche es erneut.",
+                "polski": "Zła płeć, spróbuj ponownie.",
+                "italiano": "Genere non valido, riprova"
+            },
+            {
+                "english": "Nickname is too long, please try include it in 20 characters max.",
+                "polski": "Imię jest zbyt długie, spróbuj się zmieścić w 20 znakach.",
+                "deutsch": "Nickname zu lang, bitte nutze maximal 20 Zeichen.",
+                "italiano": "Nickname troppo lungo, perfavore prova ad includerlo in massimo 20 caratteri"
+            },
+            {
+                "english": "no image in message.",
+                "polski": "Brak obrazka w wiadomości.",
+                "deutsch": "Kein Bild in der Nachicht.",
+                "italiano": "Nessuna immagine nel messaggio."
+            },
+            {
+                "english": "wrong sum of arguments",
+                "polski": "Zła suma argumentów",
+                "deutsch": "Falsche Summe der Argumente",
+                "italiano": "Somma non valida degli argomenti"
+            },
+            {
+                "english": "Wrong number of arguments",
+                "polski": "Zła liczba argumentów",
+                "deutsch": "Falsche Nummer der Argumente",
+                "italiano": "Numero degli argomenti non valido"
+            }
         ]
     }
 }

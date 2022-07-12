@@ -2,192 +2,670 @@
     "list":
     [
         {
-            "question": "905*18=?",
+            "question": {"english": "905*18=?"},
             "answers":[
-                {"text": "16290", "changes": ["+luck", "-hp"]},
-                {"text": "5", "changes": ["+attack", "-luck"]},
-                {"text": "165834324351618398904759302747534591188205718994140625 ", "changes": ["+sp.def", "-luck"]},
-                {"text": "?", "changes": ["+sp.atk", "-luck"]}
+                {
+                   "english": "16290",
+                   "changes": ["+luck", "-hp" ]
+                },
+                {
+                   "english": "5", 
+                   "changes": ["+attack", "-luck" ]
+                },
+                {
+                   "english": "165834324351618398904759302747534591188205718994140625 ", 
+                   "changes": ["+sp.def", "-luck" ]
+                },
+                {
+                   "english": "?", 
+                   "changes": ["+sp.atk", "-luck" ]
+                }
             ]
         },
         {
-            "question": "what would you choose?",
-            "answers":[
-                {"text": "authority", "changes":["+sp.atk", "-hp"]},
-                {"text": "money", "changes":["+sp.atk", "-defence"]},
-                {"text": "family", "changes":["+sp.def", "-sp.atk"]},
-                {"text": "knowledge", "changes":["+sp.atk", "-attack"]}
+            "question": 
+            {
+               "english": "What would you choose?",
+               "polski": "Co byś wybrał?",
+               "italiano": "Cosa sceglieresti?"
+            },
+            "answers":
+            [
+                {
+                    "changes":["+sp.atk", "-hp"],
+                    "english": "authority",
+                    "polski": "Władzę",
+                    "italiano": "Autorità"
+                },
+                {
+                    "changes":["+sp.atk", "-defence"],
+                    "english": "money",
+                    "polski": "Pieniądze",
+                    "italiano": "Soldi"
+                },
+                {
+                    "changes":["+sp.def", "-sp.atk"],
+                    "english": "family",
+                    "polski": "Rodzinę",
+                    "italiano": "Famiglia"
+                },
+                {
+                    "changes":["+sp.atk", "-attack"],
+                    "english": "knowledge",
+                    "polski": "Wiedzę",
+                    "italiano": "Conoscenza"
+                }
             ]
         },
         {
-            "question": "what would you loose the fastest?",
-            "answers":[
-                {"text": "family", "changes":["-sp.def", "+sp.atk"]},
-                {"text": "friends", "changes":["-sp.atk", "-attack"]},
-                {"text": "luck", "changes":["-sp.atk", "-luck"]},
-                {"text": "life", "changes":["-hp", "+sp.atk"]}
+            "question": 
+            {
+                "english": "What would you loose the fastest?",
+                "polski": "Co najszybciej mógłbyś stracić?",
+                "italiano": "Cosa perderesti velocemente?"
+            },
+            "answers":
+            [
+                {
+                    "changes":["-sp.def", "+sp.atk"],
+                    "english": "family",
+                    "polski": "Rodzinę",
+                    "italiano": "Famiglia"
+                },
+                {
+                    "changes":["-sp.atk", "-attack"],
+                    "english": "friends",
+                    "polski": "Przyjaciół",
+                    "italiano": "Amici"
+                },
+                {
+                    "changes":["-sp.atk", "-luck"],
+                    "english": "luck",
+                    "polski": "Szczęście",
+                    "italiano": "Fortuna"
+                },
+                {
+                    "changes":["-hp", "+sp.atk"],
+                    "english": "life",
+                    "polski": "Życie",
+                    "italiano": "Vita"
+                }
             ]
         },
         {
-            "question": "how do you feel?",
-            "answers":[
-                {"text": "excellent", "changes":["+hp", "-attack"]},
-                {"text": "good", "changes":["+hp", "-sp.atk"]},
-                {"text": "bad", "changes":["+defence", "-hp"]},
-                {"text": "i don't know...", "changes":["-sp.def", "-hp"]}
+            "question": 
+            {
+                "english": "How do you feel?",
+                "polski": "Jak się czujesz?",
+                "italiano": "Come ti senti?"
+            },
+            "answers":
+            [
+                {
+                    "changes":["+hp", "-attack"],
+                    "english": "excellent", 
+                    "polski": "Znakomicie",
+                    "italiano": "Benissimo"
+                },
+                {
+                    "english": "good", 
+                    "polski": "Dobrze",
+                    "italiano": "Bene",
+                    "changes":["+hp", "-sp.atk"]
+                },
+                {
+                    "english": "bad", 
+                    "polski": "Źle",
+                    "italiano": "Male",
+                    "changes":["+defence", "-hp"]
+                },
+                {
+                    "english": "i don't know...",
+                    "polski": "Nie wiem...",
+                    "italiano": "Non lo so...",
+                    "changes":["-sp.def", "-hp"]
+                }
             ]
         },
         {
-            "question": "are you afraid of death?",
-            "answers":[
-                {"text": "yes", "changes":["+defence", "-attack"]},
-                {"text": "i don't know", "changes":["+attack", "-attack"]},
-                {"text": "no", "changes":["+attack", "-defence"]},
-                {"text": "...", "changes":["+defence", "-defence"]}
+            "question": 
+            {
+                "english": "Are you afraid of death?",
+                "polski": "Czy boisz się śmierci?",
+                "italiano": "Hai paura della morte?"
+            },
+            "answers":
+            [
+                {
+                    "english": "yes", 
+                    "polski": "tak",
+                    "italiano": "Sì",
+                    "changes":["+defence", "-attack"]
+                },
+                {
+                    "english": "i don't know", 
+                    "polski": "nie wiem",
+                    "italiano": "Non lo so",
+                    "changes":["+attack", "-attack" ]
+                },
+                {
+                    "english": "no", 
+                    "polski": "nie",
+                    "italiano": "no",
+                    "changes":["+attack", "-defence" ]
+                },
+                {
+                   "english": "...",
+                   "changes":["+defence", "-defence" ]
+                }
             ]
         },
         {
-            "question": "are you afraid that someone from your family/friends or anyone important for you would die?",
-            "answers":[
-                {"text": "yes", "changes":["+sp.def", "-sp.atk"]},
-                {"text": "i don't know", "changes":["+sp.atk", "-sp.atk"]},
-                {"text": "no", "changes":["+sp.atk", "-sp.def"]},
-                {"text": "why would i be afraid", "changes":["-sp.def", "-sp.atk"]}
+            "question": 
+            {
+                "english": "Are you afraid that someone from your friends, family, or anyone important for you would die?",
+                "polski": "Czy boisz się śmierci rodziny przyjaciół kogokolwiek istotnego dla ciebie?",
+                "italiano": "Hai paura che qualcuno dei tuoi amici, famiglia, o a te caro, possa morire?"
+            },
+            "answers":
+            [
+                {
+                    "english": "yes", 
+                    "polski": "tak",
+                    "italiano": "Sì",
+                    "changes":["+sp.def", "-sp.atk" ]
+                },
+                {
+                    "english": "i don't know",
+                    "polski": "nie wiem",
+                    "italiano": "Non lo so",
+                    "changes":["+sp.atk", "-sp.atk" ]
+                },
+                {
+                    "english": "no", 
+                    "polski": "nie",
+                    "italiano": "no",
+                    "changes":["+sp.atk", "-sp.def" ]
+                },
+                {
+                    "english": "why would i be afraid",
+                    "polski": "czemu mam się bać?",
+                    "italiano": "Perchè dovrei esserne spaventato/a?",
+                    "changes":["-sp.def", "-sp.atk"]
+                }
             ]
         },
         {
-            "question": "did yoy/will you answer honestly?",
-            "answers":[
-                {"text": "yes", "changes":["+attack", "-sp.def"]},
-                {"text": "no", "changes":["+defence", "-sp.atk"]},
-                {"text": "lol, nope", "changes":["+luck", "-sp.def"]},
-                {"text": "ok.", "changes":["+luck", "-defence"]}
+            "question": 
+            {
+                "english": "Did you/will you answer honestly?",
+                "polski": "Czy twoje odpowiedzi były/będą szczere?",
+                "italiano": "Hai risposto/risponderai onestamente?"
+            },
+            "answers":
+            [
+                {
+                    "english": "yes",
+                    "polski": "tak",
+                    "italiano": "Sì",
+                    "changes":["+attack", "-sp.def" ]
+                },
+                {
+                    "english": "no",
+                    "polski": "nie",
+                    "italiano": "no",
+                    "changes":["+defence", "-sp.atk" ]
+                },
+                {
+                    "english": "lol, nope", 
+                    "polski": "haha bez szans.",
+                    "italiano": "lol, nha",
+                    "changes":["+luck", "-sp.def" ]
+                },
+                {
+                    "english": "ok.", 
+                    "polski": "no dobrze.",
+                    "italiano": "ok.",
+                    "changes":["+luck", "-defence"]
+                }
             ]
         },
         {
-            "question": "what position in footbal would you choose?",
-            "answers":[
-                {"text": "attacker", "changes":["+attack", "-hp"]},
-                {"text": "support", "changes":["+sp.atk", "-hp"]},
-                {"text": "defender", "changes":["+hp", "-sp.atk"]},
-                {"text": "goalkeeper", "changes":["+hp", "-attack"]}
+            "question": 
+            {
+                "english": "what position in footbol (soccer) would you choose?",
+                "polski": "Jaką pozycję w piłce nożnej wybierasz?",
+                "italiano": "Quale ruolo sceglieresti da calciatore?"
+            },
+            "answers":
+            [
+                {
+                    "english": "attacker", 
+                    "polski": "napastnik",
+                    "italiano": "Attaccante",
+                    "changes":["+attack", "-hp" ]
+                },
+                {
+                    "english": "support", 
+                    "polski": "pomocnik",
+                    "italiano": "Supporto",
+                    "changes":["+sp.atk", "-hp" ]
+                },
+                {
+                    "english": "defender", 
+                    "polski": "obrońca",
+                    "italiano": "Difensore",
+                    "changes":["+hp", "-sp.atk" ]
+                },
+                {
+                    "english": "goalkeeper", 
+                    "polski": "bramkarz",
+                    "italiano": "Portiere",
+                    "changes":["+hp", "-attack" ]
+                }
             ]
         },
         {
-            "question": "do you feel everything is ok in the place you are?",
-            "answers":[
-                {"text": "yes", "changes":["+luck", "+hp"]},
-                {"text": "dunno", "changes":["+luck", "-luck"]},
-                {"text": "no", "changes":["-luck", "+hp"]},
-                {"text": "...", "changes":["+hp", "-hp"]}
+            "question": 
+            {
+                "english": "Do you feel everything is ok in the place that you are?",
+                "polski": "Czy czujesz się dobrze w swojej okolicy?",
+                "italiano": "Senti che tutto vada bene nel luogo in cui ti trovi ora?"
+            },
+            "answers":
+            [
+                {
+                    "english": "yes",
+                    "polski": "tak",
+                    "italiano": "Sì",
+                    "changes":["+luck", "+hp" ]
+                },
+                {
+                    "english": "dunno", 
+                    "polski": "nie wiem",
+                    "italiano": "Non lo so",
+                    "changes":["+luck", "-luck" ]
+                },
+                {
+                    "english": "no", 
+                    "polski": "nie",
+                    "italiano": "no",
+                    "changes":["-luck", "+hp" ]
+                },
+                {
+                   "english": "...",
+                   "changes":["+hp", "-hp" ]
+                }
             ]
         },
         {
-            "question": "what word from those describe you the most?",
+            "question": 
+            {
+                "english": "What word from the following describes you the most?",
+                "polski": "Jakie z tych słów najlepiej do ciebie pasuje?",
+                "italiano": "Quali delle seguenti parole ti descrive di più?"
+            },
             "answers":[
-                {"text": "cunning", "changes":["+speed", "+sp.atk"]},
-                {"text": "wisdom", "changes":["+attack", "+defence"]},
-                {"text": "luck", "changes":["+speed", "+hp"]},
-                {"text": "calmness", "changes":["+sp.def", "+defence"]}
+                {
+                    "english": "cunning", 
+                    "polski": "Spryt",
+                    "italiano": "astuzzia",
+                    "changes":["+speed", "+sp.atk" ]
+                },
+                {
+                    "english": "wisdom", 
+                    "polski": "Mądrość",
+                    "italiano": "saggezza",
+                    "changes":["+attack", "+defence" ]
+                },
+                {
+                    "english": "luck", 
+                    "polski": "Szczęście",
+                    "italiano": "fortuna",
+                    "changes":["+speed", "+hp" ]
+                },
+                {
+                    "english": "calmness", 
+                    "polski": "Spokój",
+                    "italiano": "calma",
+                    "changes":["+sp.def", "+defence" ]
+                }
             ]
         },
         {
-            "question": "what word from those doesn't describe you at all?",
-            "answers":[
-                {"text": "dance", "changes":["-speed", "-sp.atk"]},
-                {"text": "school", "changes":["-defence", "-attack"]},
-                {"text": "food", "changes":["+speed", "-hp"]},
-                {"text": "light", "changes":["-luck", "-luck"]}
+            "question": 
+            {
+                "english": "What word from the following doesn't describe you at all?",
+                "polski": "Jakie z tych słów do ciebie najmniej pasuje?",
+                "italiano": "Quali delle seguenti parole non ti descrive affatto?"
+            },
+            "answers":
+            [
+                {
+                    "english": "dance", 
+                    "polski": "Taniec",
+                    "italiano": "danza",
+                    "changes":["-speed", "-sp.atk" ]
+                },
+                {
+                    "english": "school", 
+                    "polski": "Szkoła",
+                    "italiano": "scuola",
+                    "changes":["-defence", "-attack" ]
+                },
+                {
+                    "english": "food", 
+                    "polski": "Jedzenie",
+                    "italiano": "cibo",
+                    "changes":["+speed", "-hp" ]
+                },
+                {
+                    "english": "light", 
+                    "polski": "Światło",
+                    "italiano": "luce",
+                    "changes":["-luck", "-luck" ]
+                }
             ]
         },
         {
-            "question": "do you think the world should change?",
+            "question": 
+            {
+                "english": "Do you believe the world should change?",
+                "polski": "Czy czujesz że ten świat powinien się zmienić?",
+                "italiano": "Hai fiducia nel cambiamento del mondo?"
+            },
             "answers":[
-                {"text": "yes", "changes":["+attack", "+speed"]},
-                {"text": "i don't know", "changes":["+attack", "-attack"]},
-                {"text": "no", "changes":["+defence", "+sp.atk"]},
-                {"text": "i'm not here to decide about it", "changes":["+luck", "+hp"]}
+                {
+                    "english": "yes", 
+                    "polski": "tak",
+                    "italiano": "Sì",
+                    "changes":["+attack", "+speed" ]
+                },
+                {
+                    "english": "i don't know", 
+                    "polski": "nie wiem",
+                    "italiano": "Non lo so",
+                    "changes":["+attack", "-attack" ]
+                },
+                {
+                    "english": "no", 
+                    "polski": "nie",
+                    "italiano": "no",
+                    "changes":["+defence", "+sp.atk" ]
+                },
+                {
+                    "english": "i'm not here to decide about it", 
+                    "polski": "Nie jestem tutaj aby o tym decydować",
+                    "changes":["+luck", "+hp" ]
+                }
             ]
         },
         {
-            "question": "what appeals to you the most?",
+            "question": 
+            {
+                "english": "What appeals to you the most?",
+                "polski": "Co przemawia do ciebie najbardziej?"
+            },
             "answers":[
-                {"text": "nature", "changes":["+hp", "+speed"]},
-                {"text": "technology", "changes":["+speed", "-luck"]},
-                {"text": "calm", "changes":["-sp.atk", "-attack"]},
-                {"text": "beauty", "changes":["+luck", "-attack"]}
+                {
+                   "english": "nature", 
+                        "polski": "natura" ,
+                   "changes":["+hp", "+speed" ]
+                },
+                {
+                   "english": "technology", 
+                        "polski": "technologia",
+                   "changes":["+speed", "-luck" ]
+                },
+                {
+                   "english": "calm", 
+                        "polski": "spokój",
+                   "changes":["-sp.atk", "-attack" ]
+                },
+                {
+                   "english": "beauty", 
+                        "polski": "piękno",
+                   "changes":["+luck", "-attack" ]
+                }
             ]
         },
         {
-            "question": "where you prefer to live",
-            "answers":[
-                {"text": "in the palace", "changes":["+luck", "+luck"]},
-                {"text": "in the house", "changes":["-sp.atk", "-sp.atk"]},
-                {"text": "in the hut", "changes":["+hp", "+speed"]},
-                {"text": "in the treehouse", "changes":["+speed", "-sp.def"]}
+            "question": 
+            {
+                "english": "Where you prefer to live?",
+                "polski": "Gdzie wolisz mieszkać?"
+            },
+            "answers":
+            [
+                {
+                   "english": "in a palace", 
+                        "polski": "w pałacu",
+                   "changes":["+luck", "+luck" ]
+                },
+                {
+                   "english": "in a house", 
+                        "polski": "w domu",
+                   "changes":["-sp.atk", "-sp.atk" ]
+                },
+                {
+                   "english": "in a hut", 
+                        "polski": "w szałasie",
+                   "changes":["+hp", "+speed" ]
+                },
+                {
+                   "english": "in a treehouse", 
+                        "polski": "w domku na drzewie",
+                   "changes":["+speed", "-sp.def" ]
+                }
             ]
         },
         {
-            "question": "what you feel when you're in the forest",
+            "question": 
+            {
+                "english": "What you feel when you're in a forest?",
+                "polski": "Co czujesz gdy jesteś w lesie?"
+            },
             "answers":[
-                {"text": "peace", "changes":["+luck", "-defence"]},
-                {"text": "fear", "changes":["+sp.def", "-attack"]},
-                {"text": "harmony", "changes":["+luck", "-attack"]},
-                {"text": "just nice", "changes":["+speed", "+luck"]}
+                {
+                   "english": "peace", 
+                        "polski": "spokój",
+                   "changes":["+luck", "-defence" ]
+                },
+                {
+                   "english": "fear", 
+                        "polski": "strach",
+                   "changes":["+sp.def", "-attack" ]
+                },
+                {
+                   "english": "harmony", 
+                        "polski": "harmonie",
+                   "changes":["+luck", "-attack" ]
+                },
+                {
+                   "english": "just nice", 
+                        "polski": "po prostu przyjemnie",
+                   "changes":["+speed", "+luck" ]
+                }
             ]
         },
         {
-            "question": "what do you feel when you're in the city",
-            "answers":[
-                {"text": "fear", "changes":["+sp.def", "-attack"]},
-                {"text": "comfort", "changes":["+speed", "+hp"]},
-                {"text": "discomfort", "changes":["+defence", "-luck"]},
-                {"text": "nothing", "changes":["+hp", "-hp"]}
+            "question": 
+            {
+                "english": "What do you feel when you're in a city?",
+                "polski": "Co czujesz gdy jesteś w mieście?"
+            },
+            "answers":
+            [
+                {
+                   "english": "fear", 
+                        "polski": "strach",
+                   "changes":["+sp.def", "-attack" ]
+                },
+                {
+                   "english": "comfort", 
+                        "polski": "komfort",
+                   "changes":["+speed", "+hp" ]
+                },
+                {
+                   "english": "discomfort", 
+                        "polski": "dyskomfort",
+                   "changes":["+defence", "-luck" ]
+                },
+                {
+                   "english": "nothing", 
+                        "polski": "nic",
+                   "changes":["+hp", "-hp" ]
+                }
             ]
         },
         {
-            "question": "what you feel when you're in the mountain",
-            "answers":[
-                {"text": "fear", "changes":["-sp.atk", "-attack"]},
-                {"text": "discomfort", "changes":["+sp.def", "-attack"]},
-                {"text": "fascination", "changes":["+speed", "+sp.atk"]},
-                {"text": "i've never been", "changes":["+speed", "-luck"]}
+            "question": 
+            {
+                "english": "What you feel when you're at a mountain?",
+                "polski": "Co czujesz gdy jesteś w górach?"
+            },
+            "answers":
+            [
+                {
+                    "english": "fear", 
+                    "polski": "strach",
+                    "changes":["-sp.atk", "-attack" ]
+                },
+                {
+                   "english": "discomfort", 
+                        "polski": "dyskomfort",
+                   "changes":["+sp.def", "-attack" ]
+                },
+                {
+                   "english": "fascination", 
+                        "polski": "fascynację",
+                   "changes":["+speed", "+sp.atk" ]
+                },
+                {
+                   "english": "i've never been", 
+                        "polski": "nie bywam",
+                   "changes":["+speed", "-luck" ]
+                }
             ]
         },
         {
-            "question": "what you feel when you're by the sea",
-            "answers":[
-                {"text": "pleasantly", "changes":["+luck", "-defence"]},
-                {"text": "happiness", "changes":["+luck", "+speed"]},
-                {"text": "anxiety", "changes":["+defence", "-attack"]},
-                {"text": "boredness", "changes":["-speed", "-speed"]}
+            "question": 
+            {
+                "english": "What you feel when you're by a sea?",
+                "polski": "Co czujesz gdy jesteś nad morzem?"
+            },                
+            "answers":
+            [
+                {
+                   "english": "pleasantly", 
+                        "polski": "przyjemność",
+                   "changes":["+luck", "-defence" ]
+                },
+                {
+                   "english": "happiness", 
+                        "polski": "szczęście",
+                   "changes":["+luck", "+speed" ]
+                },
+                {
+                   "english": "anxiety", 
+                        "polski": "niepokój",
+                   "changes":["+defence", "-attack" ]
+                },
+                {
+                   "english": "boredness", 
+                        "polski": "nudę",
+                   "changes":["-speed", "-speed" ]
+                }
             ]
         },
         {
-            "question": "what you feel when you're in cave",
+            "question": 
+            {
+                "english": "What you feel when you're in a cave?",
+                "polski": "Co czujesz gdy jesteś w jaskini?"
+            },
             "answers":[
-                {"text": "fear", "changes":["-hp", "-speed"]},
-                {"text": "discomfort", "changes":["+speed", "-hp"]},
-                {"text": "good", "changes":["+hp", "-speed"]},
-                {"text": "i don't know", "changes":["+hp", "-hp"]}
+                {
+                   "english": "fear", 
+                        "polski": "strach",
+                   "changes":["-hp", "-speed" ]
+                },
+                {
+                   "english": "discomfort", 
+                        "polski": "dyskomfort",
+                   "changes":["+speed", "-hp" ]
+                },
+                {
+                   "english": "good", 
+                        "polski": "Dobrze",
+                   "changes":["+hp", "-speed" ]
+                },
+                {
+                   "english": "i don't know", 
+                        "polski": "nie wiem",
+                    "italiano": "Non lo so",
+                   "changes":["+hp", "-hp" ]
+                }
             ]
         },
         {
-            "question": "what element suits you the most",
-            "answers":[
-                {"text": "water", "changes":["+hp", "+sp.atk"]},
-                {"text": "wind", "changes":["+speed", "+sp.atk"]},
-                {"text": "fire", "changes":["+sp.atk", "-attack"]},
-                {"text": "ground", "changes":["+defence", "+sp.def"]}
+            "question": 
+            {
+                "english": "What element suits you the most?",
+                "polski": "Który żywioł pasuje do ciebie najbardziej?"
+            },
+            "answers":
+            [
+                {
+                   "english": "water", 
+                        "polski": "woda",
+                   "changes":["+hp", "+sp.atk" ]
+                },
+                {
+                   "english": "air", 
+                        "polski": "powietrze",
+                   "changes":["+speed", "+sp.atk" ]
+                },
+                {
+                   "english": "fire", 
+                        "polski": "ogień",
+                   "changes":["+sp.atk", "-attack" ]
+                },
+                {
+                   "english": "earth", 
+                        "polski": "Ziemia",
+                   "changes":["+defence", "+sp.def" ]
+                }
             ]
         },
         {
-            "question": "",
-            "answers":[
-                {"text": "", "changes":["", ""]},
-                {"text": "", "changes":["", ""]},
-                {"text": "", "changes":["", ""]},
-                {"text": "", "changes":["", ""]}
+            "question": 
+            {
+                "english": "Which season you like the most?",
+                "polski": "Którą porę roku lubisz najbardziej?"
+            },
+            "answers":
+            [
+                {
+                   "english": "Spring", 
+                        "polski": "Wiosna",
+                    "changes":["+hp", "-attack"]
+                },
+                {
+                   "english": "Summer", 
+                        "polski": "Lato",
+                    "changes":["+sp.atk", "-hp"]
+                },
+                {
+                   "english": "Aunt",
+                        "polski": "Jesień",
+                    "changes":["+attack", "-sp.def"]
+                },
+                {
+                   "english": "Winter", 
+                        "polski": "Zima",
+                   "changes":["+sp.atk", "-speed"]
+                }
             ]
         }
     ]

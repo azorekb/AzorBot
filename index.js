@@ -62,7 +62,8 @@ class BweClass
                 message: _message,
                 author: _author,
                 channel: _channel,
-                step: 0
+                step: 0,
+                language: 'english'
             }
             return LAST;
         },
