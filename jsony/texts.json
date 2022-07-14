@@ -6,7 +6,9 @@
             "english": "Creating stop",
             "polski": "Tworzenie przerwane.",
             "italiano": "Creazione fermata",
-            "deutsch": "Erstellung abgebrochen"
+            "deutsch": "Erstellung abgebrochen",
+            "francais": "Stopper la création",
+            "espanol": "Creación detenida"
             
         },
         "title":
@@ -14,7 +16,9 @@
             "english": "Creating pokemon character for Pokemon Adventure:",
             "polski": "Tworzenie postaci Pokemona dla Pokemon Adventure:",
             "italiano": "Creazione del personaggio Pokemon per Pokemon Adventure:",
-            "deutsch": "Erstelle einen Pokémon Charakter für Pokemon Adventure:"
+            "deutsch": "Erstelle einen Pokémon Charakter für Pokemon Adventure:",
+            "francais": "Créer un avatar pokémon pour Pokémon Adventure:",
+            "espanol": "Creando personaje para Pokemon Adventure"
         },
         "steps":
         [
@@ -23,49 +27,71 @@
                 "english": "Please choose your specie. Write name of pokemon or number in pokedex.",
                 "polski": "Proszę wybrać gatunek. Napisz nazwę pokemona lub jego numer w pokedexie.",
                 "deutsch": "Bitte wähle deine Spezies. Schreibe den Namen des Pokémon oder die Pokédexnummer.",
-                "italiano": "Perfavore scegli la tua specie. Scrivi il nome del pokemon o il numero nel pokedex."
+                "italiano": "Perfavore scegli la tua specie. Scrivi il nome del pokemon o il numero nel pokedex.",
+                "francais": "Choisissez votre pokémon et écrivez son nom dans le pokédex",
+                "espanol": "Por favor elige tu especie. Escribe el nombre del Pokemon o su número en la pokedex"
             },
             {
                 "english": "Please choose your form: regular",
                 "polski": "Proszę wybrać formę: regular",
                 "deutsch": "Bitte wähle deine Form: regular",
-                "italiano": "Perfavore scegli la tua forma: regular"
+                "italiano": "Perfavore scegli la tua forma: regular",
+                "francais": "Choisissez votre forme: regular",
+                "espanol": "Por favor elige tu forma: regular"
             },
             {
                 "english": "Please choose your gender:\nM - male, F - female, N - no gender.",
                 "polski": "Proszę wybrać płeć:\nM - samiec, F - samica, N - bezpłciowiec.",
                 "deutsch": "Bitte wähle dein Geschlecht:\nM - männlich, F - weiblich, N - kein Geschlecht.",
-                "italiano": "Perfavore scegli il tuo genere: \nM - maschio, F - femmina, N - nessun genere."
+                "italiano": "Perfavore scegli il tuo genere: \nM - maschio, F - femmina, N - nessun genere.",
+                "francais": "Choisissez votre genre:\nM - male, F - femelle, N - neutre",
+                "espanol": "Por favor elige tu género:\nM - Hombre, F - Mujer, N - Sin género"
             },
             {
                 "english": "Please write your nickname (please don't use any custom character, cus there could be a problem with dispaly it) max 20 characters.",
                 "polski": "Proszę wpisać imię/nick (proszę nie używać niestandartowych symboli, gdyż mógłby wystąpić problem z ich wyświetleniem) max 20 znaków.",
                 "deutsch": "Bitte schreibe deinen Nicknamen (Bitte nutze keine Sonderzeichen, da es zu Probelmen bei der Anzeige führen kann) max 20 Zeichen.",
-                "italiano": "Perfavore scrivi il tuo nickname (perfavore non usare caratteri speciali, perchè potrebbe esserci un problema nel proiettarli) massimo 20 caratteri."
+                "italiano": "Perfavore scrivi il tuo nickname (perfavore non usare caratteri speciali, perchè potrebbe esserci un problema nel proiettarli) massimo 20 caratteri.",
+                "francais": "Ecrivez votre surnom (veuillez ne pas utiliser des caractères spéciaux), 20 caractères maximum",
+                "espanol": "Elige tu nombre (Evita caracteres especiales, podrían ocasionar problemas gráficos) 20 caracteres máximo."
             },
             {
                 "english": "Please Send your pfp here.",
                 "polski": "Proszę wysłać zdjęcie profilowe.",
                 "deutsch": "Bitte sende dein Profilbild.",
-                "italiano": "Perfavore manda la foto profilo qui."
+                "italiano": "Perfavore manda la foto profilo qui.",
+                "francais": "Veuillez envoyer votre image de profil ici",
+                "espanol": "Envía tu icono de perfil aquí:"
             },
             {
                 "english": "Now please choose your base stats. You can choose 35 points (for HP 1 point means 25hp)\nWrite in one message 7 values separate with space: [HP] [attack] [defence] [special attack] [special defence] [speed] [luck]",
                 "polski": "Teraz proszę wybrać podstawowe statystyki. Możesz wybrać 35 punktów (dla życia 1 punkt to 25punktów życia)\nWypisz 7 wartości w jednej wiadomości oddzielając spacją: [życie] [atak] [obrona] [specjalny atak] [specjalna obrona] [szybkość] [szczęście]",
                 "deutsch": "Bitta wähle deine Statuswerte. Du kannst 35 Punkte wählen (1 KP entspricht 25KP)\nSchreibe 7 Werte getrennt mit Leerzeichen: [KP] [Angriff] [Verteidigung] [Spezial-Angriff] [Spezial-Verteidigung] [Initiative] [Glück]",
-                "italiano": "Adesso scegli le tue statistiche di base. Puoi scegliere 35 punti (per I PV, 1 punto vale 25 PV)\nScrivi in un messaggio, 7 valori separati da uno spazio: [PV] [attacco] [difesa] [attacco speciale] [difesa speciale] [velocità] [fortuna]"
+                "italiano": "Adesso scegli le tue statistiche di base. Puoi scegliere 35 punti (per I PV, 1 punto vale 25 PV)\nScrivi in un messaggio, 7 valori separati da uno spazio: [PV] [attacco] [difesa] [attacco speciale] [difesa speciale] [velocità] [fortuna]",
+                "francais": "Maintenant choisissez vos stats de base. Vous pouvez choisir 35 points (1 HP correspond à 25hp)\nEcrivez en un message 7 valeurs séparées par des espaces: [HP] [attack] [defence] [special attack] [special defence] [speed] [luck]",
+                "espanol": "Elige tus estadísticas base. Puedes elegir 35 puntos (Para HP 1 punto significa 25HP)\nEscribe en un solo mensaje 7 separados con espacios: [HP] [attack] [defence] [special attack]"              
             },
             {
                 "english": "Now I will ask you few questions to specify your nature.\nQuestion number ",
                 "polski": "Teraz zadam kilka pytań dla określenia natury.\nPytanie numer ",
                 "deutsch": "Jetzt werde ich dir ein paar Fragen stellen um dein Wesen zu bestimmen.\nFrage nummer ",
-                "italiano": "Adesso ti farò qualche domanda in maniera da specificare la tua natura. \nDomanda numero "
+                "italiano": "Adesso ti farò qualche domanda in maniera da specificare la tua natura.\nDomanda numero ",
+                "francais": "Maintenant je vais vous poser quelques questions pour spécifier votre nature.\nQuestion numéro",
+                "espanol":"Ahora algunas preguntas para determinar tu naturaleza.\nNúmero de pregunta"
             },
             {
                 "english": "Please choose your ability (write name of it).",
                 "polski": "Proszę wybrać umiejętność (wpisz jej nazwę w języku angielskim).",
                 "deutsch": "Bitte wähle deine Fähigkeit (schreibe den Namen).",
-                "italiano": "Perfavore scegli la tua abilità (Scrivi il suo nome)."
+                "italiano": "Perfavore scegli la tua abilità (Scrivi il suo nome).",
+                "francais": "Choisissez votre capacité (écrivez son nom)",
+                "espanol": "Elige tu habilidad (escribe su nombre)."
+            },
+            {
+                "english": "sending data...",
+                "polski": "wysyłanie danych...",
+                "deutsch": "sende Daten...",
+                "espanol": "Enviando datos…"
             }
         ],
         "errors": 
@@ -74,44 +100,145 @@
                 "english": "Wrong number or name, try again.",
                 "deutsch": "Falsche Nummer oder Name, versuche es erneut.",
                 "polski": "Nieprawidłowa nazwa będź liczba.",
-                "italiano": "Numero o nome sbagliato, riprova"
+                "italiano": "Numero o nome sbagliato, riprova.",
+                "francais": "Nombre ou nom incorrect, réessayez.",
+                "espanol": "Número o nombre equivocados, intenta de nuevo."
             },
             {
                 "english": "Wrong form, try again.",
                 "deutsch": "Falsche Form, versuche es erneut.",
                 "polski": "Nieprawidłowa forma, spróbuj ponownie.",
-                "italiano": "Forma non valida, riprova."
+                "italiano": "Forma non valida, riprova.",
+                "francais": "Forme incorrecte, réessayez.",
+                "espanol": "Forma equivocada, intenta de nuevo."
             },
             {
                 "english": "wrong gender, try again.",
                 "deutsch": "Falsches Geschlecht, versuche es erneut.",
                 "polski": "Zła płeć, spróbuj ponownie.",
-                "italiano": "Genere non valido, riprova"
+                "italiano": "Genere non valido, riprova.",
+                "francais": "Genre incorrect, réessayez",
+                "espanol": "Género equivocado, intenta de nuevo."
             },
             {
                 "english": "Nickname is too long, please try include it in 20 characters max.",
                 "polski": "Imię jest zbyt długie, spróbuj się zmieścić w 20 znakach.",
                 "deutsch": "Nickname zu lang, bitte nutze maximal 20 Zeichen.",
-                "italiano": "Nickname troppo lungo, perfavore prova ad includerlo in massimo 20 caratteri"
+                "italiano": "Nickname troppo lungo, perfavore prova ad includerlo in massimo 20 caratteri",
+                "francais": "Surnom trop long, attention à ne pas dépasser 20 caractères maximum",
+                "espanol": "El nombre es demasiado largo, por favor usa 20 caracteres máximo"
             },
             {
                 "english": "no image in message.",
                 "polski": "Brak obrazka w wiadomości.",
                 "deutsch": "Kein Bild in der Nachicht.",
-                "italiano": "Nessuna immagine nel messaggio."
+                "italiano": "Nessuna immagine nel messaggio.",
+                "francais": "Aucune image dans le message.",
+                "espanol": "No hay imagen en el mensaje."
             },
             {
                 "english": "wrong sum of arguments",
                 "polski": "Zła suma argumentów",
                 "deutsch": "Falsche Summe der Argumente",
-                "italiano": "Somma non valida degli argomenti"
+                "italiano": "Somma non valida degli argomenti",
+                "francais": "Total d'arguments incorrect",
+                "espanol": "Suma incorrecta de argumentos"
             },
             {
                 "english": "Wrong number of arguments",
                 "polski": "Zła liczba argumentów",
                 "deutsch": "Falsche Nummer der Argumente",
-                "italiano": "Numero degli argomenti non valido"
+                "italiano": "Numero degli argomenti non valido",
+                "francais": "Nombre d'arguments incorrect",
+                "espanol": "Número incorrecto de argumentos"
+            },
+            {
+                "english": "wrong language, try again"
             }
-        ]
+        ],
+        "properties":
+        [
+            {
+                "english": "specie",
+                "polski": "gatunek",
+                "francais": "race",
+                "deutsch": "Spezies",
+                "espanol": "Especie"
+            },
+            {
+                "english":"form",
+                "polski": "forma",
+                "francais": "forme",
+                "deutsch": "Form",
+                "espanol": "Forma"
+            },
+            {
+                "english": "gender",
+                "polski": "płeć",
+                "francais": "genre",
+                "deutsch": "Geschlecht",
+                "espanol": "Género"
+            },
+            {
+                "english": "nickname",
+                "polski": "imię/nick",
+                "francais": "surnom",
+                "deutsch": "Nickname",
+                "espanol": "Nombre"
+            },
+            {
+                "english": "nature",
+                "polski": "natura",
+                "francais": "nature",
+                "deutsch": "Wesen",
+                "espanol": "Naturaleza"
+            }
+        ],
+        "genders":
+        [
+            {
+                "english": "male",
+                "polski": "samiec",
+                "francais": "male",
+                "deutsch": "Männlich",
+                "espanol": "Hombre"
+            },
+            {
+                "english": "female",
+                "polski": "samica",
+                "francais": "femelle",
+                "deutsch": "Weiblich",
+                "espanol": "Mujer"
+            },
+            {
+                "english": "none",
+                "polski": "brak",
+                "francais": "aucun",
+                "deutsch": "Keins",
+                "espanol": "Ninguno"
+            }
+        ],
+        "answerWith":
+        {
+            "english": "Answer with number",
+            "polski": "Odpowiedz za pomocą liczb",
+            "francais": "Réponse avec nombre",
+            "deutsch": "Antwort mit Nummer",
+            "espanol": "Responde con un número"
+        },
+        "step":
+        {
+            "english": "step",
+            "polski": "etap",
+            "deutsch" :"Schritt",
+            "espanol": "Paso"
+        },
+        "makeCancel": 
+        {
+            "english": "write \"cancel\" to stop the process, write \"back\" to go back 1 step",
+            "polski": "wpisz \"cancel\" by zastrzymać proces, wpisz \"back\" by wrócić do poprzedniego etapu",
+            "deutsch": "schreibe “cancel” um den Prozess abzubrechen, schreibe “back“ um einen Schritt zurückzugehen",
+            "espanol": "Escribe \"cancel\" para detener el proceso, escribe \"back\" para regresar al paso anterior"
+        }
     }
 }

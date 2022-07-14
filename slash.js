@@ -8,6 +8,7 @@ const commands = [
 	new SlashCommandBuilder().setName('help').setDescription('Shows list of commands or info about the command').addStringOption(option => option.setName('command').setDescription('Write command to check info about it.')),
 	new SlashCommandBuilder().setName('welcomechannel').setDescription('set/change/check welcome channel').addChannelOption(option => option.setName('channel').setDescription('channel when message will be sent')),
 	new SlashCommandBuilder().setName('test').setDescription('test'),
+	new SlashCommandBuilder().setName('start').setDescription('create account in Pokemon Adventure'),
 	new SlashCommandBuilder().setName('oc').setDescription('shows the picture of Szibi\'s or Fairy\'s OC').addStringOption(option => option.setName('name').setDescription('name of OC')),
 	new SlashCommandBuilder().setName('pic').setDescription('shows the picture of pokemon').addStringOption(option => option.setName('name').setDescription('name of Pokemon')),
 	new SlashCommandBuilder().setName('play').setDescription('play music').addStringOption(option => option.setName('song').setDescription('name of song, author or link').setRequired(true)),
@@ -18,6 +19,7 @@ const commands = [
 	new SlashCommandBuilder().setName('connectchannel').setDescription('set/check connection channel').addStringOption(option => option.setName('code').setDescription('connection code. must be the same in 2 or more channels to make connection')),
 	new SlashCommandBuilder().setName('level').setDescription('show actual level'),
 	new SlashCommandBuilder().setName('character').setDescription('show your character in da Game'),
+	new SlashCommandBuilder().setName('pokedex').setDescription('show some global info about pokemon').addStringOption(option => option.setName('nameornumber').setDescription('Write name or number of pokemon in pokedex')),
 
 ].map(command => command.toJSON());
 

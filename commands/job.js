@@ -1,9 +1,9 @@
-const TEXTS = require('../jsony/texts.json').newCharacter;
-const QUESTIONS = require('../jsony/questions.json').list;
 const { MessageEmbed } = require('discord.js');
 
 module.exports = async (aMessage, client, con, interaction = null) => 
 {
+    const QUESTIONS = client.bwe.loadJson('questions').list;
+    const TEXTS = client.bwe.loadJson('texts').newCharacter;
     const reply = (stuffs) => {if(interaction){return interaction.channel.send(stuffs);}else{return aMessage.message.channel.send(stuffs);}}
     const theArgument = interaction ? interaction.options.getString('language').toLowerCase() : aMessage.arguments[0].toLowerCase();
 

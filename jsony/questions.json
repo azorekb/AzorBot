@@ -27,7 +27,10 @@
             {
                "english": "What would you choose?",
                "polski": "Co byś wybrał?",
-               "italiano": "Cosa sceglieresti?"
+               "italiano": "Cosa sceglieresti?",
+               "francais": "Que voudriez-vous choisir?",
+               "deutsch": "Was würdest du wählen?",
+               "espanol": "¿Qué elegirías?"
             },
             "answers":
             [
@@ -35,25 +38,37 @@
                     "changes":["+sp.atk", "-hp"],
                     "english": "authority",
                     "polski": "Władzę",
-                    "italiano": "Autorità"
+                    "italiano": "Autorità",
+                    "francais": "autorité",
+                    "deutsch": "Autorität",
+                    "espanol": "Autoridad"
                 },
                 {
                     "changes":["+sp.atk", "-defence"],
                     "english": "money",
                     "polski": "Pieniądze",
-                    "italiano": "Soldi"
+                    "italiano": "Soldi",
+                    "francais": "monnaie",
+                    "deutsch": "Geld",
+                    "espanol": "Dinero"
                 },
                 {
                     "changes":["+sp.def", "-sp.atk"],
                     "english": "family",
                     "polski": "Rodzinę",
-                    "italiano": "Famiglia"
+                    "italiano": "Famiglia",
+                    "francais": "famille",
+                    "deutsch": "Familie",
+                    "espanol": "Familia"
                 },
                 {
                     "changes":["+sp.atk", "-attack"],
                     "english": "knowledge",
                     "polski": "Wiedzę",
-                    "italiano": "Conoscenza"
+                    "italiano": "Conoscenza",
+                    "francais": "savoir/connaissance",
+                    "deutsch": "Wissen",
+                    "espanol": "Conocimiento"
                 }
             ]
         },
@@ -62,7 +77,10 @@
             {
                 "english": "What would you loose the fastest?",
                 "polski": "Co najszybciej mógłbyś stracić?",
-                "italiano": "Cosa perderesti velocemente?"
+                "italiano": "Cosa perderesti velocemente?",
+                "francais": "Que voudriez-vous perdre le plus vite?",
+                "deutsch": "Was würdest du am schnellsten verlieren?",
+                "espanol": "Teniendo que elegir, ¿Qué perderías primero?"
             },
             "answers":
             [
@@ -70,25 +88,37 @@
                     "changes":["-sp.def", "+sp.atk"],
                     "english": "family",
                     "polski": "Rodzinę",
-                    "italiano": "Famiglia"
+                    "italiano": "Famiglia",
+                    "francais": "famille",
+                    "deutsch": "Familie",
+                    "espanol": "Familia"
                 },
                 {
                     "changes":["-sp.atk", "-attack"],
                     "english": "friends",
                     "polski": "Przyjaciół",
-                    "italiano": "Amici"
+                    "italiano": "Amici",
+                    "francais": "amis",
+                    "deutsch": "Freunde",
+                    "espanol": "Amigos"
                 },
                 {
                     "changes":["-sp.atk", "-luck"],
                     "english": "luck",
                     "polski": "Szczęście",
-                    "italiano": "Fortuna"
+                    "italiano": "Fortuna",
+                    "francais": "chance",
+                    "deutsch": "Glück",
+                    "espanol": "Suerte"
                 },
                 {
                     "changes":["-hp", "+sp.atk"],
                     "english": "life",
                     "polski": "Życie",
-                    "italiano": "Vita"
+                    "italiano": "Vita",
+                    "francais": "vie",
+                    "deutsch": "Leben",
+                    "espanol": "Vida"
                 }
             ]
         },
@@ -97,7 +127,10 @@
             {
                 "english": "How do you feel?",
                 "polski": "Jak się czujesz?",
-                "italiano": "Come ti senti?"
+                "italiano": "Come ti senti?",
+                "francais": "Comment tu te sens?",
+                "deutsch": "Wie fühlst du dich?",
+                "espanol": "¿Cómo te sientes?"
             },
             "answers":
             [
@@ -105,25 +138,37 @@
                     "changes":["+hp", "-attack"],
                     "english": "excellent", 
                     "polski": "Znakomicie",
-                    "italiano": "Benissimo"
+                    "italiano": "Benissimo",
+                    "francais": "excellent",
+                    "deutsch": "exzellent",
+                    "espanol": "Excelente"
                 },
                 {
                     "english": "good", 
                     "polski": "Dobrze",
                     "italiano": "Bene",
-                    "changes":["+hp", "-sp.atk"]
+                    "francais": "bien",
+                    "changes":["+hp", "-sp.atk"],
+                    "deutsch": "gut",
+                    "espanol": "Bien"
                 },
                 {
                     "english": "bad", 
                     "polski": "Źle",
                     "italiano": "Male",
-                    "changes":["+defence", "-hp"]
+                    "francais": "mal",
+                    "changes":["+defence", "-hp"],
+                    "deutsch": "schlecht",
+                    "espanol": "Mal"
                 },
                 {
                     "english": "i don't know...",
                     "polski": "Nie wiem...",
                     "italiano": "Non lo so...",
-                    "changes":["-sp.def", "-hp"]
+                    "francais": "je ne sais pas...",
+                    "changes":["-sp.def", "-hp"],
+                    "deutsch": "ich weiß nicht...",
+                    "espanol": "No lo sé..."
                 }
             ]
         },
@@ -132,25 +177,37 @@
             {
                 "english": "Are you afraid of death?",
                 "polski": "Czy boisz się śmierci?",
-                "italiano": "Hai paura della morte?"
+                "italiano": "Hai paura della morte?",
+                "francais": "As-tu peur de la mort?",
+                "deutsch": "Hast du Angst vor den Tot?",
+                "espanol": "¿Le temes a la muerte?"
             },
             "answers":
             [
                 {
                     "english": "yes", 
                     "polski": "tak",
+                    "espanol": "Si",
+                    "deutsch": "ja",
+                    "francais": "oui",
                     "italiano": "Sì",
                     "changes":["+defence", "-attack"]
                 },
                 {
                     "english": "i don't know", 
                     "polski": "nie wiem",
+                    "espanol": "No lo sé",
+                    "deutsch": "ich weiß nicht",
+                    "francais": "je ne sais pas",
                     "italiano": "Non lo so",
                     "changes":["+attack", "-attack" ]
                 },
                 {
                     "english": "no", 
                     "polski": "nie",
+                    "espanol": "No",
+                    "deutsch": "nein",
+                    "francais": "non",
                     "italiano": "no",
                     "changes":["+attack", "-defence" ]
                 },
@@ -165,25 +222,37 @@
             {
                 "english": "Are you afraid that someone from your friends, family, or anyone important for you would die?",
                 "polski": "Czy boisz się śmierci rodziny przyjaciół kogokolwiek istotnego dla ciebie?",
-                "italiano": "Hai paura che qualcuno dei tuoi amici, famiglia, o a te caro, possa morire?"
+                "italiano": "Hai paura che qualcuno dei tuoi amici, famiglia, o a te caro, possa morire?",
+                "francais": "As-tu peur qu'un de tes amis, de ta famille, ou quelque personne importante pour toi pourrait mourir?",
+                "deutsch": "Hast du angst das jemand von deinen Freunden, Familie oder jemand wichtiges sterben könnte?",
+                "espanol": "¿Temes que alguno de tus amigos, familiares, o alguien importante a ti muriera?"
             },
             "answers":
             [
                 {
                     "english": "yes", 
                     "polski": "tak",
+                    "espanol": "Si",
+                    "deutsch": "ja",
+                    "francais": "oui",
                     "italiano": "Sì",
                     "changes":["+sp.def", "-sp.atk" ]
                 },
                 {
                     "english": "i don't know",
                     "polski": "nie wiem",
+                    "espanol": "No lo sé",
+                    "deutsch": "ich weiß nicht",
+                    "francais": "je ne sais pas",
                     "italiano": "Non lo so",
                     "changes":["+sp.atk", "-sp.atk" ]
                 },
                 {
                     "english": "no", 
                     "polski": "nie",
+                    "espanol": "No",
+                    "deutsch": "nein",
+                    "francais": "non",
                     "italiano": "no",
                     "changes":["+sp.atk", "-sp.def" ]
                 },
@@ -191,7 +260,9 @@
                     "english": "why would i be afraid",
                     "polski": "czemu mam się bać?",
                     "italiano": "Perchè dovrei esserne spaventato/a?",
-                    "changes":["-sp.def", "-sp.atk"]
+                    "francais": "pourquoi serais-je effrayé?",
+                    "changes":["-sp.def", "-sp.atk"],
+                    "deutsch": "warum würde ich Angst haben?"
                 }
             ]
         },
@@ -200,19 +271,26 @@
             {
                 "english": "Did you/will you answer honestly?",
                 "polski": "Czy twoje odpowiedzi były/będą szczere?",
-                "italiano": "Hai risposto/risponderai onestamente?"
+                "italiano": "Hai risposto/risponderai onestamente?",
+                "deutsch": "Hast du ehrlich geantwortet?"
             },
             "answers":
             [
                 {
                     "english": "yes",
                     "polski": "tak",
+                    "espanol": "Si",
+                    "deutsch": "ja",
+                    "francais": "oui",
                     "italiano": "Sì",
                     "changes":["+attack", "-sp.def" ]
                 },
                 {
                     "english": "no",
                     "polski": "nie",
+                    "espanol": "No",
+                    "deutsch": "nein",
+                    "francais": "non",
                     "italiano": "no",
                     "changes":["+defence", "-sp.atk" ]
                 },
@@ -220,12 +298,14 @@
                     "english": "lol, nope", 
                     "polski": "haha bez szans.",
                     "italiano": "lol, nha",
-                    "changes":["+luck", "-sp.def" ]
+                    "changes":["+luck", "-sp.def" ],
+                    "deutsch": "lol, nein"
                 },
                 {
                     "english": "ok.", 
                     "polski": "no dobrze.",
                     "italiano": "ok.",
+                    "deutsch": "ok.",
                     "changes":["+luck", "-defence"]
                 }
             ]
@@ -235,7 +315,8 @@
             {
                 "english": "what position in footbol (soccer) would you choose?",
                 "polski": "Jaką pozycję w piłce nożnej wybierasz?",
-                "italiano": "Quale ruolo sceglieresti da calciatore?"
+                "italiano": "Quale ruolo sceglieresti da calciatore?",
+                "deutsch": "Welche Position in Fußball würdest du wählen?"
             },
             "answers":
             [
@@ -243,25 +324,29 @@
                     "english": "attacker", 
                     "polski": "napastnik",
                     "italiano": "Attaccante",
-                    "changes":["+attack", "-hp" ]
+                    "changes":["+attack", "-hp" ],
+                    "deutsch": "Angreifer"
                 },
                 {
                     "english": "support", 
                     "polski": "pomocnik",
                     "italiano": "Supporto",
-                    "changes":["+sp.atk", "-hp" ]
+                    "changes":["+sp.atk", "-hp" ],
+                    "deutsch": "Unterstützer"
                 },
                 {
                     "english": "defender", 
                     "polski": "obrońca",
                     "italiano": "Difensore",
-                    "changes":["+hp", "-sp.atk" ]
+                    "changes":["+hp", "-sp.atk" ],
+                    "deutsch": "Verteidiger"
                 },
                 {
                     "english": "goalkeeper", 
                     "polski": "bramkarz",
                     "italiano": "Portiere",
-                    "changes":["+hp", "-attack" ]
+                    "changes":["+hp", "-attack" ],
+                    "deutsch": "Torwart"
                 }
             ]
         },
@@ -270,25 +355,35 @@
             {
                 "english": "Do you feel everything is ok in the place that you are?",
                 "polski": "Czy czujesz się dobrze w swojej okolicy?",
-                "italiano": "Senti che tutto vada bene nel luogo in cui ti trovi ora?"
+                "italiano": "Senti che tutto vada bene nel luogo in cui ti trovi ora?",
+                "deutsch": "Hast du das Gefühl, dass an dem Ort, an dem du bist, alles in Ordnung ist?"
             },
             "answers":
             [
                 {
                     "english": "yes",
                     "polski": "tak",
+                    "espanol": "Si",
+                    "deutsch": "ja",
+                    "francais": "oui",
                     "italiano": "Sì",
                     "changes":["+luck", "+hp" ]
                 },
                 {
                     "english": "dunno", 
                     "polski": "nie wiem",
+                    "espanol": "No lo sé",
+                    "deutsch": "ich weiß nicht",
+                    "francais": "je ne sais pas",
                     "italiano": "Non lo so",
                     "changes":["+luck", "-luck" ]
                 },
                 {
                     "english": "no", 
                     "polski": "nie",
+                    "espanol": "No",
+                    "deutsch": "nein",
+                    "francais": "non",
                     "italiano": "no",
                     "changes":["-luck", "+hp" ]
                 },
@@ -378,18 +473,27 @@
                 {
                     "english": "yes", 
                     "polski": "tak",
+                    "espanol": "Si",
+                    "deutsch": "ja",
+                    "francais": "oui",
                     "italiano": "Sì",
                     "changes":["+attack", "+speed" ]
                 },
                 {
                     "english": "i don't know", 
                     "polski": "nie wiem",
+                    "espanol": "No lo sé",
+                    "deutsch": "ich weiß nicht",
+                    "francais": "je ne sais pas",
                     "italiano": "Non lo so",
                     "changes":["+attack", "-attack" ]
                 },
                 {
                     "english": "no", 
                     "polski": "nie",
+                    "espanol": "No",
+                    "deutsch": "nein",
+                    "francais": "non",
                     "italiano": "no",
                     "changes":["+defence", "+sp.atk" ]
                 },
@@ -603,6 +707,9 @@
                 {
                    "english": "i don't know", 
                         "polski": "nie wiem",
+                    "espanol": "No lo sé",
+                    "deutsch": "ich weiß nicht",
+                    "francais": "je ne sais pas",
                     "italiano": "Non lo so",
                    "changes":["+hp", "-hp" ]
                 }

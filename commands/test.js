@@ -1,28 +1,9 @@
-const { MessageEmbed } = require('discord.js');
-const TEXTS = require('../jsony/texts.json').newCharacter;
 module.exports = async (aMessage, client, con, interaction = null) => 
 {
-    const reply = (stuffs) => {if(interaction){return interaction.channel.send(stuffs);}else{return aMessage.message.channel.send(stuffs);}}
-        const member = interaction ? interaction.member : aMessage.message.member;
-        const author = interaction ? interaction.member.id : aMessage.message.author.id;
-    try
-    {
-        let index = client.bwe.creatingCharacter.find(author);
-        if(index == -1)
-        {
-            if(interaction)
-            {
-                interaction.deferReply();
-                interaction.deleteReply();
-            }
+    DEX = client.bwe.loadJson('pokedex').pokemon;
+    const reply = (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return aMessage.message.channel.send(stuffs);}}
 
-            const embed = new MessageEmbed().setColor(client.bwe.AzorDefaultColor).setTitle(TEXTS.title.english)
-            .setAuthor({name: member.displayName, iconURL: member.displayAvatarURL()})
-            .setDescription('Step 1: ' + TEXTS.steps[0].english);
-
-            const theMessage = await reply({embeds: [embed]});
-            client.bwe.creatingCharacter.add(theMessage, author, theMessage.channel.id);
-        }
-    }
-    catch(error){client.bwe.theError(error, aMessage, interaction)}
+    let count = 0;
+    for(let i = 0; i < DEX.length; i++){if(DEX[i]){count++;}}
+    reply('Number pokemon in Pokedex: ' + count + '/' + DEX.length);
 }

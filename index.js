@@ -49,6 +49,19 @@ class BweClass
     theZero = (num) => {return num < 10 ? '0' + num : num;}
     picturesList = [];
     talkChannels = null;
+
+    loadJson(name)
+    {
+        try
+        {
+            delete require.cache[require.resolve('./jsony/' + name + '.json')];
+        }
+        catch(e)
+        {
+            console.log(e);
+        }
+        return require('./jsony/' + name + '.json');
+    }
     
     creatingCharacter =
     {
