@@ -281,22 +281,23 @@ module.exports = async (message, client, con) =>
         if(message.content.toLocaleLowerCase().startsWith('bwe') && message.content.toLocaleLowerCase() != 'bwe!')
         {
             let msg = message.content;
-            let yes = true;
+            let bweing = true;
             let wykrzyknik = '';
-            while(msg[msg.length - 1] == '!')
+            while(msg[msg.length - 1] == '!' || msg[msg.length - 1] == '?')
             {
                 msg = msg.slice(0, -1);
                 wykrzyknik += '!';
-                console.log(msg);
             }
+            let e_E = msg[msg.length -1];
             for(let i = 3; i < msg.length; i++)
             {
-                if(msg[i] != 'e' && msg[i] != 'E'){yes = false;}
+                if(msg[i] != 'e' && msg[i] != 'E'){bweing = false;}
+                e_E = msg[i];
             }
-            if(yes)
+            if(bweing)
             {
-                if(message.content.length >= 2000){message.channel.send('yeshanium Z ' + EMOJIS.vibbing);}
-                else{message.channel.send(msg + 'e' + wykrzyknik);}
+                if(message.content.length >= 2000){message.channel.send('*Dies of too many bweeing*');}
+                else{message.channel.send(msg + e_E + wykrzyknik);}
             }
         }
 
@@ -391,7 +392,7 @@ module.exports = async (message, client, con) =>
                     if(message.attachments.firstKey())
                     {
                         let img = null;
-                        const end = message.attachments.first().url.slice(-4);
+                        const end = message.attachments.first().url.slice(-4).toLowerCase();
                         if(end == '.jpg' || end == 'jpeg' || end == '.gif' || end == '.png' || end == '.bmp')
                         {
                             const theMSG = await client.channels.cache.get('992854842932473967').send({files: [message.attachments.first().url]});

@@ -272,7 +272,8 @@
                 "english": "Did you/will you answer honestly?",
                 "polski": "Czy twoje odpowiedzi były/będą szczere?",
                 "italiano": "Hai risposto/risponderai onestamente?",
-                "deutsch": "Hast du ehrlich geantwortet?"
+                "deutsch": "Hast du ehrlich geantwortet?",
+                "francais": "Avez-vous répondu honnêtement ?"
             },
             "answers":
             [
@@ -299,14 +300,16 @@
                     "polski": "haha bez szans.",
                     "italiano": "lol, nha",
                     "changes":["+luck", "-sp.def" ],
-                    "deutsch": "lol, nein"
+                    "deutsch": "lol, nein",
+                    "francais": "lol, nope"
                 },
                 {
                     "english": "ok.", 
                     "polski": "no dobrze.",
                     "italiano": "ok.",
                     "deutsch": "ok.",
-                    "changes":["+luck", "-defence"]
+                    "changes":["+luck", "-defence"],
+                    "francais": "d'accord."
                 }
             ]
         },
@@ -316,7 +319,8 @@
                 "english": "what position in footbol (soccer) would you choose?",
                 "polski": "Jaką pozycję w piłce nożnej wybierasz?",
                 "italiano": "Quale ruolo sceglieresti da calciatore?",
-                "deutsch": "Welche Position in Fußball würdest du wählen?"
+                "deutsch": "Welche Position in Fußball würdest du wählen?",
+                "francais": "quelle position dans le football choisiriez-vous ?"
             },
             "answers":
             [
@@ -325,28 +329,32 @@
                     "polski": "napastnik",
                     "italiano": "Attaccante",
                     "changes":["+attack", "-hp" ],
-                    "deutsch": "Angreifer"
+                    "deutsch": "Angreifer",
+                    "francais": "attaquant"
                 },
                 {
                     "english": "support", 
                     "polski": "pomocnik",
                     "italiano": "Supporto",
                     "changes":["+sp.atk", "-hp" ],
-                    "deutsch": "Unterstützer"
+                    "deutsch": "Unterstützer",
+                    "francais": "soutien"
                 },
                 {
                     "english": "defender", 
                     "polski": "obrońca",
                     "italiano": "Difensore",
                     "changes":["+hp", "-sp.atk" ],
-                    "deutsch": "Verteidiger"
+                    "deutsch": "Verteidiger",
+                    "francais": "défenseur"
                 },
                 {
                     "english": "goalkeeper", 
                     "polski": "bramkarz",
                     "italiano": "Portiere",
                     "changes":["+hp", "-attack" ],
-                    "deutsch": "Torwart"
+                    "deutsch": "Torwart",
+                    "francais": "gardien de but"
                 }
             ]
         },
@@ -356,7 +364,8 @@
                 "english": "Do you feel everything is ok in the place that you are?",
                 "polski": "Czy czujesz się dobrze w swojej okolicy?",
                 "italiano": "Senti che tutto vada bene nel luogo in cui ti trovi ora?",
-                "deutsch": "Hast du das Gefühl, dass an dem Ort, an dem du bist, alles in Ordnung ist?"
+                "deutsch": "Hast du das Gefühl, dass an dem Ort, an dem du bist, alles in Ordnung ist?",
+                "francais": "Sentez-vous que tout va bien où vous vous situez ?"
             },
             "answers":
             [
@@ -398,32 +407,41 @@
             {
                 "english": "What word from the following describes you the most?",
                 "polski": "Jakie z tych słów najlepiej do ciebie pasuje?",
-                "italiano": "Quali delle seguenti parole ti descrive di più?"
+                "italiano": "Quali delle seguenti parole ti descrive di più?",
+                "deutsch": "Welches der folgenden Wörter beschreibt dich am besten?",
+                "francais": "Quel mot depuis ce qui suit vous décrit le mieux ?"
             },
             "answers":[
                 {
                     "english": "cunning", 
                     "polski": "Spryt",
                     "italiano": "astuzzia",
-                    "changes":["+speed", "+sp.atk" ]
+                    "changes":["+speed", "+sp.atk" ],
+                    "deutsch": "gerissen"
                 },
                 {
                     "english": "wisdom", 
                     "polski": "Mądrość",
                     "italiano": "saggezza",
-                    "changes":["+attack", "+defence" ]
+                    "changes":["+attack", "+defence" ],
+                    "deutsch": "Weisheit",
+                    "francais": "sagesse"
                 },
                 {
                     "english": "luck", 
                     "polski": "Szczęście",
                     "italiano": "fortuna",
-                    "changes":["+speed", "+hp" ]
+                    "changes":["+speed", "+hp" ],
+                    "deutsch": "Glück",
+                    "francais": "chance"
                 },
                 {
                     "english": "calmness", 
                     "polski": "Spokój",
                     "italiano": "calma",
-                    "changes":["+sp.def", "+defence" ]
+                    "changes":["+sp.def", "+defence" ],
+                    "deutsch": "Ruhe",
+                    "francais": "calme"
                 }
             ]
         },
@@ -432,7 +450,9 @@
             {
                 "english": "What word from the following doesn't describe you at all?",
                 "polski": "Jakie z tych słów do ciebie najmniej pasuje?",
-                "italiano": "Quali delle seguenti parole non ti descrive affatto?"
+                "italiano": "Quali delle seguenti parole non ti descrive affatto?",
+                "deutsch": "Welches der folgenden Wörter beschreibt Sie überhaupt nicht?",
+                "francais": "Quel mot depuis ce qui suit ne vous décrit pas du tout?"
             },
             "answers":
             [
@@ -440,25 +460,33 @@
                     "english": "dance", 
                     "polski": "Taniec",
                     "italiano": "danza",
-                    "changes":["-speed", "-sp.atk" ]
+                    "changes":["-speed", "-sp.atk" ],
+                    "deutsch": "Tanz",
+                    "francais": "danse"
                 },
                 {
                     "english": "school", 
                     "polski": "Szkoła",
                     "italiano": "scuola",
-                    "changes":["-defence", "-attack" ]
+                    "changes":["-defence", "-attack" ],
+                    "deutsch": "Schule",
+                    "francais": "école"
                 },
                 {
                     "english": "food", 
                     "polski": "Jedzenie",
                     "italiano": "cibo",
-                    "changes":["+speed", "-hp" ]
+                    "changes":["+speed", "-hp" ],
+                    "deutsch": "Essen",
+                    "francais": "nourriture"
                 },
                 {
                     "english": "light", 
                     "polski": "Światło",
                     "italiano": "luce",
-                    "changes":["-luck", "-luck" ]
+                    "changes":["-luck", "-luck" ],
+                    "deutsch": "Licht",
+                    "francais": "lumière"
                 }
             ]
         },
@@ -467,7 +495,9 @@
             {
                 "english": "Do you believe the world should change?",
                 "polski": "Czy czujesz że ten świat powinien się zmienić?",
-                "italiano": "Hai fiducia nel cambiamento del mondo?"
+                "italiano": "Hai fiducia nel cambiamento del mondo?",
+                "deutsch": "Glaubst du, die Welt sollte sich ändern?",
+                "francais": "Crois-tu que le monde devrait changer ?"
             },
             "answers":[
                 {
@@ -500,7 +530,10 @@
                 {
                     "english": "i'm not here to decide about it", 
                     "polski": "Nie jestem tutaj aby o tym decydować",
-                    "changes":["+luck", "+hp" ]
+                    "changes":["+luck", "+hp" ],
+                    "italiano": "Non sono qui per decidere approposito di questo",
+                    "deutsch": "Ich bin nicht hier, um darüber zu entscheiden",
+                    "francais": "Je ne suis pas là pour décider à ce propos"
                 }
             ]
         },
@@ -508,28 +541,43 @@
             "question": 
             {
                 "english": "What appeals to you the most?",
-                "polski": "Co przemawia do ciebie najbardziej?"
+                "polski": "Co przemawia do ciebie najbardziej?",
+                "italiano": "cosa ti si appella di più?",
+                "deutsch": "Was spricht dich am meisten an?",
+                "francais": "Qu'est-ce qui te parle le plus ?"
             },
             "answers":[
                 {
-                   "english": "nature", 
-                        "polski": "natura" ,
-                   "changes":["+hp", "+speed" ]
+                    "english": "nature", 
+                    "polski": "natura" ,
+                    "changes":["+hp", "+speed" ],
+                    "italiano": "natura",
+                    "deutsch": "Natur",
+                    "francais": "nature"
                 },
                 {
-                   "english": "technology", 
-                        "polski": "technologia",
-                   "changes":["+speed", "-luck" ]
+                    "english": "technology", 
+                    "polski": "technologia",
+                    "changes":["+speed", "-luck" ],
+                    "italiano": "tecnologia",
+                    "deutsch": "Technologie",
+                    "francais": "technologie"
                 },
                 {
-                   "english": "calm", 
-                        "polski": "spokój",
-                   "changes":["-sp.atk", "-attack" ]
+                    "english": "calm", 
+                    "polski": "spokój",
+                    "changes":["-sp.atk", "-attack" ],
+                    "italiano": "calma",
+                    "deutsch": "Ruhe",
+                    "francais": "calme"
                 },
                 {
-                   "english": "beauty", 
-                        "polski": "piękno",
-                   "changes":["+luck", "-attack" ]
+                    "english": "beauty", 
+                    "polski": "piękno",
+                    "changes":["+luck", "-attack" ],
+                    "italiano": "bellezza",
+                    "deutsch": "Schönheit",
+                    "francais": "beauté"
                 }
             ]
         },
@@ -537,29 +585,44 @@
             "question": 
             {
                 "english": "Where you prefer to live?",
-                "polski": "Gdzie wolisz mieszkać?"
+                "polski": "Gdzie wolisz mieszkać?",
+                "italiano": "Dove preferisci vivere?",
+                "deutsch": "Wo bevorzugst du zu leben?",
+                "francais": "Ou préfères-tu vivre ?"
             },
             "answers":
             [
                 {
-                   "english": "in a palace", 
-                        "polski": "w pałacu",
-                   "changes":["+luck", "+luck" ]
+                    "english": "in a palace", 
+                    "polski": "w pałacu",
+                    "changes":["+luck", "+luck" ],
+                    "italiano": "in un palazzo",
+                    "deutsch": "in einen Palast",
+                    "francais": "dans un palais"
                 },
                 {
-                   "english": "in a house", 
-                        "polski": "w domu",
-                   "changes":["-sp.atk", "-sp.atk" ]
+                    "english": "in a house", 
+                    "polski": "w domu",
+                    "changes":["-sp.atk", "-sp.atk" ],
+                    "italiano": "in una casa",
+                    "deutsch": "in ein Haus",
+                    "francais": "dans une maison"
                 },
                 {
-                   "english": "in a hut", 
-                        "polski": "w szałasie",
-                   "changes":["+hp", "+speed" ]
+                    "english": "in a hut", 
+                    "polski": "w szałasie",
+                    "changes":["+hp", "+speed" ],
+                    "italiano": "in una capanna",
+                    "deutsch": "in einer Hütte",
+                    "francais": "dans une hutte"
                 },
                 {
-                   "english": "in a treehouse", 
-                        "polski": "w domku na drzewie",
-                   "changes":["+speed", "-sp.def" ]
+                    "english": "in a treehouse", 
+                    "polski": "w domku na drzewie",
+                    "changes":["+speed", "-sp.def" ],
+                    "italiano": "in una casa sull'albero",
+                    "deutsch": "in ein Baumhaus",
+                    "francais": "dans une cabane perchée"
                 }
             ]
         },
@@ -567,28 +630,43 @@
             "question": 
             {
                 "english": "What you feel when you're in a forest?",
-                "polski": "Co czujesz gdy jesteś w lesie?"
+                "polski": "Co czujesz gdy jesteś w lesie?",
+                "italiano": "come ti senti quando sei in una foresta?",
+                "deutsch": "Was fühlst du im Wald?",
+                "francais": "Que sentez-vous quand vous êtes dans une forêt?"
             },
             "answers":[
                 {
-                   "english": "peace", 
-                        "polski": "spokój",
-                   "changes":["+luck", "-defence" ]
+                    "english": "peace", 
+                    "polski": "spokój",
+                    "changes":["+luck", "-defence" ],
+                    "italiano": "pace",
+                    "deutsch": "Frieden",
+                    "francais": "paix"
                 },
                 {
-                   "english": "fear", 
-                        "polski": "strach",
-                   "changes":["+sp.def", "-attack" ]
+                    "english": "fear", 
+                    "polski": "strach",
+                    "changes":["+sp.def", "-attack" ],
+                    "italiano": "paura",
+                    "deutsch": "Angst",
+                    "francais": "peur"
                 },
                 {
-                   "english": "harmony", 
-                        "polski": "harmonie",
-                   "changes":["+luck", "-attack" ]
+                    "english": "harmony", 
+                    "polski": "harmonie",
+                    "changes":["+luck", "-attack" ],
+                    "italiano": "armonico/a",
+                    "deutsch": "Harmonie",
+                    "francais": "harmonie"
                 },
                 {
-                   "english": "just nice", 
-                        "polski": "po prostu przyjemnie",
-                   "changes":["+speed", "+luck" ]
+                    "english": "just nice", 
+                    "polski": "po prostu przyjemnie",
+                    "changes":["+speed", "+luck" ],
+                    "italiano": "semplicemente bene",
+                    "deutsch": "einfach schön",
+                    "francais": "juste gentil"
                 }
             ]
         },
@@ -596,29 +674,44 @@
             "question": 
             {
                 "english": "What do you feel when you're in a city?",
-                "polski": "Co czujesz gdy jesteś w mieście?"
+                "polski": "Co czujesz gdy jesteś w mieście?",
+                "italiano": "Come ti senti quando sei in una città?",
+                "deutsch": "Was fühlst du, wenn du in einer Stadt bist?",
+                "francais": "Que sentez-vous quand vous être dans une ville?"
             },
             "answers":
             [
                 {
-                   "english": "fear", 
-                        "polski": "strach",
-                   "changes":["+sp.def", "-attack" ]
+                    "english": "fear", 
+                    "polski": "strach",
+                    "changes":["+sp.def", "-attack" ],
+                    "italiano": "paura",
+                    "deutsch": "Angst",
+                    "francais": "fear"
                 },
                 {
-                   "english": "comfort", 
-                        "polski": "komfort",
-                   "changes":["+speed", "+hp" ]
+                    "english": "comfort", 
+                    "polski": "komfort",
+                    "changes":["+speed", "+hp" ],
+                    "italiano": "conforto",
+                    "deutsch": "Komfort",
+                    "francais": "confort"
                 },
                 {
-                   "english": "discomfort", 
-                        "polski": "dyskomfort",
-                   "changes":["+defence", "-luck" ]
+                    "english": "discomfort", 
+                    "polski": "dyskomfort",
+                    "changes":["+defence", "-luck" ],
+                    "italiano": "sconfortato",
+                    "deutsch": "Unbehagen",
+                    "francais": "déconfort"
                 },
                 {
-                   "english": "nothing", 
-                        "polski": "nic",
-                   "changes":["+hp", "-hp" ]
+                    "english": "nothing", 
+                    "polski": "nic",
+                    "changes":["+hp", "-hp" ],
+                    "italiano": "nulla",
+                    "deutsch": "nichts",
+                    "francais": "rien"
                 }
             ]
         },
@@ -626,29 +719,44 @@
             "question": 
             {
                 "english": "What you feel when you're at a mountain?",
-                "polski": "Co czujesz gdy jesteś w górach?"
+                "polski": "Co czujesz gdy jesteś w górach?",
+                "italiano": "come ti senti quando sei in una montagna?",
+                "deutsch": "Was fühlst du, wenn du auf einem Berg bist?",
+                "francais": "Que sentez-vous à la montagne ?"
             },
             "answers":
             [
                 {
                     "english": "fear", 
                     "polski": "strach",
-                    "changes":["-sp.atk", "-attack" ]
+                    "changes":["-sp.atk", "-attack" ],
+                    "italiano": "paura",
+                    "deutsch": "Angst",
+                    "francais": "peur"
                 },
                 {
-                   "english": "discomfort", 
-                        "polski": "dyskomfort",
-                   "changes":["+sp.def", "-attack" ]
+                    "english": "discomfort", 
+                    "polski": "dyskomfort",
+                    "changes":["+sp.def", "-attack" ],
+                    "italiano": "sconfortato",
+                    "deutsch": "Unbehagen",
+                    "francais": "déconfort"
                 },
                 {
-                   "english": "fascination", 
-                        "polski": "fascynację",
-                   "changes":["+speed", "+sp.atk" ]
+                    "english": "fascination", 
+                    "polski": "fascynację",
+                    "changes":["+speed", "+sp.atk" ],
+                    "italiano": "fascino",
+                    "deutsch": "Faszination",
+                    "francais": "fascination"
                 },
                 {
-                   "english": "i've never been", 
-                        "polski": "nie bywam",
-                   "changes":["+speed", "-luck" ]
+                    "english": "i've never been", 
+                    "polski": "nie bywam",
+                    "changes":["+speed", "-luck" ],
+                    "italiano": "non ci sono mai stato/a",
+                    "deutsch": "War ich noch nie",
+                    "francais": "je n'y ai jamais été"
                 }
             ]
         },
@@ -656,29 +764,40 @@
             "question": 
             {
                 "english": "What you feel when you're by a sea?",
-                "polski": "Co czujesz gdy jesteś nad morzem?"
+                "polski": "Co czujesz gdy jesteś nad morzem?",
+                "italiano": "Come ti senti quando sei vicino al mare?",
+                "deutsch": "Was du fühlst, wenn du am Meer bist?",
+                "francais": "Que sentez-vous à la mer ?"
             },                
             "answers":
             [
                 {
-                   "english": "pleasantly", 
-                        "polski": "przyjemność",
-                   "changes":["+luck", "-defence" ]
+                    "english": "pleasantly", 
+                    "polski": "przyjemność",
+                    "changes":["+luck", "-defence" ],
+                    "italiano": "piacere",
+                    "deutsch": "angenehm"
                 },
                 {
-                   "english": "happiness", 
-                        "polski": "szczęście",
-                   "changes":["+luck", "+speed" ]
+                    "english": "happiness", 
+                    "polski": "szczęście",
+                    "changes":["+luck", "+speed" ],
+                    "italiano": "felicità",
+                    "deutsch": "glücklich"
                 },
                 {
-                   "english": "anxiety", 
-                        "polski": "niepokój",
-                   "changes":["+defence", "-attack" ]
+                    "english": "anxiety", 
+                    "polski": "niepokój",
+                    "changes":["+defence", "-attack" ],
+                    "italiano": "ansia",
+                    "deutsch": "Angst"
                 },
                 {
-                   "english": "boredness", 
-                        "polski": "nudę",
-                   "changes":["-speed", "-speed" ]
+                    "english": "boredness", 
+                    "polski": "nudę",
+                    "changes":["-speed", "-speed" ],
+                    "italiano": "noia",
+                    "deutsch": "Langeweile"
                 }
             ]
         },
@@ -686,32 +805,40 @@
             "question": 
             {
                 "english": "What you feel when you're in a cave?",
-                "polski": "Co czujesz gdy jesteś w jaskini?"
+                "polski": "Co czujesz gdy jesteś w jaskini?",
+                "italiano": "Come ti senti quando stai in caverna?",
+                "deutsch": "Was du fühlst, wenn du in einer Höhle bist?"
             },
             "answers":[
                 {
-                   "english": "fear", 
-                        "polski": "strach",
-                   "changes":["-hp", "-speed" ]
+                    "english": "fear", 
+                    "polski": "strach",
+                    "changes":["-hp", "-speed" ],
+                    "italiano": "paura",
+                    "deutsch": "Angst"
                 },
                 {
-                   "english": "discomfort", 
-                        "polski": "dyskomfort",
-                   "changes":["+speed", "-hp" ]
+                    "english": "discomfort", 
+                    "polski": "dyskomfort",
+                    "changes":["+speed", "-hp" ],
+                    "italiano": "sconfortato",
+                    "deutsch": "Unbehagen"
                 },
                 {
-                   "english": "good", 
-                        "polski": "Dobrze",
-                   "changes":["+hp", "-speed" ]
+                    "english": "good", 
+                    "polski": "Dobrze",
+                    "changes":["+hp", "-speed" ],
+                    "italiano": "bene",
+                    "deutsch": "gut"
                 },
                 {
-                   "english": "i don't know", 
-                        "polski": "nie wiem",
+                    "english": "i don't know", 
+                    "polski": "nie wiem",
                     "espanol": "No lo sé",
                     "deutsch": "ich weiß nicht",
                     "francais": "je ne sais pas",
                     "italiano": "Non lo so",
-                   "changes":["+hp", "-hp" ]
+                    "changes":["+hp", "-hp" ]
                 }
             ]
         },
@@ -719,29 +846,39 @@
             "question": 
             {
                 "english": "What element suits you the most?",
-                "polski": "Który żywioł pasuje do ciebie najbardziej?"
+                "polski": "Który żywioł pasuje do ciebie najbardziej?",
+                "italiano": "Quale elemento si appella meglio a te?",
+                "deutsch": "Welches Element passt am besten zu dir?"
             },
             "answers":
             [
                 {
-                   "english": "water", 
-                        "polski": "woda",
-                   "changes":["+hp", "+sp.atk" ]
+                    "english": "water", 
+                    "polski": "woda",
+                    "changes":["+hp", "+sp.atk" ],
+                    "italiano": "acqua",
+                    "deutsch": "Wasser"
                 },
                 {
-                   "english": "air", 
-                        "polski": "powietrze",
-                   "changes":["+speed", "+sp.atk" ]
+                    "english": "air", 
+                    "polski": "powietrze",
+                    "changes":["+speed", "+sp.atk" ],
+                    "italiano": "aria",
+                    "deutsch": "Luft"
                 },
                 {
-                   "english": "fire", 
-                        "polski": "ogień",
-                   "changes":["+sp.atk", "-attack" ]
+                    "english": "fire", 
+                    "polski": "ogień",
+                    "changes":["+sp.atk", "-attack" ],
+                    "deutsch": "Feuer",
+                    "italiano": "fuoco"
                 },
                 {
-                   "english": "earth", 
-                        "polski": "Ziemia",
-                   "changes":["+defence", "+sp.def" ]
+                    "english": "earth", 
+                    "polski": "Ziemia",
+                    "changes":["+defence", "+sp.def" ],
+                    "deutsch": "Erde",
+                    "italiano": "terra"
                 }
             ]
         },
@@ -749,29 +886,39 @@
             "question": 
             {
                 "english": "Which season you like the most?",
-                "polski": "Którą porę roku lubisz najbardziej?"
+                "polski": "Którą porę roku lubisz najbardziej?",
+                "deutsch": "Welche Jahreszeit magst du am meisten?",
+                "italiano": "Quale stagione ti piace di più?"
             },
             "answers":
             [
                 {
-                   "english": "Spring", 
-                        "polski": "Wiosna",
-                    "changes":["+hp", "-attack"]
+                    "english": "Spring", 
+                    "polski": "Wiosna",
+                    "changes":["+hp", "-attack"],
+                    "deutsch": "Frühling",
+                    "italiano": "Primavera"
                 },
                 {
-                   "english": "Summer", 
-                        "polski": "Lato",
-                    "changes":["+sp.atk", "-hp"]
+                    "english": "Summer", 
+                    "polski": "Lato",
+                    "changes":["+sp.atk", "-hp"],
+                    "deutsch": "Sommer",
+                    "italiano": "Estate"
                 },
                 {
-                   "english": "Aunt",
-                        "polski": "Jesień",
-                    "changes":["+attack", "-sp.def"]
+                    "english": "Aunt",
+                    "polski": "Jesień",
+                    "changes":["+attack", "-sp.def"],
+                    "deutsch": "Herbst",
+                    "italiano": "Autunno"
                 },
                 {
-                   "english": "Winter", 
-                        "polski": "Zima",
-                   "changes":["+sp.atk", "-speed"]
+                    "english": "Winter", 
+                    "polski": "Zima",
+                    "changes":["+sp.atk", "-speed"],
+                    "deutsch": "Winter",
+                    "italiano": "Inverno"
                 }
             ]
         }

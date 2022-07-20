@@ -92,9 +92,7 @@ class BweClass
 
         delete(_user)
         {
-            console.log(this.theList);
             this.theList.splice(this.find(_user), 1);
-            console.log(this.theList);
         }
     };
 

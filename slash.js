@@ -19,7 +19,7 @@ const commands = [
 	new SlashCommandBuilder().setName('connectchannel').setDescription('set/check connection channel').addStringOption(option => option.setName('code').setDescription('connection code. must be the same in 2 or more channels to make connection')),
 	new SlashCommandBuilder().setName('level').setDescription('show actual level'),
 	new SlashCommandBuilder().setName('character').setDescription('show your character in da Game'),
-	new SlashCommandBuilder().setName('pokedex').setDescription('show some global info about pokemon').addStringOption(option => option.setName('nameornumber').setDescription('Write name or number of pokemon in pokedex')),
+	new SlashCommandBuilder().setName('pokedex').setDescription('show some global info about pokemon').addStringOption(option => option.setName('nameornumber').setDescription('Write name or number of pokemon in pokedex')).addStringOption(option => option.setName('form').setDescription('choose form if any exists')),
 
 ].map(command => command.toJSON());
 

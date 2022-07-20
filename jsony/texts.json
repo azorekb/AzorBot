@@ -91,7 +91,9 @@
                 "english": "sending data...",
                 "polski": "wysyłanie danych...",
                 "deutsch": "sende Daten...",
-                "espanol": "Enviando datos…"
+                "espanol": "Enviando datos…",
+                "italiano": "Invio dati...",
+                "francais": "Envoi des données.."
             }
         ],
         "errors": 
@@ -163,35 +165,40 @@
                 "polski": "gatunek",
                 "francais": "race",
                 "deutsch": "Spezies",
-                "espanol": "Especie"
+                "espanol": "Especie",
+                "italiano": "specie"
             },
             {
                 "english":"form",
                 "polski": "forma",
                 "francais": "forme",
                 "deutsch": "Form",
-                "espanol": "Forma"
+                "espanol": "Forma",
+                "italiano": "forma"
             },
             {
                 "english": "gender",
                 "polski": "płeć",
                 "francais": "genre",
                 "deutsch": "Geschlecht",
-                "espanol": "Género"
+                "espanol": "Género",
+                "italiano": "genere"
             },
             {
                 "english": "nickname",
                 "polski": "imię/nick",
                 "francais": "surnom",
                 "deutsch": "Nickname",
-                "espanol": "Nombre"
+                "espanol": "Nombre",
+                "italiano": "nickname"
             },
             {
                 "english": "nature",
                 "polski": "natura",
                 "francais": "nature",
                 "deutsch": "Wesen",
-                "espanol": "Naturaleza"
+                "espanol": "Naturaleza",
+                "italiano": "natura"
             }
         ],
         "genders":
@@ -201,21 +208,24 @@
                 "polski": "samiec",
                 "francais": "male",
                 "deutsch": "Männlich",
-                "espanol": "Hombre"
+                "espanol": "Hombre",
+                "italiano": "maschio"
             },
             {
                 "english": "female",
                 "polski": "samica",
                 "francais": "femelle",
                 "deutsch": "Weiblich",
-                "espanol": "Mujer"
+                "espanol": "Mujer",
+                "italiano": "femmina"
             },
             {
                 "english": "none",
                 "polski": "brak",
                 "francais": "aucun",
                 "deutsch": "Keins",
-                "espanol": "Ninguno"
+                "espanol": "Ninguno",
+                "italiano": "nessuno"
             }
         ],
         "answerWith":
@@ -224,21 +234,26 @@
             "polski": "Odpowiedz za pomocą liczb",
             "francais": "Réponse avec nombre",
             "deutsch": "Antwort mit Nummer",
-            "espanol": "Responde con un número"
+            "espanol": "Responde con un número",
+            "italiano": "rispondi con i numeri"
         },
         "step":
         {
             "english": "step",
             "polski": "etap",
             "deutsch" :"Schritt",
-            "espanol": "Paso"
+            "espanol": "Paso",
+            "italiano": "passo",
+            "francais": "étape"
         },
         "makeCancel": 
         {
             "english": "write \"cancel\" to stop the process, write \"back\" to go back 1 step",
             "polski": "wpisz \"cancel\" by zastrzymać proces, wpisz \"back\" by wrócić do poprzedniego etapu",
             "deutsch": "schreibe “cancel” um den Prozess abzubrechen, schreibe “back“ um einen Schritt zurückzugehen",
-            "espanol": "Escribe \"cancel\" para detener el proceso, escribe \"back\" para regresar al paso anterior"
+            "espanol": "Escribe \"cancel\" para detener el proceso, escribe \"back\" para regresar al paso anterior",
+            "italiano": "scrivi \"cancel\" per fermare la creazione. Scrivi \"back\" per tornare indietro di 1 passo",
+            "francais": "Ecrivez \"cancel\" pour arrêter le processus, écrivez \"back\" pour revenir en arrière"
         }
     }
 }
