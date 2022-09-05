@@ -17,6 +17,7 @@
     "mathjs": "^10.6.1",
     "mysql": "^2.18.1",
     "source-map-loader": "^3.0.1",
+    "time-counter": "^1.0.0",
     "ytdl-core": "^4.11.0"
   },
   "version": "1.0.0",

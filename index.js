@@ -4,11 +4,7 @@ const AzorActivity = 'bweeing';
 const Discord = require('discord.js');
 const client = new Discord.Client({intents: 32767, partials: ['CHANNEL'], allowedMentions: {parse: ['users']}, repliedUser: true});
 const { MessageEmbed } = require('discord.js');
-const fs = require('fs');
-const path = require('path');
-const fsPromises = fs.promises;
 const DATA = TheTest ? require('./testdata.json') : require('./data.json');
-const POKEMON_TYPES = require('./jsony/pokemontypes.json');
 const mysql = require('mysql');
 const EMOJIS = require('./jsony/emoji.json');
 
@@ -42,316 +38,8 @@ const { Player } = require('discord-music-player');
 const player = new Player(client, {leaveOnEmpty: false,});
 client.player = player;
 
-class BweClass
-{
-    pokemonList = [];
-    AzorDefaultColor = '#ff4444';
-    theZero = (num) => {return num < 10 ? '0' + num : num;}
-    picturesList = [];
-    talkChannels = null;
 
-    loadJson(name)
-    {
-        try
-        {
-            delete require.cache[require.resolve('./jsony/' + name + '.json')];
-        }
-        catch(e)
-        {
-            console.log(e);
-        }
-        return require('./jsony/' + name + '.json');
-    }
-    
-    creatingCharacter =
-    {
-        theList: [],
-    
-        add(_message, _author, _channel)
-        {
-            const LAST = this.theList.length;
-            this.theList[LAST] = 
-            {
-                message: _message,
-                author: _author,
-                channel: _channel,
-                step: 0,
-                language: 'english'
-            }
-            return LAST;
-        },
-    
-        find(_user)
-        {
-            for(let i = 0; i < this.theList.length; i++)
-            {
-                if(this.theList[i].author == _user){return i;}
-            }
-            return -1;
-        },
-
-        delete(_user)
-        {
-            this.theList.splice(this.find(_user), 1);
-        }
-    };
-
-    picReact =
-    {
-        theList: [],
-    
-        add(_message, _dir,  _pic, _author, _OCname)
-        {
-            const LAST = this.theList.length;
-            this.theList[LAST] = 
-            {
-                message: _message,
-                dir: _dir,
-                picture: _pic,
-                author: _author,
-                OCname: _OCname,
-    
-                timeout: null
-            }
-            return LAST;
-        },
-    
-        find(_channelid, _messageid)
-        {
-            for(let i = 0; i < this.theList.length; i++)
-            {
-                if(this.theList[i].message.channel.id == _channelid && this.theList[i].message.id == _messageid){return i;}
-            }
-            return -1;
-        }
-    };
-
-    queueMessagesTimeouts =
-    {
-        timeouts: [],
-
-        get(guild, index = false)
-        {
-            for(let i = 0; i < this.timeouts.length; i++)
-            {
-                if(this.timeouts[i][0] == guild){return index ? i : this.timeouts[i][1];}
-            }
-            return index ? -1 : null;
-        },
-        add(guild, timeout)
-        {
-            let index = this.get(guild, true);
-            if(index == -1){this.timeouts[this.timeouts.length] = [guild,timeout];}
-            else{this.timeouts[index][1] = timeout;}
-        },
-        delete(guild)
-        {
-            clearTimeout(this.timeouts[this.get(guild, true)][1]);
-            this.timeouts.slice(this.get(guild,true), 1);
-        }
-
-    };
-
-    createQueueMessage = (guildID) =>
-    {
-        let guildQueue = client.player.getQueue(guildID);
-        if(guildQueue == undefined)
-        {
-            let embed = new MessageEmbed()
-            .setColor(this.AzorDefaultColor)
-            .setTitle('Queue is empty');
-            return embed;
-        }
-        let text = '';
-        let allTime = [0,0,0];
-        for(let i = 0; i < guildQueue.songs.length; i++)
-        {
-            text += '\n' + (i + 1) + '. ' + guildQueue.songs[i].name;
-            let time = guildQueue.songs[i].duration.split(':');
-            let difference = 3 - time.length;
-            for(let i = 2; i >= difference; i--)
-            {
-                allTime[i] += time[i - difference] * 1;
-                if(i > 0 && allTime[i] >= 60)
-                {
-                    allTime[i] -= 60;
-                    allTime[i - 1] += 1;
-                }
-            }
-        }
-        let theSettings = ' volume: ' + guildQueue.volume + '%';
-        let theFooter = 'starting playing...';
-        if(guildQueue.isPlaying)
-        {
-            theSettings += guildQueue.paused ? ' ' + EMOJIS.pause : '';
-            if(guildQueue.repeatMode == 1){theSettings += ' ' + EMOJIS.loop1;}
-            if(guildQueue.repeatMode == 2){theSettings += ' ' + EMOJIS.loop2;}
-            const ProgressBar = guildQueue.createProgressBar();
-            let theBar = ('' + ProgressBar.bar).replace(/ /g,'-');
-            theBar = theBar.replace(/>/g,'|');
-            theBar = theBar.replace(/=/g,'-');
-            theFooter = 'Now playing:\n' + guildQueue.nowPlaying + '\n' + ProgressBar.times + ' >' + theBar + '<';
-        }
-        let embed = new MessageEmbed()
-        .setColor(this.AzorDefaultColor)
-        .setTitle('Playlist [' + allTime[0] + ':' + this.theZero(allTime[1]) + ':' + this.theZero(allTime[2]) + ']' + theSettings)
-        .setDescription(text + '\n\n' + theFooter);
-        // .setFooter(theFooter);
-
-        const theTimeout = this.queueMessagesTimeouts.get(guildID);
-        if(theTimeout != null){clearTimeout(theTimeout)}
-        const newTimeout = setTimeout(() => 
-        {  
-            const MSG = client.queueMessages.get(guildID);
-            if(MSG == null){return}
-            MSG.edit({embeds:[this.createQueueMessage(guildID)]});
-        }, 10000);
-        this.queueMessagesTimeouts.add(guildID, newTimeout);
-
-        return embed;
-    }
-
-    crawl = async (directory, filesArray) => 
-    {
-        const dirs = await fsPromises.readdir(directory, {
-            withFileTypes: true 
-        });
-
-        for (let i = 0; i < dirs.length; i++)
-        {
-            const currentDir = dirs[i];
-            const newPath = path.join(directory, currentDir.name);
-            filesArray.push(newPath);
-        }
-    }
-
-    addNewPokemon = (name, type1, type2, ability1, ability2, hp, attack, defence, spAttack, spDefence, speed, femaleChance, message) =>
-    {
-        if(this.getPokemonNumberByName(name) == -1)
-        {
-            allIsOk = true;
-            let text = 'errors:';
-            const types = [this.getTypeNumberByName(type1), this.getTypeNumberByName(type2)];
-            if(types[0] == -1){text += '\nThere is no type with name ' + type1; allIsOk = false;}
-            if(types[1] == -1){text += '\nThere is no type with name ' + type2; allIsOk = false;}
-            if(types[0] == types[1] && types[0] > -1){text += '\nPokemon can\'t have both the same type. if you want pokemon to be one type write - as second type'; allIsOk = false;}
-            const stats = [hp, attack, defence, spAttack, spDefence, speed];
-            const statnames = ['hp', 'attack', 'defence', 'spAttack', 'spDefence', 'speed'];
-            for(let i = 0; i < stats.length; i++)
-            {
-                if(isNaN(stats[i] * 1)){text += '\n' + statnames[i] + ' is not a number'; allIsOk = false;}
-                else if(stats[i] * 1 < 1){text += '\n' + statnames[i] + ' is too low (less than 1)'; allIsOk = false;}
-                else if(stats[i] * 1 > 255){text += '\n' + statnames[i] + ' is too big (more than 255)'; allIsOk = false;}
-            }
-            if(isNaN(femaleChance * 1)){text += '\nfemale chance is not a number'; allIsOk = false;}
-            else if(femaleChance * 1 < -1){text += '\nfemale chance is too low (less than -1)'; allIsOk = false;}
-            else if(femaleChance * 1 > 100){text += '\nfemale chance is too big (more than 100)'; allIsOk = false;}
-
-            if(allIsOk)
-            {
-                const stuffs = 'name,types,ability1,ability2,hp,attack,defence,specialattack,specialdefence,speed,femalechance';
-                const values = '"' + name + '","' + types[0] + ',' + types[1] + '","' + ability1 + '","' + ability2 + '",' + hp + ',' + attack + ',' + defence + ',' + spAttack + ',' + spDefence + ',' + speed + ',' + femaleChance; 
-                con.query('insert into pokemonList (' + stuffs + ') value (' + values + ')', (err, row) => 
-                {
-                    if(err == null)
-                    {
-                        client.bwe.pokemonList[client.bwe.pokemonList.length] = 
-                        {
-                            name: name,
-                            types: [types[0],types[1]],
-                            abilities: [ability1, ability2],
-                            hp: hp,
-                            attack: attack, 
-                            defence: defence,
-                            spAttack: spAttack,
-                            spDefence: spDefence,
-                            speed: speed,
-                            femaleChance: femaleChance
-
-                        }
-                        message.channel.send('Pokemon added');
-                    }
-                    else
-                    {
-                        message.channel.send('Error happend: ' + err);
-                        console.log(err);
-                    }
-
-                });   
-            }
-            else
-            {
-                message.channel.send(text);
-            }
-        }
-        else
-        {
-            message.channel.send('This pokemon already exists.');
-        }
-    }
-
-    getPokemonNumberByName = (_name) =>
-    {
-        for(let i = 0; i < client.bwe.pokemonList.length; i++)
-        {
-            if(client.bwe.pokemonList[i].name == _name){return i;}
-        }
-
-        return -1;
-    }
-
-    getTypeNumberByName = (_name) =>
-    {
-        for(let i = 0; i < POKEMON_TYPES.length; i++)
-        {
-            if(POKEMON_TYPES[i].english == _name.toLowerCase()){return i}
-        }
-
-        return -1;
-    }
-
-    isItAdmin = (_message) =>
-    {
-        for(let i = 0; i < DATA.adminList.length; i++)
-        {
-            if(_message.author.id == DATA.adminList[i]){return true;}
-        }
-
-        return false;
-    }
-
-    isItTester = (_message) =>
-    {
-        if(this.isItAdmin(_message)){return true;}
-        for(let i = 0; i < DATA.testers.length; i++)
-        {
-            if(_message.author.id == DATA.testers[i]){return true;}
-        }
-
-        return false;
-    }
-
-    deleteMessage = (_message) =>
-    {
-        let permissions = _message.channel.permissionsFor(_message.guild.me).toArray();
-        if(permissions.indexOf('MANAGE_MESSAGES') == -1)
-        {
-            _message.channel.send('Psst... i can\'t delete messages... ' + EMOJIS.hide);
-        }
-        else
-        {
-            _message.delete();
-        }
-    }
-
-    theError(error, aMessage, interaction)
-    {
-        if(interaction){interaction.reply('some error happens ' + EMOJIS.blush);}else{aMessage.message.channel.send('some error happens ' + EMOJIS.blush);}
-        client.channels.cache.get('946830760839610460').send('error: ' + error);
-        console.log(error);
-    }
-}
-client.bwe = new BweClass();
+client.bwe = require('./bweClass')();
 
 const NAMES = require('./jsony/names.json');
 function tellName(_message)
@@ -408,6 +96,13 @@ client.on('messageCreate', async (message) =>
         message.mentions.users.forEach(user => 
         {
             if(user.id == '934774688419282984')
+            {
+                pinged = true;
+            }
+        });
+        message.mentions.roles.forEach(role => 
+        {
+            if(message.guild.me.roles.cache.get(role.id))
             {
                 pinged = true;
             }
@@ -1007,86 +702,9 @@ client.on('messageCreate', async (message) =>
 client.on('messageReactionAdd', async (reaction, user) =>
 {
     if(user.bot){return false;}
-    let ACTION;
-
-    if((ACTION = client.bwe.picReact.find(reaction.message.channel.id, reaction.message.id)) > -1)
-    {
-        let thePic = client.bwe.picReact.theList[ACTION];
-        if(thePic.author == user.id)
-        {
-            if(reaction.emoji.name == 'bweLeft' || reaction.emoji.name == 'bweRight')
-            {
-                let filesArray = [];
-                const directory = thePic.dir;
-                await client.bwe.crawl(directory,filesArray);
-                if(filesArray.length > 1)
-                {
-                    let picNum = thePic.picture;
-                    if(reaction.emoji.name == 'bweLeft'){picNum--;}
-                    if(picNum == -1){picNum = filesArray.length - 1;}
-                    if(reaction.emoji.name == 'bweRight'){picNum++;}
-                    if(picNum == filesArray.length){picNum = 0;}
-                    const text = (picNum + 1) + '/' + filesArray.length;
-                    const theEnd = filesArray[picNum].slice(filesArray[picNum].indexOf('.'));
-                    const attachment = new Discord.MessageAttachment(filesArray[picNum], 'att' + theEnd);
-                    const embed = new MessageEmbed()
-                    .setTitle(thePic.OCname)
-                    .setColor(client.bwe.AzorDefaultColor)
-                    .setImage('attachment://att' + theEnd)
-                    .setFooter({ text: text});
-                    await thePic.message.edit({ embeds: [embed] ,files: [attachment]});
-                    thePic.picture = picNum;
-                    thePic.message.reactions.resolve(reaction).users.remove(user.id);
-                }
-            }
-            if(reaction.emoji.name == 'bweX')
-            {
-                thePic.message.delete();
-                client.bwe.picReact.theList.splice(ACTION, 1);
-            }
-        }
-    }
-
-    if((ACTION = client.queueMessages.get(reaction.message.guild.id)) != null && reaction.message.id == ACTION.id)
-    {
-        const guildQueue = client.player.getQueue(reaction.message.guild.id);
-        if(guildQueue == undefined){return false;}
-        let shouldIEditMessage = true;
-        let botChannel = 0;
-        let userChannel = 1;
-
-        await reaction.message.guild.members.fetch(user.id).then(member => 
-        {
-            if(member.voice.channel != null){userChannel = member.voice.channel.id;}
-        });
-        await reaction.message.guild.members.fetch(client.user.id).then(member => 
-        {
-            if(member.voice.channel != null){botChannel = member.voice.channel.id;}
-        });
-        if(botChannel == userChannel)
-        {
-            await ACTION.reactions.resolve(reaction).users.remove(user.id);
-            switch(reaction.emoji.name)
-            {
-                case 'bwePausePlay': if(guildQueue.paused){guildQueue.setPaused(false)}else{guildQueue.setPaused(true)} break;
-                case 'bweShuffle': guildQueue.shuffle(); break;
-                case 'bweUp': if(guildQueue.volume >= 200){guildQueue.setVolume(200);}else{guildQueue.setVolume(guildQueue.volume + 10);} break;
-                case 'bweDown': if(guildQueue.volume <= 0){guildQueue.setVolume(0);}else{guildQueue.setVolume(guildQueue.volume - 10);} break;
-                case 'bweSkip': guildQueue.skip(); break;
-                case 'bweLoop1': if(guildQueue.repeatMode == 1){guildQueue.setRepeatMode(0)}else{guildQueue.setRepeatMode(1)} break;
-                case 'bweLoop2': if(guildQueue.repeatMode == 2){guildQueue.setRepeatMode(0)}else{guildQueue.setRepeatMode(2)} break;
-                case 'bweStop': guildQueue.stop(); shouldIEditMessage = false; client.bwe.queueMessagesTimeouts.delete(reaction.message.guild.id); ACTION.channel.send('Music Stop!' + EMOJIS.sit); ACTION.delete(); client.queueMessages.delete(reaction.message.guild.id); break;
-
-                default: shouldIEditMessage = false;
-            }
-
-            if(shouldIEditMessage)
-            {  
-                const MSG = client.bwe.createQueueMessage(reaction.message.guild.id);
-                ACTION.edit({embeds: [MSG]});
-            }
-        }
-    }
+    const run = require('./reactions');
+    run(reaction, user, client);
+    delete require.cache[require.resolve('./reactions')]; 
 });
 
 client.on('messageDelete', (message) => 
@@ -1164,65 +782,69 @@ client.on('guildMemberRemove', (member) =>
 });
 
 client.on('interactionCreate', async interaction => {
-	if(interaction.isCommand())
+    try
     {
-        try
+        if(interaction.isCommand())
         {
-            if(interaction.guild)
+            try
             {
-                let permissions = interaction.channel.permissionsFor(interaction.guild.me).toArray();
-                if(permissions.indexOf('SEND_MESSAGES') == -1)
+                if(interaction.guild)
                 {
-                    interaction.reply({content: 'Sorry, i can\'t send messages here ' + EMOJIS.hide, ephemeral: true,});
-                    return;
+                    let permissions = interaction.channel.permissionsFor(interaction.guild.me).toArray();
+                    if(permissions.indexOf('SEND_MESSAGES') == -1)
+                    {
+                        interaction.reply({content: 'Sorry, i can\'t send messages here ' + EMOJIS.hide, ephemeral: true,});
+                        return;
+                    }
+                }
+                const run = require('./commands/' + interaction.commandName);
+                run(null, client, con, interaction);
+                delete require.cache[require.resolve('./commands/' + interaction.commandName)];
+    
+            }
+            catch(error){client.bwe.theError(error, null, interaction)}
+        }
+    
+        if(interaction.isButton())
+        {
+            const name = interaction.message.interaction.commandName;
+            const id = interaction.customId;
+            if(name == 'pic' || name == 'oc')
+            {
+                if(interaction.member.id != interaction.message.interaction.user.id){return;}
+                if(id == 'left' || id == 'right')
+                {
+                    
+                    let filesArray = [];
+                    const directory = interaction.message.embeds[0].title;
+                    await client.bwe.crawl(name + '\\' + directory,filesArray);
+                    if(filesArray.length > 1)
+                    {
+                        const footer = interaction.message.embeds[0].footer.text;
+                        let picNum = footer.slice(0, footer.indexOf('/')) * 1 - 1;
+                        if(id == 'left'){picNum--;}
+                        if(picNum == -1){picNum = filesArray.length - 1;}
+                        if(id == 'right'){picNum++;}
+                        if(picNum == filesArray.length){picNum = 0;}
+                        const text = (picNum + 1) + '/' + filesArray.length;
+                        const theEnd = filesArray[picNum].slice(filesArray[picNum].indexOf('.'));
+                        const attachment = new Discord.MessageAttachment(filesArray[picNum], 'att' + theEnd);
+                        const embed = new MessageEmbed()
+                        .setTitle(directory)
+                        .setColor(client.bwe.AzorDefaultColor)
+                        .setImage('attachment://att' + theEnd)
+                        .setFooter({ text: text});
+                        interaction.update({ embeds: [embed] ,files: [attachment]});
+                    }
+                }
+                if(id == 'delete')
+                {
+                    interaction.message.delete();
                 }
             }
-            const run = require('./commands/' + interaction.commandName);
-            run(null, client, con, interaction);
-            delete require.cache[require.resolve('./commands/' + interaction.commandName)];
-
-        }
-        catch(error){client.bwe.theError(error, null, interaction)}
-    }
-
-    if(interaction.isButton())
-    {
-        const name = interaction.message.interaction.commandName;
-        const id = interaction.customId;
-        if(name == 'pic' || name == 'oc')
-        {
-            if(interaction.member.id != interaction.message.interaction.user.id){return;}
-            if(id == 'left' || id == 'right')
-            {
-                
-                let filesArray = [];
-                const directory = interaction.message.embeds[0].title;
-                await client.bwe.crawl(name + '\\' + directory,filesArray);
-                if(filesArray.length > 1)
-                {
-                    const footer = interaction.message.embeds[0].footer.text;
-                    let picNum = footer.slice(0, footer.indexOf('/')) * 1 - 1;
-                    if(id == 'left'){picNum--;}
-                    if(picNum == -1){picNum = filesArray.length - 1;}
-                    if(id == 'right'){picNum++;}
-                    if(picNum == filesArray.length){picNum = 0;}
-                    const text = (picNum + 1) + '/' + filesArray.length;
-                    const theEnd = filesArray[picNum].slice(filesArray[picNum].indexOf('.'));
-                    const attachment = new Discord.MessageAttachment(filesArray[picNum], 'att' + theEnd);
-                    const embed = new MessageEmbed()
-                    .setTitle(directory)
-                    .setColor(client.bwe.AzorDefaultColor)
-                    .setImage('attachment://att' + theEnd)
-                    .setFooter({ text: text});
-                    interaction.update({ embeds: [embed] ,files: [attachment]});
-                }
-            }
-            if(id == 'delete')
-            {
-                interaction.message.delete();
-            }
         }
     }
+    catch(error){client.bwe.theError(error, null, interaction)}
 });
 
 //===== LOGINING IN ================

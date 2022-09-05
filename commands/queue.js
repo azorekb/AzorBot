@@ -18,7 +18,7 @@ module.exports = async (aMessage, client, con, interaction = null) =>
         if(interaction && interaction.guild == null){interaction.reply('It can\'t be used in DM'); return;}
         const channel = interaction ? interaction.channel : aMessage.message.channel;
         const serverID = interaction ? interaction.guildId : aMessage.message.guildId;
-        const MSG = client.bwe.createQueueMessage(serverID);
+        const MSG = client.bwe.createQueueMessage(serverID, client);
         if(interaction)
         {
             interaction.deferReply();

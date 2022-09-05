@@ -8,7 +8,8 @@
             "italiano": "Creazione fermata",
             "deutsch": "Erstellung abgebrochen",
             "francais": "Stopper la création",
-            "espanol": "Creación detenida"
+            "espanol": "Creación detenida",
+            "greece": "Τερματισμός"
             
         },
         "title":
@@ -18,18 +19,20 @@
             "italiano": "Creazione del personaggio Pokemon per Pokemon Adventure:",
             "deutsch": "Erstelle einen Pokémon Charakter für Pokemon Adventure:",
             "francais": "Créer un avatar pokémon pour Pokémon Adventure:",
-            "espanol": "Creando personaje para Pokemon Adventure"
+            "espanol": "Creando personaje para Pokemon Adventure",
+            "greece": "Δημιουργία Pokemon χαρακτήρα για το Pokemon Adventure:"
         },
         "steps":
         [
-            {"english": "choose your language: english, polski, deutsch, espanol, francais, italiano"},
+            {"english": "choose your language: english, polski, deutsch, espanol, francais, italiano, ελληνίδα"},
             {
                 "english": "Please choose your specie. Write name of pokemon or number in pokedex.",
                 "polski": "Proszę wybrać gatunek. Napisz nazwę pokemona lub jego numer w pokedexie.",
                 "deutsch": "Bitte wähle deine Spezies. Schreibe den Namen des Pokémon oder die Pokédexnummer.",
                 "italiano": "Perfavore scegli la tua specie. Scrivi il nome del pokemon o il numero nel pokedex.",
                 "francais": "Choisissez votre pokémon et écrivez son nom dans le pokédex",
-                "espanol": "Por favor elige tu especie. Escribe el nombre del Pokemon o su número en la pokedex"
+                "espanol": "Por favor elige tu especie. Escribe el nombre del Pokemon o su número en la pokedex",
+                "greece": "Παρακαλώ επέλεξε το είδος σου. Γράψε το όνομα του Pokemon ή τον αριθμό του στο Pokedex."
             },
             {
                 "english": "Please choose your form: regular",
@@ -37,7 +40,8 @@
                 "deutsch": "Bitte wähle deine Form: regular",
                 "italiano": "Perfavore scegli la tua forma: regular",
                 "francais": "Choisissez votre forme: regular",
-                "espanol": "Por favor elige tu forma: regular"
+                "espanol": "Por favor elige tu forma: regular",
+                "greece": "Παρακαλώ επίλεξε την μορφή σας: regular"
             },
             {
                 "english": "Please choose your gender:\nM - male, F - female, N - no gender.",
@@ -45,7 +49,8 @@
                 "deutsch": "Bitte wähle dein Geschlecht:\nM - männlich, F - weiblich, N - kein Geschlecht.",
                 "italiano": "Perfavore scegli il tuo genere: \nM - maschio, F - femmina, N - nessun genere.",
                 "francais": "Choisissez votre genre:\nM - male, F - femelle, N - neutre",
-                "espanol": "Por favor elige tu género:\nM - Hombre, F - Mujer, N - Sin género"
+                "espanol": "Por favor elige tu género:\nM - Hombre, F - Mujer, N - Sin género",
+                "greece": "Παρακαλώ επιλέξτε το φύλο σας:\nM - Άνδρας, F - Γυναίκα, N - Χωρίς φύλο"
             },
             {
                 "english": "Please write your nickname (please don't use any custom character, cus there could be a problem with dispaly it) max 20 characters.",
@@ -53,7 +58,8 @@
                 "deutsch": "Bitte schreibe deinen Nicknamen (Bitte nutze keine Sonderzeichen, da es zu Probelmen bei der Anzeige führen kann) max 20 Zeichen.",
                 "italiano": "Perfavore scrivi il tuo nickname (perfavore non usare caratteri speciali, perchè potrebbe esserci un problema nel proiettarli) massimo 20 caratteri.",
                 "francais": "Ecrivez votre surnom (veuillez ne pas utiliser des caractères spéciaux), 20 caractères maximum",
-                "espanol": "Elige tu nombre (Evita caracteres especiales, podrían ocasionar problemas gráficos) 20 caracteres máximo."
+                "espanol": "Elige tu nombre (Evita caracteres especiales, podrían ocasionar problemas gráficos) 20 caracteres máximo.",
+                "greece": "Παρακαλώ γράτε το ψευδώνυμό σου (μην χρησιμοποιείσεις προσαρμοσμένο χαρακτήρα, επειδή μπορεί να υπάρχει πρόβλημα στην προβολή) mas 20 χαρακτήρες."
             },
             {
                 "english": "Please Send your pfp here.",
@@ -61,7 +67,8 @@
                 "deutsch": "Bitte sende dein Profilbild.",
                 "italiano": "Perfavore manda la foto profilo qui.",
                 "francais": "Veuillez envoyer votre image de profil ici",
-                "espanol": "Envía tu icono de perfil aquí:"
+                "espanol": "Envía tu icono de perfil aquí:",
+                "greece": "Παρακαλώ στείλε την φωτογραφία προφίλ σου εδώ."
             },
             {
                 "english": "Now please choose your base stats. You can choose 35 points (for HP 1 point means 25hp)\nWrite in one message 7 values separate with space: [HP] [attack] [defence] [special attack] [special defence] [speed] [luck]",
@@ -69,7 +76,8 @@
                 "deutsch": "Bitta wähle deine Statuswerte. Du kannst 35 Punkte wählen (1 KP entspricht 25KP)\nSchreibe 7 Werte getrennt mit Leerzeichen: [KP] [Angriff] [Verteidigung] [Spezial-Angriff] [Spezial-Verteidigung] [Initiative] [Glück]",
                 "italiano": "Adesso scegli le tue statistiche di base. Puoi scegliere 35 punti (per I PV, 1 punto vale 25 PV)\nScrivi in un messaggio, 7 valori separati da uno spazio: [PV] [attacco] [difesa] [attacco speciale] [difesa speciale] [velocità] [fortuna]",
                 "francais": "Maintenant choisissez vos stats de base. Vous pouvez choisir 35 points (1 HP correspond à 25hp)\nEcrivez en un message 7 valeurs séparées par des espaces: [HP] [attack] [defence] [special attack] [special defence] [speed] [luck]",
-                "espanol": "Elige tus estadísticas base. Puedes elegir 35 puntos (Para HP 1 punto significa 25HP)\nEscribe en un solo mensaje 7 separados con espacios: [HP] [attack] [defence] [special attack]"              
+                "espanol": "Elige tus estadísticas base. Puedes elegir 35 puntos (Para HP 1 punto significa 25HP)\nEscribe en un solo mensaje 7 separados con espacios: [HP] [attack] [defence] [special attack]",
+                "greece": "Τώρα επέλεξε τα βασικά σου στατιστικά. Μπορείς να επιλέξεις 35 πόντους (Κάθε HP 1 ισούται με 25hp)\nΓράψε σε ένα μύνημα 7 τιμές διαχβρισμένες με κενό:  [HP] [επίθεση] [άμυνα] [ειδική επίθεση] [ειδική άμυνα] [ταχύτητα] [τύχη]"
             },
             {
                 "english": "Now I will ask you few questions to specify your nature.\nQuestion number ",
@@ -77,7 +85,8 @@
                 "deutsch": "Jetzt werde ich dir ein paar Fragen stellen um dein Wesen zu bestimmen.\nFrage nummer ",
                 "italiano": "Adesso ti farò qualche domanda in maniera da specificare la tua natura.\nDomanda numero ",
                 "francais": "Maintenant je vais vous poser quelques questions pour spécifier votre nature.\nQuestion numéro",
-                "espanol":"Ahora algunas preguntas para determinar tu naturaleza.\nNúmero de pregunta"
+                "espanol":"Ahora algunas preguntas para determinar tu naturaleza.\nNúmero de pregunta",
+                "greece": "Τώρα θα σε ρωτήσω μερικά πράγματα για την φύση σου.\nΕρώτηση νούμερο"
             },
             {
                 "english": "Please choose your ability (write name of it).",
@@ -85,7 +94,8 @@
                 "deutsch": "Bitte wähle deine Fähigkeit (schreibe den Namen).",
                 "italiano": "Perfavore scegli la tua abilità (Scrivi il suo nome).",
                 "francais": "Choisissez votre capacité (écrivez son nom)",
-                "espanol": "Elige tu habilidad (escribe su nombre)."
+                "espanol": "Elige tu habilidad (escribe su nombre).",
+                "greece": "Επίλεξε την ικανότητά σου (γράψτε το όνομά της)."
             },
             {
                 "english": "sending data...",
@@ -93,7 +103,8 @@
                 "deutsch": "sende Daten...",
                 "espanol": "Enviando datos…",
                 "italiano": "Invio dati...",
-                "francais": "Envoi des données.."
+                "francais": "Envoi des données..",
+                "greece": "Αποστολή δεδομένων..."
             }
         ],
         "errors": 
@@ -104,7 +115,8 @@
                 "polski": "Nieprawidłowa nazwa będź liczba.",
                 "italiano": "Numero o nome sbagliato, riprova.",
                 "francais": "Nombre ou nom incorrect, réessayez.",
-                "espanol": "Número o nombre equivocados, intenta de nuevo."
+                "espanol": "Número o nombre equivocados, intenta de nuevo.",
+                "greece": "Λάθος αριθμός ή όνομα, δοκίμασε ξανά."
             },
             {
                 "english": "Wrong form, try again.",
@@ -112,7 +124,8 @@
                 "polski": "Nieprawidłowa forma, spróbuj ponownie.",
                 "italiano": "Forma non valida, riprova.",
                 "francais": "Forme incorrecte, réessayez.",
-                "espanol": "Forma equivocada, intenta de nuevo."
+                "espanol": "Forma equivocada, intenta de nuevo.",
+                "greece": "Λάθος φόρμα, δοκίμασε ξανά."
             },
             {
                 "english": "wrong gender, try again.",
@@ -120,7 +133,8 @@
                 "polski": "Zła płeć, spróbuj ponownie.",
                 "italiano": "Genere non valido, riprova.",
                 "francais": "Genre incorrect, réessayez",
-                "espanol": "Género equivocado, intenta de nuevo."
+                "espanol": "Género equivocado, intenta de nuevo.",
+                "greece": "Λάθος φύλο, δοκίμασε ξανά."
             },
             {
                 "english": "Nickname is too long, please try include it in 20 characters max.",
@@ -128,7 +142,8 @@
                 "deutsch": "Nickname zu lang, bitte nutze maximal 20 Zeichen.",
                 "italiano": "Nickname troppo lungo, perfavore prova ad includerlo in massimo 20 caratteri",
                 "francais": "Surnom trop long, attention à ne pas dépasser 20 caractères maximum",
-                "espanol": "El nombre es demasiado largo, por favor usa 20 caracteres máximo"
+                "espanol": "El nombre es demasiado largo, por favor usa 20 caracteres máximo",
+                "greece": "Το ψευδώνυμο είναι πολύ μεγάλο, δοκίμασε να το συμπεριλάβεις σε 20 χαρακτήρες το πολύ."
             },
             {
                 "english": "no image in message.",
@@ -136,7 +151,8 @@
                 "deutsch": "Kein Bild in der Nachicht.",
                 "italiano": "Nessuna immagine nel messaggio.",
                 "francais": "Aucune image dans le message.",
-                "espanol": "No hay imagen en el mensaje."
+                "espanol": "No hay imagen en el mensaje.",
+                "greece": "Καμία εικόνα στο μήνυμα."
             },
             {
                 "english": "wrong sum of arguments",
@@ -144,7 +160,8 @@
                 "deutsch": "Falsche Summe der Argumente",
                 "italiano": "Somma non valida degli argomenti",
                 "francais": "Total d'arguments incorrect",
-                "espanol": "Suma incorrecta de argumentos"
+                "espanol": "Suma incorrecta de argumentos",
+                "greece": "Λάθος άθροισμα επιχειρημάτων"
             },
             {
                 "english": "Wrong number of arguments",
@@ -152,7 +169,8 @@
                 "deutsch": "Falsche Nummer der Argumente",
                 "italiano": "Numero degli argomenti non valido",
                 "francais": "Nombre d'arguments incorrect",
-                "espanol": "Número incorrecto de argumentos"
+                "espanol": "Número incorrecto de argumentos",
+                "greece": "Λάθος αριθμός επιχειρημάτων"
             },
             {
                 "english": "wrong language, try again"
@@ -166,7 +184,8 @@
                 "francais": "race",
                 "deutsch": "Spezies",
                 "espanol": "Especie",
-                "italiano": "specie"
+                "italiano": "specie",
+                "greece": "Είδος"
             },
             {
                 "english":"form",
@@ -174,7 +193,8 @@
                 "francais": "forme",
                 "deutsch": "Form",
                 "espanol": "Forma",
-                "italiano": "forma"
+                "italiano": "forma",
+                "greece": "Μορφή"
             },
             {
                 "english": "gender",
@@ -182,7 +202,8 @@
                 "francais": "genre",
                 "deutsch": "Geschlecht",
                 "espanol": "Género",
-                "italiano": "genere"
+                "italiano": "genere",
+                "greece": "Φύλο"
             },
             {
                 "english": "nickname",
@@ -190,7 +211,8 @@
                 "francais": "surnom",
                 "deutsch": "Nickname",
                 "espanol": "Nombre",
-                "italiano": "nickname"
+                "italiano": "nickname",
+                "greece": "Ψευδόνυμο"
             },
             {
                 "english": "nature",
@@ -198,7 +220,8 @@
                 "francais": "nature",
                 "deutsch": "Wesen",
                 "espanol": "Naturaleza",
-                "italiano": "natura"
+                "italiano": "natura",
+                "greece": "Φύση"
             }
         ],
         "genders":
@@ -209,7 +232,8 @@
                 "francais": "male",
                 "deutsch": "Männlich",
                 "espanol": "Hombre",
-                "italiano": "maschio"
+                "italiano": "maschio",
+                "greece": "Άνδρας"
             },
             {
                 "english": "female",
@@ -217,7 +241,8 @@
                 "francais": "femelle",
                 "deutsch": "Weiblich",
                 "espanol": "Mujer",
-                "italiano": "femmina"
+                "italiano": "femmina",
+                "greece": "Γυναίκα"
             },
             {
                 "english": "none",
@@ -225,7 +250,8 @@
                 "francais": "aucun",
                 "deutsch": "Keins",
                 "espanol": "Ninguno",
-                "italiano": "nessuno"
+                "italiano": "nessuno",
+                "greece": "Κανένα"
             }
         ],
         "answerWith":
@@ -235,7 +261,8 @@
             "francais": "Réponse avec nombre",
             "deutsch": "Antwort mit Nummer",
             "espanol": "Responde con un número",
-            "italiano": "rispondi con i numeri"
+            "italiano": "rispondi con i numeri",
+            "greece": "Απάντησε με νούμερο"
         },
         "step":
         {
@@ -244,7 +271,8 @@
             "deutsch" :"Schritt",
             "espanol": "Paso",
             "italiano": "passo",
-            "francais": "étape"
+            "francais": "étape",
+            "greece": "Βήμα"
         },
         "makeCancel": 
         {
@@ -253,7 +281,8 @@
             "deutsch": "schreibe “cancel” um den Prozess abzubrechen, schreibe “back“ um einen Schritt zurückzugehen",
             "espanol": "Escribe \"cancel\" para detener el proceso, escribe \"back\" para regresar al paso anterior",
             "italiano": "scrivi \"cancel\" per fermare la creazione. Scrivi \"back\" per tornare indietro di 1 passo",
-            "francais": "Ecrivez \"cancel\" pour arrêter le processus, écrivez \"back\" pour revenir en arrière"
+            "francais": "Ecrivez \"cancel\" pour arrêter le processus, écrivez \"back\" pour revenir en arrière",
+            "greece": "Γράψε \"cancel\" για να σταματήσεις την διαδικασία, γράψε \"back\" για να πας στο βήμα 1"
         }
     }
 }

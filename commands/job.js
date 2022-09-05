@@ -42,7 +42,7 @@ module.exports = async (aMessage, client, con, interaction = null) =>
             return [text, jobs];
         }
 
-        const language = ['deutsch', 'espanol', 'francais', 'italiano'];
+        const language = ['deutsch', 'espanol', 'francais', 'italiano', 'greece'];
         if(language.indexOf(theArgument) > -1)
         {
             let jobs = 0;

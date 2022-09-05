@@ -30,7 +30,8 @@
                "italiano": "Cosa sceglieresti?",
                "francais": "Que voudriez-vous choisir?",
                "deutsch": "Was würdest du wählen?",
-               "espanol": "¿Qué elegirías?"
+               "espanol": "¿Qué elegirías?",
+               "greece": "Τι θα επιλέξεις;"
             },
             "answers":
             [
@@ -41,7 +42,8 @@
                     "italiano": "Autorità",
                     "francais": "autorité",
                     "deutsch": "Autorität",
-                    "espanol": "Autoridad"
+                    "espanol": "Autoridad",
+                    "greece": "Εξουσία"
                 },
                 {
                     "changes":["+sp.atk", "-defence"],
@@ -50,7 +52,8 @@
                     "italiano": "Soldi",
                     "francais": "monnaie",
                     "deutsch": "Geld",
-                    "espanol": "Dinero"
+                    "espanol": "Dinero",
+                    "greece": "Χρήματα"
                 },
                 {
                     "changes":["+sp.def", "-sp.atk"],
@@ -59,7 +62,8 @@
                     "italiano": "Famiglia",
                     "francais": "famille",
                     "deutsch": "Familie",
-                    "espanol": "Familia"
+                    "espanol": "Familia",
+                    "greece": "Οικογένεια"
                 },
                 {
                     "changes":["+sp.atk", "-attack"],
@@ -68,7 +72,8 @@
                     "italiano": "Conoscenza",
                     "francais": "savoir/connaissance",
                     "deutsch": "Wissen",
-                    "espanol": "Conocimiento"
+                    "espanol": "Conocimiento",
+                    "greece": "Γνώση"
                 }
             ]
         },
@@ -80,7 +85,8 @@
                 "italiano": "Cosa perderesti velocemente?",
                 "francais": "Que voudriez-vous perdre le plus vite?",
                 "deutsch": "Was würdest du am schnellsten verlieren?",
-                "espanol": "Teniendo que elegir, ¿Qué perderías primero?"
+                "espanol": "Teniendo que elegir, ¿Qué perderías primero?",
+                "greece": "Τι θα έχανες πιο γρήγορα"
             },
             "answers":
             [
@@ -91,7 +97,8 @@
                     "italiano": "Famiglia",
                     "francais": "famille",
                     "deutsch": "Familie",
-                    "espanol": "Familia"
+                    "espanol": "Familia",
+                    "greece": "Οικογένεια"
                 },
                 {
                     "changes":["-sp.atk", "-attack"],
@@ -100,7 +107,8 @@
                     "italiano": "Amici",
                     "francais": "amis",
                     "deutsch": "Freunde",
-                    "espanol": "Amigos"
+                    "espanol": "Amigos",
+                    "greece": "Φίλοι"
                 },
                 {
                     "changes":["-sp.atk", "-luck"],
@@ -109,7 +117,8 @@
                     "italiano": "Fortuna",
                     "francais": "chance",
                     "deutsch": "Glück",
-                    "espanol": "Suerte"
+                    "espanol": "Suerte",
+                    "greece": "Τύχη"
                 },
                 {
                     "changes":["-hp", "+sp.atk"],
@@ -118,7 +127,8 @@
                     "italiano": "Vita",
                     "francais": "vie",
                     "deutsch": "Leben",
-                    "espanol": "Vida"
+                    "espanol": "Vida",
+                    "greece": "Ζωή"
                 }
             ]
         },
@@ -130,7 +140,8 @@
                 "italiano": "Come ti senti?",
                 "francais": "Comment tu te sens?",
                 "deutsch": "Wie fühlst du dich?",
-                "espanol": "¿Cómo te sientes?"
+                "espanol": "¿Cómo te sientes?",
+                "greece": "Τι θα αισθανόσουν"
             },
             "answers":
             [
@@ -141,7 +152,8 @@
                     "italiano": "Benissimo",
                     "francais": "excellent",
                     "deutsch": "exzellent",
-                    "espanol": "Excelente"
+                    "espanol": "Excelente",
+                    "greece": "Εξαιρετικά"
                 },
                 {
                     "english": "good", 
@@ -150,7 +162,8 @@
                     "francais": "bien",
                     "changes":["+hp", "-sp.atk"],
                     "deutsch": "gut",
-                    "espanol": "Bien"
+                    "espanol": "Bien",
+                    "greece": "Καλό"
                 },
                 {
                     "english": "bad", 
@@ -159,7 +172,8 @@
                     "francais": "mal",
                     "changes":["+defence", "-hp"],
                     "deutsch": "schlecht",
-                    "espanol": "Mal"
+                    "espanol": "Mal",
+                    "greece": "Κακό"
                 },
                 {
                     "english": "i don't know...",
@@ -168,7 +182,8 @@
                     "francais": "je ne sais pas...",
                     "changes":["-sp.def", "-hp"],
                     "deutsch": "ich weiß nicht...",
-                    "espanol": "No lo sé..."
+                    "espanol": "No lo sé...",
+                    "greece": "Δεν ξέρω..."
                 }
             ]
         },
@@ -180,7 +195,8 @@
                 "italiano": "Hai paura della morte?",
                 "francais": "As-tu peur de la mort?",
                 "deutsch": "Hast du Angst vor den Tot?",
-                "espanol": "¿Le temes a la muerte?"
+                "espanol": "¿Le temes a la muerte?",
+                "greece": "Φοβάσαι τον θάνατο;"
             },
             "answers":
             [
@@ -191,6 +207,7 @@
                     "deutsch": "ja",
                     "francais": "oui",
                     "italiano": "Sì",
+                    "greece": "Ναι",
                     "changes":["+defence", "-attack"]
                 },
                 {
@@ -200,6 +217,7 @@
                     "deutsch": "ich weiß nicht",
                     "francais": "je ne sais pas",
                     "italiano": "Non lo so",
+                    "greece": "Δεν ξέρω",
                     "changes":["+attack", "-attack" ]
                 },
                 {
@@ -209,6 +227,7 @@
                     "deutsch": "nein",
                     "francais": "non",
                     "italiano": "no",
+                    "greece": "Όχι",
                     "changes":["+attack", "-defence" ]
                 },
                 {
@@ -225,7 +244,8 @@
                 "italiano": "Hai paura che qualcuno dei tuoi amici, famiglia, o a te caro, possa morire?",
                 "francais": "As-tu peur qu'un de tes amis, de ta famille, ou quelque personne importante pour toi pourrait mourir?",
                 "deutsch": "Hast du angst das jemand von deinen Freunden, Familie oder jemand wichtiges sterben könnte?",
-                "espanol": "¿Temes que alguno de tus amigos, familiares, o alguien importante a ti muriera?"
+                "espanol": "¿Temes que alguno de tus amigos, familiares, o alguien importante a ti muriera?",
+                "greece": "Φοβάσαι μήπως κάποιος από τους φίλους σου, την οικογένεια, ή κάποιον σημαντικό που θα μπορούσαι να πεθάνει;"
             },
             "answers":
             [
@@ -236,6 +256,7 @@
                     "deutsch": "ja",
                     "francais": "oui",
                     "italiano": "Sì",
+                    "greece": "Ναι",
                     "changes":["+sp.def", "-sp.atk" ]
                 },
                 {
@@ -245,6 +266,7 @@
                     "deutsch": "ich weiß nicht",
                     "francais": "je ne sais pas",
                     "italiano": "Non lo so",
+                    "greece": "Δεν ξέρω",
                     "changes":["+sp.atk", "-sp.atk" ]
                 },
                 {
@@ -254,6 +276,7 @@
                     "deutsch": "nein",
                     "francais": "non",
                     "italiano": "no",
+                    "greece": "Όχι",
                     "changes":["+sp.atk", "-sp.def" ]
                 },
                 {
@@ -262,7 +285,8 @@
                     "italiano": "Perchè dovrei esserne spaventato/a?",
                     "francais": "pourquoi serais-je effrayé?",
                     "changes":["-sp.def", "-sp.atk"],
-                    "deutsch": "warum würde ich Angst haben?"
+                    "deutsch": "warum würde ich Angst haben?",
+                    "greece": "Γιατί να φοβάμαι;"
                 }
             ]
         },
@@ -273,7 +297,8 @@
                 "polski": "Czy twoje odpowiedzi były/będą szczere?",
                 "italiano": "Hai risposto/risponderai onestamente?",
                 "deutsch": "Hast du ehrlich geantwortet?",
-                "francais": "Avez-vous répondu honnêtement ?"
+                "francais": "Avez-vous répondu honnêtement ?",
+                "greece": "Θα απαντήσεις τίμια;"
             },
             "answers":
             [
@@ -284,6 +309,7 @@
                     "deutsch": "ja",
                     "francais": "oui",
                     "italiano": "Sì",
+                    "greece": "Ναι",
                     "changes":["+attack", "-sp.def" ]
                 },
                 {
@@ -293,6 +319,7 @@
                     "deutsch": "nein",
                     "francais": "non",
                     "italiano": "no",
+                    "greece": "Όχι",
                     "changes":["+defence", "-sp.atk" ]
                 },
                 {
@@ -301,7 +328,8 @@
                     "italiano": "lol, nha",
                     "changes":["+luck", "-sp.def" ],
                     "deutsch": "lol, nein",
-                    "francais": "lol, nope"
+                    "francais": "lol, nope",
+                    "greece": "lol, μπα"
                 },
                 {
                     "english": "ok.", 
@@ -309,7 +337,8 @@
                     "italiano": "ok.",
                     "deutsch": "ok.",
                     "changes":["+luck", "-defence"],
-                    "francais": "d'accord."
+                    "francais": "d'accord.",
+                    "greece": "ok."
                 }
             ]
         },
@@ -320,7 +349,8 @@
                 "polski": "Jaką pozycję w piłce nożnej wybierasz?",
                 "italiano": "Quale ruolo sceglieresti da calciatore?",
                 "deutsch": "Welche Position in Fußball würdest du wählen?",
-                "francais": "quelle position dans le football choisiriez-vous ?"
+                "francais": "quelle position dans le football choisiriez-vous ?",
+                "greece": "Ποια θέση στο ποδόσφαιρο θα επέλεγες;"
             },
             "answers":
             [
@@ -330,7 +360,8 @@
                     "italiano": "Attaccante",
                     "changes":["+attack", "-hp" ],
                     "deutsch": "Angreifer",
-                    "francais": "attaquant"
+                    "francais": "attaquant",
+                    "greece": "Επιθετικός"
                 },
                 {
                     "english": "support", 
@@ -338,7 +369,8 @@
                     "italiano": "Supporto",
                     "changes":["+sp.atk", "-hp" ],
                     "deutsch": "Unterstützer",
-                    "francais": "soutien"
+                    "francais": "soutien",
+                    "greece": "Υποστήριξη"
                 },
                 {
                     "english": "defender", 
@@ -346,7 +378,8 @@
                     "italiano": "Difensore",
                     "changes":["+hp", "-sp.atk" ],
                     "deutsch": "Verteidiger",
-                    "francais": "défenseur"
+                    "francais": "défenseur",
+                    "greece": "Αμυντικός"
                 },
                 {
                     "english": "goalkeeper", 
@@ -354,7 +387,8 @@
                     "italiano": "Portiere",
                     "changes":["+hp", "-attack" ],
                     "deutsch": "Torwart",
-                    "francais": "gardien de but"
+                    "francais": "gardien de but",
+                    "greece": "Τερματοφύλακας"
                 }
             ]
         },
@@ -365,7 +399,8 @@
                 "polski": "Czy czujesz się dobrze w swojej okolicy?",
                 "italiano": "Senti che tutto vada bene nel luogo in cui ti trovi ora?",
                 "deutsch": "Hast du das Gefühl, dass an dem Ort, an dem du bist, alles in Ordnung ist?",
-                "francais": "Sentez-vous que tout va bien où vous vous situez ?"
+                "francais": "Sentez-vous que tout va bien où vous vous situez ?",
+                "greece": "Αισθάνεσαι πως όλα είναι καλά στο μέρος που βρίσκεσαι;"
             },
             "answers":
             [
@@ -376,6 +411,7 @@
                     "deutsch": "ja",
                     "francais": "oui",
                     "italiano": "Sì",
+                    "greece": "Ναι",
                     "changes":["+luck", "+hp" ]
                 },
                 {
@@ -385,6 +421,7 @@
                     "deutsch": "ich weiß nicht",
                     "francais": "je ne sais pas",
                     "italiano": "Non lo so",
+                    "greece": "Δεν ξέρω",
                     "changes":["+luck", "-luck" ]
                 },
                 {
@@ -394,6 +431,7 @@
                     "deutsch": "nein",
                     "francais": "non",
                     "italiano": "no",
+                    "greece": "Όχι",
                     "changes":["-luck", "+hp" ]
                 },
                 {
@@ -409,7 +447,8 @@
                 "polski": "Jakie z tych słów najlepiej do ciebie pasuje?",
                 "italiano": "Quali delle seguenti parole ti descrive di più?",
                 "deutsch": "Welches der folgenden Wörter beschreibt dich am besten?",
-                "francais": "Quel mot depuis ce qui suit vous décrit le mieux ?"
+                "francais": "Quel mot depuis ce qui suit vous décrit le mieux ?",
+                "greece": "Ποια λέξη από τις ακόλουθες σε περιγράφουν καλύτερα;"
             },
             "answers":[
                 {
@@ -417,7 +456,9 @@
                     "polski": "Spryt",
                     "italiano": "astuzzia",
                     "changes":["+speed", "+sp.atk" ],
-                    "deutsch": "gerissen"
+                    "deutsch": "gerissen",
+                    "francais": "ruse",
+                    "greece": "Πονηριά"
                 },
                 {
                     "english": "wisdom", 
@@ -425,7 +466,8 @@
                     "italiano": "saggezza",
                     "changes":["+attack", "+defence" ],
                     "deutsch": "Weisheit",
-                    "francais": "sagesse"
+                    "francais": "sagesse",
+                    "greece": "Σοφία"
                 },
                 {
                     "english": "luck", 
@@ -433,7 +475,8 @@
                     "italiano": "fortuna",
                     "changes":["+speed", "+hp" ],
                     "deutsch": "Glück",
-                    "francais": "chance"
+                    "francais": "chance",
+                    "greece": "Τύχη"
                 },
                 {
                     "english": "calmness", 
@@ -441,7 +484,8 @@
                     "italiano": "calma",
                     "changes":["+sp.def", "+defence" ],
                     "deutsch": "Ruhe",
-                    "francais": "calme"
+                    "francais": "calme",
+                    "greece": "Ηρεμία"
                 }
             ]
         },
@@ -452,7 +496,8 @@
                 "polski": "Jakie z tych słów do ciebie najmniej pasuje?",
                 "italiano": "Quali delle seguenti parole non ti descrive affatto?",
                 "deutsch": "Welches der folgenden Wörter beschreibt Sie überhaupt nicht?",
-                "francais": "Quel mot depuis ce qui suit ne vous décrit pas du tout?"
+                "francais": "Quel mot depuis ce qui suit ne vous décrit pas du tout?",
+                "greece": "Ποια από τις ακόλουθες λέξεις δεν σε περιγράφει καθόλου;"
             },
             "answers":
             [
@@ -462,7 +507,8 @@
                     "italiano": "danza",
                     "changes":["-speed", "-sp.atk" ],
                     "deutsch": "Tanz",
-                    "francais": "danse"
+                    "francais": "danse",
+                    "greece": "Χορός"
                 },
                 {
                     "english": "school", 
@@ -470,7 +516,8 @@
                     "italiano": "scuola",
                     "changes":["-defence", "-attack" ],
                     "deutsch": "Schule",
-                    "francais": "école"
+                    "francais": "école",
+                    "greece": "Σχολείο"
                 },
                 {
                     "english": "food", 
@@ -478,7 +525,8 @@
                     "italiano": "cibo",
                     "changes":["+speed", "-hp" ],
                     "deutsch": "Essen",
-                    "francais": "nourriture"
+                    "francais": "nourriture",
+                    "greece": "Φαγητό"
                 },
                 {
                     "english": "light", 
@@ -486,7 +534,8 @@
                     "italiano": "luce",
                     "changes":["-luck", "-luck" ],
                     "deutsch": "Licht",
-                    "francais": "lumière"
+                    "francais": "lumière",
+                    "greece": "Φώς"
                 }
             ]
         },
@@ -497,7 +546,8 @@
                 "polski": "Czy czujesz że ten świat powinien się zmienić?",
                 "italiano": "Hai fiducia nel cambiamento del mondo?",
                 "deutsch": "Glaubst du, die Welt sollte sich ändern?",
-                "francais": "Crois-tu que le monde devrait changer ?"
+                "francais": "Crois-tu que le monde devrait changer ?",
+                "greece": "Πιστεύεις πως ο κόσμος πρέπει να αλλάξει;"
             },
             "answers":[
                 {
@@ -507,6 +557,7 @@
                     "deutsch": "ja",
                     "francais": "oui",
                     "italiano": "Sì",
+                    "greece": "Ναι",
                     "changes":["+attack", "+speed" ]
                 },
                 {
@@ -516,6 +567,7 @@
                     "deutsch": "ich weiß nicht",
                     "francais": "je ne sais pas",
                     "italiano": "Non lo so",
+                    "greece": "Δεν ξέρω",
                     "changes":["+attack", "-attack" ]
                 },
                 {
@@ -525,6 +577,7 @@
                     "deutsch": "nein",
                     "francais": "non",
                     "italiano": "no",
+                    "greece": "Όχι",
                     "changes":["+defence", "+sp.atk" ]
                 },
                 {
@@ -533,7 +586,8 @@
                     "changes":["+luck", "+hp" ],
                     "italiano": "Non sono qui per decidere approposito di questo",
                     "deutsch": "Ich bin nicht hier, um darüber zu entscheiden",
-                    "francais": "Je ne suis pas là pour décider à ce propos"
+                    "francais": "Je ne suis pas là pour décider à ce propos",
+                    "greece": "Δεν είμαι εδώ για να το αποφασίσω"
                 }
             ]
         },
@@ -544,7 +598,8 @@
                 "polski": "Co przemawia do ciebie najbardziej?",
                 "italiano": "cosa ti si appella di più?",
                 "deutsch": "Was spricht dich am meisten an?",
-                "francais": "Qu'est-ce qui te parle le plus ?"
+                "francais": "Qu'est-ce qui te parle le plus ?",
+                "greece": "Tι σε ευχαριστεί περισσότερο;"
             },
             "answers":[
                 {
@@ -553,7 +608,8 @@
                     "changes":["+hp", "+speed" ],
                     "italiano": "natura",
                     "deutsch": "Natur",
-                    "francais": "nature"
+                    "francais": "nature",
+                    "greece": "Φύση"
                 },
                 {
                     "english": "technology", 
@@ -561,7 +617,8 @@
                     "changes":["+speed", "-luck" ],
                     "italiano": "tecnologia",
                     "deutsch": "Technologie",
-                    "francais": "technologie"
+                    "francais": "technologie",
+                    "greece": "Τεχνολογία"
                 },
                 {
                     "english": "calm", 
@@ -569,7 +626,8 @@
                     "changes":["-sp.atk", "-attack" ],
                     "italiano": "calma",
                     "deutsch": "Ruhe",
-                    "francais": "calme"
+                    "francais": "calme",
+                    "greece": "Ηρεμία"
                 },
                 {
                     "english": "beauty", 
@@ -577,7 +635,8 @@
                     "changes":["+luck", "-attack" ],
                     "italiano": "bellezza",
                     "deutsch": "Schönheit",
-                    "francais": "beauté"
+                    "francais": "beauté",
+                    "greece": "Ομορφιά"
                 }
             ]
         },
@@ -588,7 +647,8 @@
                 "polski": "Gdzie wolisz mieszkać?",
                 "italiano": "Dove preferisci vivere?",
                 "deutsch": "Wo bevorzugst du zu leben?",
-                "francais": "Ou préfères-tu vivre ?"
+                "francais": "Ou préfères-tu vivre ?",
+                "greece": "Που θα προτιμούσες να ζείς;"
             },
             "answers":
             [
@@ -598,7 +658,8 @@
                     "changes":["+luck", "+luck" ],
                     "italiano": "in un palazzo",
                     "deutsch": "in einen Palast",
-                    "francais": "dans un palais"
+                    "francais": "dans un palais",
+                    "greece": "Σε ένα παλάτι"
                 },
                 {
                     "english": "in a house", 
@@ -606,7 +667,8 @@
                     "changes":["-sp.atk", "-sp.atk" ],
                     "italiano": "in una casa",
                     "deutsch": "in ein Haus",
-                    "francais": "dans une maison"
+                    "francais": "dans une maison",
+                    "greece": "Σε ένα σπίτι"
                 },
                 {
                     "english": "in a hut", 
@@ -614,7 +676,8 @@
                     "changes":["+hp", "+speed" ],
                     "italiano": "in una capanna",
                     "deutsch": "in einer Hütte",
-                    "francais": "dans une hutte"
+                    "francais": "dans une hutte",
+                    "greece": "Σε μια καλύβα"
                 },
                 {
                     "english": "in a treehouse", 
@@ -622,7 +685,8 @@
                     "changes":["+speed", "-sp.def" ],
                     "italiano": "in una casa sull'albero",
                     "deutsch": "in ein Baumhaus",
-                    "francais": "dans une cabane perchée"
+                    "francais": "dans une cabane perchée",
+                    "greece": "Σε ένα δεντρόσπιτο"
                 }
             ]
         },
@@ -633,7 +697,8 @@
                 "polski": "Co czujesz gdy jesteś w lesie?",
                 "italiano": "come ti senti quando sei in una foresta?",
                 "deutsch": "Was fühlst du im Wald?",
-                "francais": "Que sentez-vous quand vous êtes dans une forêt?"
+                "francais": "Que sentez-vous quand vous êtes dans une forêt?",
+                "greece": "Τι αισθάνεσαι όταν είσαι σε ένα δάσος;"
             },
             "answers":[
                 {
@@ -642,7 +707,8 @@
                     "changes":["+luck", "-defence" ],
                     "italiano": "pace",
                     "deutsch": "Frieden",
-                    "francais": "paix"
+                    "francais": "paix",
+                    "greece": "Γαλήνη"
                 },
                 {
                     "english": "fear", 
@@ -650,7 +716,8 @@
                     "changes":["+sp.def", "-attack" ],
                     "italiano": "paura",
                     "deutsch": "Angst",
-                    "francais": "peur"
+                    "francais": "peur",
+                    "greece": "Φόβο"
                 },
                 {
                     "english": "harmony", 
@@ -658,7 +725,8 @@
                     "changes":["+luck", "-attack" ],
                     "italiano": "armonico/a",
                     "deutsch": "Harmonie",
-                    "francais": "harmonie"
+                    "francais": "harmonie",
+                    "greece": "Αρμονία"
                 },
                 {
                     "english": "just nice", 
@@ -666,7 +734,8 @@
                     "changes":["+speed", "+luck" ],
                     "italiano": "semplicemente bene",
                     "deutsch": "einfach schön",
-                    "francais": "juste gentil"
+                    "francais": "juste gentil",
+                    "greece": "Απλά καλά"
                 }
             ]
         },
@@ -677,7 +746,8 @@
                 "polski": "Co czujesz gdy jesteś w mieście?",
                 "italiano": "Come ti senti quando sei in una città?",
                 "deutsch": "Was fühlst du, wenn du in einer Stadt bist?",
-                "francais": "Que sentez-vous quand vous être dans une ville?"
+                "francais": "Que sentez-vous quand vous être dans une ville?",
+                "greece": "Τι αισθάνεσαι όταν είσαι σε μια πόλη;"
             },
             "answers":
             [
@@ -687,7 +757,8 @@
                     "changes":["+sp.def", "-attack" ],
                     "italiano": "paura",
                     "deutsch": "Angst",
-                    "francais": "fear"
+                    "francais": "fear",
+                    "greece": "Φόβο"
                 },
                 {
                     "english": "comfort", 
@@ -695,7 +766,8 @@
                     "changes":["+speed", "+hp" ],
                     "italiano": "conforto",
                     "deutsch": "Komfort",
-                    "francais": "confort"
+                    "francais": "confort",
+                    "greece": "Άνεση"
                 },
                 {
                     "english": "discomfort", 
@@ -703,7 +775,8 @@
                     "changes":["+defence", "-luck" ],
                     "italiano": "sconfortato",
                     "deutsch": "Unbehagen",
-                    "francais": "déconfort"
+                    "francais": "déconfort",
+                    "greece": "Δυσφορία"
                 },
                 {
                     "english": "nothing", 
@@ -711,7 +784,8 @@
                     "changes":["+hp", "-hp" ],
                     "italiano": "nulla",
                     "deutsch": "nichts",
-                    "francais": "rien"
+                    "francais": "rien",
+                    "greece": "Τίποτα"
                 }
             ]
         },
@@ -722,7 +796,8 @@
                 "polski": "Co czujesz gdy jesteś w górach?",
                 "italiano": "come ti senti quando sei in una montagna?",
                 "deutsch": "Was fühlst du, wenn du auf einem Berg bist?",
-                "francais": "Que sentez-vous à la montagne ?"
+                "francais": "Que sentez-vous à la montagne ?",
+                "greece": "Τι αισθάνεσαι όταν είσαι σε ένα βουνό;"
             },
             "answers":
             [
@@ -732,7 +807,8 @@
                     "changes":["-sp.atk", "-attack" ],
                     "italiano": "paura",
                     "deutsch": "Angst",
-                    "francais": "peur"
+                    "francais": "peur",
+                    "greece": "Φόβο"
                 },
                 {
                     "english": "discomfort", 
@@ -740,7 +816,8 @@
                     "changes":["+sp.def", "-attack" ],
                     "italiano": "sconfortato",
                     "deutsch": "Unbehagen",
-                    "francais": "déconfort"
+                    "francais": "déconfort",
+                    "greece": "Δυσφορία"
                 },
                 {
                     "english": "fascination", 
@@ -748,7 +825,8 @@
                     "changes":["+speed", "+sp.atk" ],
                     "italiano": "fascino",
                     "deutsch": "Faszination",
-                    "francais": "fascination"
+                    "francais": "fascination",
+                    "greece": "Γοητεία"
                 },
                 {
                     "english": "i've never been", 
@@ -756,7 +834,8 @@
                     "changes":["+speed", "-luck" ],
                     "italiano": "non ci sono mai stato/a",
                     "deutsch": "War ich noch nie",
-                    "francais": "je n'y ai jamais été"
+                    "francais": "je n'y ai jamais été",
+                    "greece": "Ποτέ δεν ήμουν σε ένα"
                 }
             ]
         },
@@ -767,7 +846,8 @@
                 "polski": "Co czujesz gdy jesteś nad morzem?",
                 "italiano": "Come ti senti quando sei vicino al mare?",
                 "deutsch": "Was du fühlst, wenn du am Meer bist?",
-                "francais": "Que sentez-vous à la mer ?"
+                "francais": "Que sentez-vous à la mer ?",
+                "greece": "Τι αισθάνεσαι όταν είσαι στην θάλασσα;"
             },                
             "answers":
             [
@@ -776,28 +856,36 @@
                     "polski": "przyjemność",
                     "changes":["+luck", "-defence" ],
                     "italiano": "piacere",
-                    "deutsch": "angenehm"
+                    "deutsch": "angenehm",
+                    "francais": "agréablement",
+                    "greece": "Τερπνώς"
                 },
                 {
                     "english": "happiness", 
                     "polski": "szczęście",
                     "changes":["+luck", "+speed" ],
                     "italiano": "felicità",
-                    "deutsch": "glücklich"
+                    "deutsch": "glücklich",
+                    "francais": "bonheur",
+                    "greece": "Ευτιχία"
                 },
                 {
                     "english": "anxiety", 
                     "polski": "niepokój",
                     "changes":["+defence", "-attack" ],
                     "italiano": "ansia",
-                    "deutsch": "Angst"
+                    "deutsch": "Angst",
+                    "francais": "anxiété",
+                    "greece": "Άγχος"
                 },
                 {
                     "english": "boredness", 
                     "polski": "nudę",
                     "changes":["-speed", "-speed" ],
                     "italiano": "noia",
-                    "deutsch": "Langeweile"
+                    "deutsch": "Langeweile",
+                    "francais": "ennui",
+                    "greece": "Βαρεμάρα"
                 }
             ]
         },
@@ -807,7 +895,9 @@
                 "english": "What you feel when you're in a cave?",
                 "polski": "Co czujesz gdy jesteś w jaskini?",
                 "italiano": "Come ti senti quando stai in caverna?",
-                "deutsch": "Was du fühlst, wenn du in einer Höhle bist?"
+                "deutsch": "Was du fühlst, wenn du in einer Höhle bist?",
+                "francais": "Que ressentez-vous dans une grotte ?",
+                "greece": "Τι αισθάνεσαι όταν είσαι σε μια σπηλιά;"
             },
             "answers":[
                 {
@@ -815,21 +905,27 @@
                     "polski": "strach",
                     "changes":["-hp", "-speed" ],
                     "italiano": "paura",
-                    "deutsch": "Angst"
+                    "deutsch": "Angst",
+                    "francais": "peur",
+                    "greece": "Φόβο"
                 },
                 {
                     "english": "discomfort", 
                     "polski": "dyskomfort",
                     "changes":["+speed", "-hp" ],
                     "italiano": "sconfortato",
-                    "deutsch": "Unbehagen"
+                    "deutsch": "Unbehagen",
+                    "francais": "déconfort",
+                    "greece": "Δυσφορία"
                 },
                 {
                     "english": "good", 
                     "polski": "Dobrze",
                     "changes":["+hp", "-speed" ],
                     "italiano": "bene",
-                    "deutsch": "gut"
+                    "deutsch": "gut",
+                    "francais": "bien",
+                    "greece": "Καλά"
                 },
                 {
                     "english": "i don't know", 
@@ -838,6 +934,7 @@
                     "deutsch": "ich weiß nicht",
                     "francais": "je ne sais pas",
                     "italiano": "Non lo so",
+                    "greece": "Δεν ξέρω",
                     "changes":["+hp", "-hp" ]
                 }
             ]
@@ -848,7 +945,9 @@
                 "english": "What element suits you the most?",
                 "polski": "Który żywioł pasuje do ciebie najbardziej?",
                 "italiano": "Quale elemento si appella meglio a te?",
-                "deutsch": "Welches Element passt am besten zu dir?"
+                "deutsch": "Welches Element passt am besten zu dir?",
+                "francais": "Quel élément vous correspond le plus ?",
+                "greece": "Ποιο στοιχείο σου ταιριάζει περισσότερο;"
             },
             "answers":
             [
@@ -857,28 +956,36 @@
                     "polski": "woda",
                     "changes":["+hp", "+sp.atk" ],
                     "italiano": "acqua",
-                    "deutsch": "Wasser"
+                    "deutsch": "Wasser",
+                    "francais": "eau",
+                    "greece": "Νερό"
                 },
                 {
                     "english": "air", 
                     "polski": "powietrze",
                     "changes":["+speed", "+sp.atk" ],
                     "italiano": "aria",
-                    "deutsch": "Luft"
+                    "deutsch": "Luft",
+                    "francais": "air",
+                    "greece": "Αέρας"
                 },
                 {
                     "english": "fire", 
                     "polski": "ogień",
                     "changes":["+sp.atk", "-attack" ],
                     "deutsch": "Feuer",
-                    "italiano": "fuoco"
+                    "italiano": "fuoco",
+                    "francais": "feu",
+                    "greece": "Φωτιά"
                 },
                 {
                     "english": "earth", 
                     "polski": "Ziemia",
                     "changes":["+defence", "+sp.def" ],
                     "deutsch": "Erde",
-                    "italiano": "terra"
+                    "italiano": "terra",
+                    "francais": "terre",
+                    "greece": "Γη"
                 }
             ]
         },
@@ -888,7 +995,9 @@
                 "english": "Which season you like the most?",
                 "polski": "Którą porę roku lubisz najbardziej?",
                 "deutsch": "Welche Jahreszeit magst du am meisten?",
-                "italiano": "Quale stagione ti piace di più?"
+                "italiano": "Quale stagione ti piace di più?",
+                "francais": "Quelle saison préferez-vous?",
+                "greece": "Ποια εποχή σου αρέσει περισσότερο;"
             },
             "answers":
             [
@@ -897,28 +1006,36 @@
                     "polski": "Wiosna",
                     "changes":["+hp", "-attack"],
                     "deutsch": "Frühling",
-                    "italiano": "Primavera"
+                    "italiano": "Primavera",
+                    "francais": "Printemps",
+                    "greece": "Άνοιξη"
                 },
                 {
                     "english": "Summer", 
                     "polski": "Lato",
                     "changes":["+sp.atk", "-hp"],
                     "deutsch": "Sommer",
-                    "italiano": "Estate"
+                    "italiano": "Estate",
+                    "francais": "été",
+                    "greece": "Καλοκαίρι"
                 },
                 {
                     "english": "Aunt",
                     "polski": "Jesień",
                     "changes":["+attack", "-sp.def"],
                     "deutsch": "Herbst",
-                    "italiano": "Autunno"
+                    "italiano": "Autunno",
+                    "francais": "Tante",
+                    "greece": "Φθινόπωρο"
                 },
                 {
                     "english": "Winter", 
                     "polski": "Zima",
                     "changes":["+sp.atk", "-speed"],
                     "deutsch": "Winter",
-                    "italiano": "Inverno"
+                    "italiano": "Inverno",
+                    "francais": "Hiver",
+                    "greece": "Χειμώνας"
                 }
             ]
         }

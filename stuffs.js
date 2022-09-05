@@ -278,6 +278,11 @@ module.exports = async (message, client, con) =>
             }
         });
 
+        // if(message.content.toLocaleLowerCase().startsWith('i\'m ') && message.content.length < 2000)
+        // {
+        //     message.channel.send('Hi ' + message.content.slice(4) + '! I\'m Azor.');
+        // }
+
         if(message.content.toLocaleLowerCase().startsWith('bwe') && message.content.toLocaleLowerCase() != 'bwe!')
         {
             let msg = message.content;
@@ -322,9 +327,10 @@ module.exports = async (message, client, con) =>
             let error = 0;
             switch(progress.step)
             {
-                case 0:    
+                case 0:
                 {
-                    const languages = ['deutsch', 'espanol', 'francais', 'italiano', 'polski', 'english'];
+                    if(message.content.toLowerCase() == 'ελληνίδα'){message.content = 'greece'}
+                    const languages = ['deutsch', 'espanol', 'francais', 'italiano', 'polski', 'english', 'greece'];
                     if(languages.indexOf(message.content.toLowerCase()) > -1)
                     {
                         progress.language = message.content.toLowerCase();
