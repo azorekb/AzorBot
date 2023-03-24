@@ -1,9 +1,7 @@
-module.exports = async (aMessage, client, con) => //no slash
+module.exports = async (message, arguments, client, con) => //no slash
 {
     try
     {
-        let arguments = aMessage.arguments;
-        let message = aMessage.message;
         if(client.bwe.isItAdmin(message))
         {
             if(arguments[0] == undefined){arguments[0] = ''}
@@ -135,7 +133,7 @@ module.exports = async (aMessage, client, con) => //no slash
         }
         else{message.channel.send('Sorry, you don\'t have permission to use this command');}
     }
-    catch(error){client.bwe.theError(error, aMessage, null)}
+    catch(error){client.bwe.theError(error, message, null)}
     
         
 }

@@ -12,13 +12,14 @@
     "discord-api-types": "^0.34.0",
     "discord-canvas": "^1.4.1",
     "discord-module": "^2.0.17",
-    "discord-music-player": "^8.3.1",
+    "discord-music-player": "^8.3.2",
     "discord.js": "^13.7.0",
+    "isomorphic-unfetch": "^3.1.0",
     "mathjs": "^10.6.1",
     "mysql": "^2.18.1",
     "source-map-loader": "^3.0.1",
     "time-counter": "^1.0.0",
-    "ytdl-core": "^4.11.0"
+    "ytdl-core": "^4.11.2"
   },
   "version": "1.0.0",
   "main": "index.js",

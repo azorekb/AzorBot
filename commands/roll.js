@@ -1,12 +1,12 @@
 const EMOJIS = require('../jsony/emoji.json');
-module.exports = async (aMessage, client, con, interaction = null) => 
+module.exports = async (message, arguments, client, con, interaction = null) => 
 {
     try
     {
         let theArgument = [];
-        theArgument[0] = interaction ? interaction.options.getInteger('max') : aMessage.arguments[0];
-        theArgument[1] = interaction ? interaction.options.getInteger('count') : aMessage.arguments[1];
-        const reply = (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return aMessage.message.channel.send(stuffs);}}
+        theArgument[0] = interaction ? interaction.options.getInteger('max') : arguments[0];
+        theArgument[1] = interaction ? interaction.options.getInteger('count') : arguments[1];
+        const reply = (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return message.channel.send(stuffs);}}
     
         if(theArgument[0] == undefined)
         {
@@ -34,7 +34,7 @@ module.exports = async (aMessage, client, con, interaction = null) =>
                 return false;
             }
         }
-        const limit = (Math.ceil(Math.log10(arguments[0] + 1)) + 2) * arguments[1];
+        const limit = (Math.ceil(Math.log10(theArgument[0] + 1)) + 2) * theArgument[1];
         if(limit > 2000)
         {
             reply({content: 'limit of text could be exceeded, try less numbers ' + EMOJIS.hide, ephemeral: true});
@@ -48,6 +48,6 @@ module.exports = async (aMessage, client, con, interaction = null) =>
     
         reply(text);
     }
-    catch(error){client.bwe.theError(error, aMessage, interaction)}
+    catch(error){client.bwe.theError(error, message, interaction)}
 
 }

@@ -11,13 +11,13 @@ function musicReact(message)
     message.react(EMOJIS.stop);
 }
 
-module.exports = async (aMessage, client, con, interaction = null) => 
+module.exports = async (message, arguments, client, con, interaction = null) => 
 {
     try
     {
         if(interaction && interaction.guild == null){interaction.reply('It can\'t be used in DM'); return;}
-        const channel = interaction ? interaction.channel : aMessage.message.channel;
-        const serverID = interaction ? interaction.guildId : aMessage.message.guildId;
+        const channel = interaction ? interaction.channel : message.channel;
+        const serverID = interaction ? interaction.guildId : message.guildId;
         const MSG = client.bwe.createQueueMessage(serverID, client);
         if(interaction)
         {
@@ -28,5 +28,5 @@ module.exports = async (aMessage, client, con, interaction = null) =>
         client.queueMessages.add(serverID, queueMessage);
         musicReact(queueMessage);
     }
-    catch(error){client.bwe.theError(error, aMessage, interaction)}
+    catch(error){client.bwe.theError(error, message, interaction)}
 }

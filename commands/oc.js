@@ -3,16 +3,16 @@ const { MessageEmbed } = require('discord.js');
 const { MessageActionRow, MessageButton } = require('discord.js');
 const EMOJIS = require('../jsony/emoji.json');
 
-module.exports = async (aMessage, client, con, interaction = null, FOLDER = 'oc') => 
+module.exports = async (message, arguments, client, con, interaction = null, FOLDER = 'oc') => 
 {
     try
     {
         let characters = [];
         await client.bwe.crawl('./' + FOLDER, characters);
-        const theArgument = interaction ? interaction.options.getString('name') : aMessage.arguments[0];
-        const reply = async (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return aMessage.message.channel.send(stuffs);}}
-        const channel = interaction ? interaction.channel : aMessage.message.channel;
-        const author = interaction ? interaction.member.id : aMessage.message.author.id;
+        const theArgument = interaction ? interaction.options.getString('name') : arguments[0];
+        const reply = async (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return message.channel.send(stuffs);}}
+        const channel = interaction ? interaction.channel : message.channel;
+        const author = interaction ? interaction.member.id : message.author.id;
         
         if(theArgument == null || theArgument == 'total')
         {
@@ -70,7 +70,7 @@ module.exports = async (aMessage, client, con, interaction = null, FOLDER = 'oc'
                 }
                 else
                 {
-                    const theMessage = await aMessage.message.channel.send(stuffs);
+                    const theMessage = await message.channel.send(stuffs);
                     client.bwe.picReact.add(theMessage, directory, RAND, author, theArgument);
                     if(filesArray.length > 1)
                     {
@@ -78,7 +78,7 @@ module.exports = async (aMessage, client, con, interaction = null, FOLDER = 'oc'
                         theMessage.react('<a:bweRight:980031862858727484>');
                     }
                     theMessage.react('<a:bweX:979738787070492793>');
-                    client.bwe.deleteMessage(aMessage.message);
+                    client.bwe.deleteMessage(message);
                 }
     
             }
@@ -88,5 +88,5 @@ module.exports = async (aMessage, client, con, interaction = null, FOLDER = 'oc'
             }
         }
     }
-    catch(error){client.bwe.theError(error, aMessage, interaction)}
+    catch(error){client.bwe.theError(error, message, interaction)}
 }    

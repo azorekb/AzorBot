@@ -1,11 +1,11 @@
 const { MessageEmbed } = require('discord.js');
 
-module.exports = async (aMessage, client, con, interaction = null) => 
+module.exports = async (message, arguments, client, con, interaction = null) => 
 {
     const QUESTIONS = client.bwe.loadJson('questions').list;
     const TEXTS = client.bwe.loadJson('texts').newCharacter;
-    const reply = (stuffs) => {if(interaction){return interaction.channel.send(stuffs);}else{return aMessage.message.channel.send(stuffs);}}
-    const theArgument = interaction ? interaction.options.getString('language').toLowerCase() : aMessage.arguments[0].toLowerCase();
+    const reply = (stuffs) => {if(interaction){return interaction.channel.send(stuffs);}else{return message.channel.send(stuffs);}}
+    const theArgument = interaction ? interaction.options.getString('language').toLowerCase() : arguments[0].toLowerCase();
 
     try
     {
@@ -65,5 +65,5 @@ module.exports = async (aMessage, client, con, interaction = null) =>
             reply('There is no language ' + theArgument + ' on my list (or you wrote it incorrect)\nList of languages: deutsch, espanol, francais, italiano');
         }
     }
-    catch(error){client.bwe.theError(error, aMessage, interaction)}
+    catch(error){client.bwe.theError(error, message, interaction)}
 }

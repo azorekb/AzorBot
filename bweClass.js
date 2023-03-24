@@ -1,5 +1,6 @@
 const POKEMON_TYPES = require('./jsony/pokemontypes.json');
 const EMOJIS = require('./jsony/emoji.json');
+const DATA = require('./data.json');
 const fs = require('fs');
 const path = require('path');
 const Discord = require('discord.js');
@@ -23,6 +24,37 @@ class bwe
             console.log(e);
         }
         return require('./jsony/' + name + '.json');
+    }
+
+    rummy =
+    {
+        theList: [],
+    
+        add(_players, _server)
+        {
+            const LAST = this.theList.length;
+            this.theList[LAST] = 
+            {
+                players: _players,
+                server: _server,
+            }
+            return LAST;
+        },
+    
+        find(_user, _server)
+        {
+            for(let i = 0; i < this.theList.length; i++)
+                if(this.theList[i].server == _server)
+                    for(let j = 0; j < this.theList[i].players.length; j++)
+                        if(this.theList[i].players[j].id == _user)
+                            return i;
+            return -1;
+        },
+
+        delete(_user, _server)
+        {
+            this.theList.splice(this.find(_user, _server), 1);
+        }
     }
 
     battle =
@@ -190,8 +222,8 @@ class bwe
         let embed = new Discord.MessageEmbed()
         .setColor(this.AzorDefaultColor)
         .setTitle('Playlist [' + allTime[0] + ':' + this.theZero(allTime[1]) + ':' + this.theZero(allTime[2]) + ']' + theSettings)
-        .setDescription(text + '\n\n' + theFooter);
-        // .setFooter(theFooter);
+        .setDescription(text.slice(0, 4000))
+        .setFooter({text: theFooter});
 
         const theTimeout = this.queueMessagesTimeouts.get(guildID);
         if(theTimeout != null){clearTimeout(theTimeout)}
@@ -274,11 +306,11 @@ class bwe
         }
     }
 
-    theError(error, aMessage, interaction)
+    theError(error, message, interaction)
     {
         console.log(error);
-        if(aMessage == null && interaction == null){return}
-        if(interaction){interaction.reply('some error happens ' + EMOJIS.blush);}else{aMessage.message.channel.send('some error happens ' + EMOJIS.blush);}
+        if(message == null && interaction == null){return}
+        if(interaction){interaction.reply('some error happens ' + EMOJIS.blush);}else{message.channel.send('some error happens ' + EMOJIS.blush);}
     }
 }
 module.exports = () => {return new bwe()}

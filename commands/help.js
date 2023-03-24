@@ -2,11 +2,11 @@ const { MessageEmbed } = require('discord.js');
 const DATA = require('../data.json');
 const EMOJIS = require('../jsony/emoji.json');
 
-module.exports = async (aMessage, client, con, interaction = null) =>
+module.exports = async (message, arguments, client, con, interaction = null) =>
 {
     try
     {
-        let theArgument = interaction ? interaction.options.getString('command') : aMessage.arguments[0];
+        let theArgument = interaction ? interaction.options.getString('command') : arguments[0];
     
         let embed = new MessageEmbed().setColor(client.bwe.AzorDefaultColor);
         if(theArgument == null)
@@ -82,7 +82,7 @@ module.exports = async (aMessage, client, con, interaction = null) =>
         }
                        
         if(interaction) await interaction.reply({ embeds: [embed], ephemeral: true });
-        else aMessage.message.channel.send({ embeds: [embed], ephemeral: true });
+        else message.channel.send({ embeds: [embed], ephemeral: true });
     }
-    catch(error){client.bwe.theError(error, aMessage, interaction)}
+    catch(error){client.bwe.theError(error, message, interaction)}
 }

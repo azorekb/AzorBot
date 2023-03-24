@@ -1,16 +1,19 @@
 const { MessageEmbed } = require('discord.js');
 const { MessageAttachment } = require('discord.js');
 const Canvas = require('canvas');
-module.exports = async (aMessage, client, con, interaction = null) => 
+module.exports = async (message, arguments, client, con, interaction = null) => 
 {
-    const theArgument = interaction ? interaction.options.getInteger('bg') : aMessage.arguments[0] * 1;
-    const channel = interaction ? interaction.channel : aMessage.message.channel;
+    // const theArgument = interaction ? interaction.options.getString('number') : arguments[0];
+    const channel = interaction ? interaction.channel : message.channel;
     const EMOJIS = client.bwe.loadJson('emoji');
-    const author = interaction ? interaction.member.id : aMessage.message.author.id;
+    const author = interaction ? interaction.member.id : message.author.id;
     const POKEDEX = client.bwe.loadJson('pokedex');
+    const reply = (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return message.channel.send(stuffs);}}
+
 
     try
     {
+        // reply('[don\'t click it](http://mozillathevulpix.ugu.pl/)');
         if(interaction)
         {
             interaction.deferReply();
@@ -137,6 +140,6 @@ module.exports = async (aMessage, client, con, interaction = null) =>
             theMessage.react('979738787070492793');
         });
     }
-    catch(error){client.bwe.theError(error, aMessage, interaction)}
+    catch(error){client.bwe.theError(error, message, interaction)}
 
 }

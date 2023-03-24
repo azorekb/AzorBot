@@ -1,14 +1,14 @@
 const EMOJIS = require('../jsony/emoji.json');
 
-module.exports = async (aMessage, client, con, interaction = null) => 
+module.exports = async (message, arguments, client, con, interaction = null) => 
 {
     try
     {
-        const reply = (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return aMessage.message.channel.send(stuffs);}}
+        const reply = (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return message.channel.send(stuffs);}}
         if(interaction && interaction.guild == null){interaction.reply('It can\'t be used in DM'); return;}
-        const permissions = interaction ? interaction.member.permissions.toArray() : aMessage.message.channel.permissionsFor(aMessage.message.author).toArray();
-        let theChannel = interaction ? interaction.options.getChannel('channel') : aMessage.message.mentions.channels.first();
-        const serverID = interaction ? interaction.guildId : aMessage.message.guildId;
+        const permissions = interaction ? interaction.member.permissions.toArray() : message.channel.permissionsFor(message.author).toArray();
+        let theChannel = interaction ? interaction.options.getChannel('channel') : message.mentions.channels.first();
+        const serverID = interaction ? interaction.guildId : message.guildId;
     
         if(permissions.indexOf('ADMINISTRATOR') == -1)
         {
@@ -56,5 +56,5 @@ module.exports = async (aMessage, client, con, interaction = null) =>
             }
         });
     }
-    catch(error){client.bwe.theError(error, aMessage, interaction)}
+    catch(error){client.bwe.theError(error, message, interaction)}
 }

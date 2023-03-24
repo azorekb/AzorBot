@@ -4,6 +4,7 @@ module.exports = async (reaction, user, client) =>
 {
     try
     {
+        const EMOJIS = client.bwe.loadJson('emoji');
         let ACTION;
         if((ACTION = client.bwe.picReact.find(reaction.message.channel.id, reaction.message.id)) > -1)
         {
@@ -78,7 +79,7 @@ module.exports = async (reaction, user, client) =>
     
                 if(shouldIEditMessage)
                 {  
-                    const MSG = client.bwe.createQueueMessage(reaction.message.guild.id);
+                    const MSG = client.bwe.createQueueMessage(reaction.message.guild.id, client);
                     ACTION.edit({embeds: [MSG]});
                 }
             }

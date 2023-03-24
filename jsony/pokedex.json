@@ -7932,8 +7932,719 @@
                 }
             ]
         },
-        
-        null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,
+        {
+          "name": "Rattata",
+          "types": [
+            "Normal",
+            "-"
+          ],
+          "height": 0.3,
+          "weight": 3.5,
+          "abilities": [
+            "Run Away",
+            "Guts",
+            "Hustle"
+          ],
+          "EVyield": [
+            "Speed"
+          ],
+          "catchRate": 255,
+          "friendship": 50,
+          "baseExp": 51,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Field"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 15,
+          "baseStats": {
+            "hp": 30,
+            "attack": 56,
+            "defence": 35,
+            "spAtk": 25,
+            "spDef": 35,
+            "speed": 72
+          },
+          "evolutions": [{"spiece": "Raticate", "method": "level 20"}],
+          "forms":[
+            {
+              "name": "alolan",
+              "types":["Normal","dark"],
+              "abilities":["Gluttony", "Hustle", "Thick Fat "],
+              "evolutions": [{"spiece": "Raticate", "method": "level 20 Nighttime", "form": "alolan"}]
+            }
+          ]
+        },
+        {
+          "name": "Raticate",
+          "types": [
+            "Normal",
+            "-"
+          ],
+          "height": 0.7,
+          "weight": 18.5,
+          "abilities": [
+            "Run Away",
+            "Guts",
+            "Hustle"
+          ],
+          "EVyield": [
+            "speed", "speed"
+          ],
+          "catchRate": 127,
+          "friendship": 50,
+          "baseExp": 145,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Field"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 15,
+          "baseStats": {
+            "hp": 55,
+            "attack": 81,
+            "defence": 60,
+            "spAtk": 50,
+            "spDef": 70,
+            "speed": 97
+          },
+          "evolutions": [],
+          "forms":[
+            {
+              "name": "alolan",
+              "types":["Normal","dark"],
+              "abilities":["Gluttony", "Hustle", "Thick Fat"]
+            }
+          ]
+        },
+        {
+          "name": "Spearow",
+          "types": [
+            "Normal",
+            "Flying"
+          ],
+          "height": 0.3,
+          "weight": 2,
+          "abilities": [
+            "Keen Eye",
+            "-",
+            "-"
+          ],
+          "EVyield": [
+            "Speed"
+          ],
+          "catchRate": 255,
+          "friendship": 50,
+          "baseExp": 52,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Flying"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 15,
+          "baseStats": {
+            "hp": 40,
+            "attack": 60,
+            "defence": 30,
+            "spAtk": 31,
+            "spDef": 31,
+            "speed": 70
+          },
+          "evolutions": [{"specie": "Fearow", "method":"level 20"}]
+        },
+        {
+          "name": "Fearow",
+          "types": [
+            "Normal",
+            "Flying"
+          ],
+          "height": 1.2,
+          "weight": 38,
+          "abilities": [
+            "Keen Eye",
+            "-",
+            "-"
+          ],
+          "EVyield": [
+            "Speed", "speed"
+          ],
+          "catchRate": 90,
+          "friendship": 50,
+          "baseExp": 155,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Flying"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 15,
+          "baseStats": {
+            "hp": 65,
+            "attack": 90,
+            "defence": 65,
+            "spAtk": 61,
+            "spDef": 61,
+            "speed": 100
+          },
+          "evolutions": []
+        },
+        {
+          "name": "Ekans",
+          "types": [
+            "Poison",
+            "-"
+          ],
+          "height": 2,
+          "weight": 6.9,
+          "abilities": [
+            "Intimidate",
+            "Shed Skin",
+            "Unnerve"
+          ],
+          "EVyield": [
+            "Attack"
+          ],
+          "catchRate": 255,
+          "friendship": 50,
+          "baseExp": 58,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Dragon",
+            "Field"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 35,
+            "attack": 60,
+            "defence": 44,
+            "spAtk": 40,
+            "spDef": 54,
+            "speed": 55
+          },
+          "evolutions": [{"specie": "Arbok", "method":"level 22"}]
+        },
+        {
+          "name": "Arbok",
+          "types": [
+            "Poison",
+            "-"
+          ],
+          "height": 3.5,
+          "weight": 65,
+          "abilities": [
+            "Intimidate",
+            "Shed Skin",
+            "Unnerve"
+          ],
+          "EVyield": [
+            "Attack", "Attack"
+          ],
+          "catchRate": 90,
+          "friendship": 50,
+          "baseExp": 157,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Dragon",
+            "Field"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 60,
+            "attack": 95,
+            "defence": 69,
+            "spAtk": 65,
+            "spDef": 79,
+            "speed": 80
+          },
+          "evolutions": []
+        },
+        {
+          "name": "Pikachu",
+          "types": [
+            "Electric",
+            "-"
+          ],
+          "height": 0.4,
+          "weight": 6,
+          "abilities": [
+            "Static",
+            "-",
+            "-"
+          ],
+          "EVyield": [
+            "Speed", "speed"
+          ],
+          "catchRate": 190,
+          "friendship": 50,
+          "baseExp": 112,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Fairy",
+            "Field"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 10,
+          "baseStats": {
+            "hp": 35,
+            "attack": 55,
+            "defence": 40,
+            "spAtk": 50,
+            "spDef": 50,
+            "speed": 90
+          },
+          "evolutions": [{"specie": "Raichu", "method": "Thunder Stone"}, {"specie": "Raichu", "method": "Thunder Stone Alola", "form":"alolan"}]
+        },
+        {
+          "name": "Raichu",
+          "types": [
+            "Electric",
+            "-"
+          ],
+          "height": 0.8,
+          "weight": 30,
+          "abilities": [
+            "Static",
+            "-",
+            "-"
+          ],
+          "EVyield": [
+            "Speed", "speed", "Speed"
+          ],
+          "catchRate": 75,
+          "friendship": 50,
+          "baseExp": 218,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Fairy",
+            "Field"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 10,
+          "baseStats": {
+            "hp": 60,
+            "attack": 90,
+            "defence": 55,
+            "spAtk": 90,
+            "spDef": 80,
+            "speed": 110
+          },
+          "evolutions": [],
+          
+          "forms":[{
+            "name":"alolan", 
+            "types": ["Electric","fairy"],
+            "height": 0.7,
+            "weight": 21,
+          "abilities": [
+            "Surge Surfer",
+            "-",
+            "-"
+          ],
+          "baseStats": {
+            "hp": 60,
+            "attack": 85,
+            "defence": 50,
+            "spAtk": 95,
+            "spDef": 85,
+            "speed": 110
+          }
+            }]
+        },
+        {
+          "name": "Sandshrew",
+          "types": [
+            "Ground",
+            "-"
+          ],
+          "height": 0.6,
+          "weight": 12,
+          "abilities": [
+            "Sand Veil",
+            "-",
+            "-"
+          ],
+          "EVyield": [
+            "Defense"
+          ],
+          "catchRate": 255,
+          "friendship": 50,
+          "baseExp": 60,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Field"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 50,
+            "attack": 75,
+            "defence": 85,
+            "spAtk": 20,
+            "spDef": 30,
+            "speed": 40
+          },
+          "evolutions": [{"specie": "Sandslash", "method":"level 22"}],
+          "forms":[{
+            "name": "alolan", 
+            "types": ["ice","steel"],
+            "height": 0.7,
+            "weight": 40,
+          "abilities": [
+            "Snow Cloak",
+            "-",
+            "Slush Rush"
+          ],
+          "baseStats": {
+            "hp": 50,
+            "attack": 75,
+            "defence": 90,
+            "spAtk": 10,
+            "spDef": 35,
+            "speed": 40
+          },
+          "evolutions":[{"specie": "Sandslash", "method": "ice stone", "form":"alolan"}]
+            }]
+        },
+        {
+          "name": "Sandslash",
+          "types": [
+            "Ground",
+            "-"
+          ],
+          "height": 1,
+          "weight": 29.5,
+          "abilities": [
+            "Sand Veil",
+            "-",
+            "-"
+          ],
+          "EVyield": [
+            "Defense", "Defense"
+          ],
+          "catchRate": 90,
+          "friendship": 50,
+          "baseExp": 158,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Field"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 75,
+            "attack": 100,
+            "defence": 110,
+            "spAtk": 45,
+            "spDef": 55,
+            "speed": 65
+          },
+          "evolutions": [],
+          "forms":[{
+            "name": "alolan", 
+            "types": ["ice","steel"],
+            "height": 1.2,
+            "weight": 55,
+          "abilities": [
+            "Snow Cloak",
+            "-",
+            "Slush Rush"
+          ],
+          "baseStats": {
+            "hp": 75,
+            "attack": 100,
+            "defence": 120,
+            "spAtk": 25,
+            "spDef": 65,
+            "speed": 65
+          }
+          }]
+        },
+        {
+          "name": "Nidoran♀",
+          "types": [
+            "Poison",
+            "-"
+          ],
+          "height": 0.4,
+          "weight": 7,
+          "abilities": [
+            "Poison Point",
+            "Rivalry",
+            "Hustle"
+          ],
+          "EVyield": [
+            "hp"
+          ],
+          "catchRate": 235,
+          "friendship": 50,
+          "baseExp": 55,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Field",
+            "Monster"
+          ],
+          "femaleRate": 100,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 55,
+            "attack": 47,
+            "defence": 52,
+            "spAtk": 40,
+            "spDef": 40,
+            "speed": 41
+          },
+          "evolutions": [{"specie":"Nidorina", "method":"level 16"}]
+        },
+        {
+          "name": "Nidorina",
+          "types": [
+            "Poison",
+            "-"
+          ],
+          "height": 0.8,
+          "weight": 20,
+          "abilities": [
+            "Poison Point",
+            "Rivalry",
+            "Hustle"
+          ],
+          "EVyield": [
+            "HP", "hp"
+          ],
+          "catchRate": 120,
+          "friendship": 50,
+          "baseExp": 128,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Undiscovered"
+          ],
+          "femaleRate": 100,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 70,
+            "attack": 62,
+            "defence": 67,
+            "spAtk": 55,
+            "spDef": 55,
+            "speed": 56
+          },
+          "evolutions": [{"specie":"Nidoqueen", "method":"Moon Stone"}]
+        },
+        {
+          "name": "Nidoqueen",
+          "types": [
+            "Poison",
+            "Ground"
+          ],
+          "height": 1.3,
+          "weight": 60,
+          "abilities": [
+            "Poison Point",
+            "Rivalry",
+            "Sheer Force"
+          ],
+          "EVyield": [
+            "HP", "HP", "HP"
+          ],
+          "catchRate": 45,
+          "friendship": 50,
+          "baseExp": 227,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Undiscovered"
+          ],
+          "femaleRate": 100,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 90,
+            "attack": 92,
+            "defence": 87,
+            "spAtk": 75,
+            "spDef": 85,
+            "speed": 76
+          },
+          "evolutions": []
+        },
+        {
+          "name": "Nidoran♂ (male)",
+          "types": [
+            "Poison",
+            "-"
+          ],
+          "height": 0.5,
+          "weight": 9,
+          "abilities": [
+            "Poison Point",
+            "Rivalry",
+            "Hustle"
+          ],
+          "EVyield": [
+            "Attack"
+          ],
+          "catchRate": 235,
+          "friendship": 50,
+          "baseExp": 55,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Field",
+            "Monster"
+          ],
+          "femaleRate": 0,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 46,
+            "attack": 57,
+            "defence": 40,
+            "spAtk": 40,
+            "spDef": 40,
+            "speed": 50
+          },
+          "evolutions": [{"specie": "Nidorino", "method":"level 16"}]
+        },
+        {
+          "name": "Nidorino",
+          "types": [
+            "Poison",
+            "-"
+          ],
+          "height": 0.9,
+          "weight": 19.5,
+          "abilities": [
+            "Poison Point",
+            "Rivalry",
+            "Hustle"
+          ],
+          "EVyield": [
+            "Attack", "Attack"
+          ],
+          "catchRate": 120,
+          "friendship": 50,
+          "baseExp": 128,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Field",
+            "Monster"
+          ],
+          "femaleRate": 0,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 61,
+            "attack": 72,
+            "defence": 57,
+            "spAtk": 55,
+            "spDef": 55,
+            "speed": 65
+          },
+          "evolutions": [{"specie": "Nidoking", "method":"Moon Stone"}]
+        },
+
+        {
+          "name": "Nidoking",
+          "types": [
+            "Poison",
+            "Ground"
+          ],
+          "height": 1.4,
+          "weight": 62,
+          "abilities": [
+            "Poison Point",
+            "Rivalry",
+            "Sheer Force"
+          ],
+          "EVyield": [
+            "Attack", "Attack", "Attack"
+          ],
+          "catchRate": 45,
+          "friendship": 50,
+          "baseExp": 227,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Field",
+            "Monster"
+          ],
+          "femaleRate": 0,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 81,
+            "attack": 102,
+            "defence": 77,
+            "spAtk": 85,
+            "spDef": 75,
+            "speed": 85
+          },
+          "evolutions": []
+        },
+        {
+          "name": "Clefairy",
+          "types": [
+            "Fairy",
+            "-"
+          ],
+          "height": 0.6,
+          "weight": 7.5,
+          "abilities": [
+            "Cute Charm",
+            "Magic Guard",
+            "Friend Guard"
+          ],
+          "EVyield": [
+            "HP", "hp"
+          ],
+          "catchRate": 150,
+          "friendship": 140,
+          "baseExp": 113,
+          "growthRate": "Fast",
+          "eggGroups": [
+            "Fairy"
+          ],
+          "femaleRate": 75,
+          "eggCycles": 10,
+          "baseStats": {
+            "hp": 70,
+            "attack": 45,
+            "defence": 48,
+            "spAtk": 60,
+            "spDef": 65,
+            "speed": 35
+          },
+          "evolutions": [{"specie": "Clefable", "method":"Moon Stone"}]
+        },
+        {
+          "name": "Clefable",
+          "types": [
+            "Fairy",
+            "-"
+          ],
+          "height": 1.3,
+          "weight": 40,
+          "abilities": [
+            "Cute Charm",
+            "Magic Guard",
+            "Unaware"
+          ],
+          "EVyield": [
+            "HP","HP","hp"
+          ],
+          "catchRate": 25,
+          "friendship": 140,
+          "baseExp": 217,
+          "growthRate": "Fast",
+          "eggGroups": [
+            "Fairy"
+          ],
+          "femaleRate": 75,
+          "eggCycles": 10,
+          "baseStats": {
+            "hp": 95,
+            "attack": 70,
+            "defence": 73,
+            "spAtk": 95,
+            "spDef": 90,
+            "speed": 60
+          },
+          "evolutions": []
+        },
         {
             "name": "vulpix",
             "types": ["fire", "-"],
@@ -8021,8 +8732,693 @@
                 }
             ]
         },
+        {
+          "name": "Ninetales",
+          "types": [
+            "Fire",
+            "-"
+          ],
+          "height": 1.1,
+          "weight": 19.9,
+          "abilities": [
+            "Flash Fire",
+            "-",
+            "-"
+          ],
+          "EVyield": [
+            "Sp. Defense", "Speed"
+          ],
+          "catchRate": 75,
+          "friendship": 50,
+          "baseExp": 177,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Field"
+          ],
+          "femaleRate": 75,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 73,
+            "attack": 76,
+            "defence": 75,
+            "spAtk": 81,
+            "spDef": 100,
+            "speed": 100
+          },
+          "evolutions": [],
+          "forms":[{
+            "name":"alolan",
+            "types": ["ice", "-"],
+            "abilities": ["snow cloak", "-", "snow warning"],
+            "EVyield": [
+              "speed", "Speed"
+            ],
+            "baseStats": {
+              "hp": 73,
+              "attack": 67,
+              "defence": 75,
+              "spAtk": 81,
+              "spDef": 100,
+              "speed": 109
+            }
+          }]
+        },
         
-        null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,
+        {
+          "name": "Jigglypuff",
+          "types": [
+            "Normal",
+            "Fairy"
+          ],
+          "height": 0.5,
+          "weight": 5.5,
+          "abilities": [
+            "Cute Charm",
+            "Competitive",
+            "Friend Guard"
+          ],
+          "EVyield": [
+            "HP", "HP"
+          ],
+          "catchRate": 170,
+          "friendship": 50,
+          "baseExp": 95,
+          "growthRate": "Fast",
+          "eggGroups": [
+            "Fairy"
+          ],
+          "femaleRate": 75,
+          "eggCycles": 10,
+          "baseStats": {
+            "hp": 115,
+            "attack": 45,
+            "defence": 20,
+            "spAtk": 45,
+            "spDef": 25,
+            "speed": 20
+          },
+          "evolutions": [{"specie":"Wigglytuff", "method":"Moon Stone"}]
+        },
+        {
+          "name": "Wigglytuff",
+          "types": [
+            "Normal",
+            "Fairy"
+          ],
+          "height": 1,
+          "weight": 12,
+          "abilities": [
+            "Cute Charm",
+            "Competitive",
+            "Frisk"
+          ],
+          "EVyield": [
+            "HP","hp","hp"
+          ],
+          "catchRate": 50,
+          "friendship": 50,
+          "baseExp": 196,
+          "growthRate": "Fast",
+          "eggGroups": [
+            "Fairy"
+          ],
+          "femaleRate": 75,
+          "eggCycles": 10,
+          "baseStats": {
+            "hp": 140,
+            "attack": 70,
+            "defence": 45,
+            "spAtk": 85,
+            "spDef": 50,
+            "speed": 45
+          },
+          "evolutions": []
+        },
+        {
+          "name": "Zubat",
+          "types": [
+            "Poison",
+            "Flying"
+          ],
+          "height": 0.8,
+          "weight": 7.5,
+          "abilities": [
+            "Inner Focus",
+            "-",
+            "-"
+          ],
+          "EVyield": [
+            "Speed"
+          ],
+          "catchRate": 255,
+          "friendship": 50,
+          "baseExp": 49,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Flying"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 15,
+          "baseStats": {
+            "hp": 40,
+            "attack": 45,
+            "defence": 35,
+            "spAtk": 30,
+            "spDef": 40,
+            "speed": 55
+          },
+          "evolutions": [{"specie":"Golbat", "method":"level 22"}]
+        },
+        {
+          "name": "Golbat",
+          "types": [
+            "Poison",
+            "Flying"
+          ],
+          "height": 1.6,
+          "weight": 55,
+          "abilities": [
+            "Inner Focus",
+            "-",
+            "-"
+          ],
+          "EVyield": [
+            "Speed","speed"
+          ],
+          "catchRate": 90,
+          "friendship": 50,
+          "baseExp": 159,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Flying"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 15,
+          "baseStats": {
+            "hp": 75,
+            "attack": 80,
+            "defence": 70,
+            "spAtk": 65,
+            "spDef": 75,
+            "speed": 90
+          },
+          "evolutions": [{"specie":"Crobat", "method":"friendship"}]
+        },
+        {
+          "name": "Oddish",
+          "types": [
+            "Grass",
+            "Poison"
+          ],
+          "height": 0.5,
+          "weight": 5.4,
+          "abilities": [
+            "Chlorophyll",
+            "-",
+            "-"
+          ],
+          "EVyield": [
+            "Sp. Attack"
+          ],
+          "catchRate": 255,
+          "friendship": 50,
+          "baseExp": 64,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Grass"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 45,
+            "attack": 50,
+            "defence": 55,
+            "spAtk": 75,
+            "spDef": 65,
+            "speed": 30
+          },
+          "evolutions": [{"specie":"Gloom", "method":"level 21"}]
+        },
+        {
+          "name": "Gloom",
+          "types": [
+            "Grass",
+            "Poison"
+          ],
+          "height": 0.8,
+          "weight": 8.6,
+          "abilities": [
+            "Chlorophyll",
+            "-",
+            "-"
+          ],
+          "EVyield": [
+            "sp. attack","sp. attack"
+          ],
+          "catchRate": 120,
+          "friendship": 50,
+          "baseExp": 138,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Grass"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 60,
+            "attack": 65,
+            "defence": 70,
+            "spAtk": 85,
+            "spDef": 75,
+            "speed": 40
+          },
+          "evolutions": [{"specie":"Vileplume", "method":"leaf stone"},{"specie": "Bellossom", "method":"sun stone"}]
+        },
+        {
+          "name": "Vileplume",
+          "types": [
+            "Grass",
+            "Poison"
+          ],
+          "height": 1.2,
+          "weight": 18.6,
+          "abilities": [
+            "Chlorophyll",
+            "-",
+            "-"
+          ],
+          "EVyield": [
+            "sp. attack","sp. attack","sp. attack"
+          ],
+          "catchRate": 45,
+          "friendship": 50,
+          "baseExp": 221,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Grass"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 75,
+            "attack": 80,
+            "defence": 85,
+            "spAtk": 110,
+            "spDef": 90,
+            "speed": 50
+          },
+          "evolutions": []
+        },
+        {
+          "name": "Paras",
+          "types": [
+            "Bug",
+            "Grass"
+          ],
+          "height": 0.3,
+          "weight": 5.4,
+          "abilities": [
+            "Effect Spore",
+            "Dry Skin",
+            "Damp"
+          ],
+          "EVyield": [
+            "Attack"
+          ],
+          "catchRate": 190,
+          "friendship": 50,
+          "baseExp": 57,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Bug",
+            "Grass"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 35,
+            "attack": 70,
+            "defence": 55,
+            "spAtk": 45,
+            "spDef": 55,
+            "speed": 25
+          },
+          "evolutions": [{"specie":"Parasect", "method":"level 24"}]
+        },
+        {
+          "name": "Parasect",
+          "types": [
+            "Bug",
+            "Grass"
+          ],
+          "height": 1,
+          "weight": 29.5,
+          "abilities": [
+            "Effect Spore",
+            "Dry Skin",
+            "Damp"
+          ],
+          "EVyield": [
+            "Attack","Attack","Defense"
+          ],
+          "catchRate": 75,
+          "friendship": 50,
+          "baseExp": 142,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Bug",
+            "Grass"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 60,
+            "attack": 95,
+            "defence": 80,
+            "spAtk": 60,
+            "spDef": 80,
+            "speed": 30
+          },
+          "evolutions": []
+        },
+        {
+          "name": "Venonat",
+          "types": [
+            "Bug",
+            "Poison"
+          ],
+          "height": 1,
+          "weight": 30,
+          "abilities": [
+            "Compound Eyes",
+            "Tinted Lens",
+            "Run Away"
+          ],
+          "EVyield": [
+            "Sp. Defense"
+          ],
+          "catchRate": 190,
+          "friendship": 50,
+          "baseExp": 61,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Bug"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 60,
+            "attack": 55,
+            "defence": 50,
+            "spAtk": 40,
+            "spDef": 55,
+            "speed": 45
+          },
+          "evolutions": [{"specie":"Venomoth", "method":"level 31"}]
+        },
+        {
+          "name": "Venomoth",
+          "types": [
+            "Bug",
+            "Poison"
+          ],
+          "height": 1.5,
+          "weight": 12.5,
+          "abilities": [
+            "Shield Dust",
+            "Tinted Lens",
+            "Wonder Skin"
+          ],
+          "EVyield": [
+            "Sp. Attack","Speed"
+          ],
+          "catchRate": 75,
+          "friendship": 50,
+          "baseExp": 158,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Bug"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 70,
+            "attack": 65,
+            "defence": 60,
+            "spAtk": 90,
+            "spDef": 75,
+            "speed": 90
+          },
+          "evolutions": []
+        },
+        {
+          "name": "Diglett",
+          "types": [
+            "Ground",
+            "-"
+          ],
+          "height": 0.2,
+          "weight": 0.8,
+          "abilities": [
+            "Sand Veil",
+            "Arena Trap",
+            "Sand Force"
+          ],
+          "EVyield": [
+            "Speed"
+          ],
+          "catchRate": 255,
+          "friendship": 50,
+          "baseExp": 53,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Field"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 10,
+            "attack": 55,
+            "defence": 25,
+            "spAtk": 35,
+            "spDef": 45,
+            "speed": 95
+          },
+          "evolutions": [{"specie":"Dugtrio", "method":"level 26"}],
+          "forms":[
+            {
+              "name":"alolan",
+              "types": ["Ground","steel"],
+              "height": 1,
+              "abilities":["Sand Veil", "Tangling Hair","Sand Force"],
+              "baseStats": {
+                "hp": 10,
+                "attack": 55,
+                "defence": 20,
+                "spAtk": 35,
+                "spDef": 45,
+                "speed": 90
+              },
+              "evolutions": [{"specie":"Dugtrio", "method":"level 26", "form":"alolan"}]
+            }
+          ]
+        },
+        {
+          "name": "Dugtrio",
+          "types": [
+            "Ground",
+            "-"
+          ],
+          "height": 0.7,
+          "weight": 33.3,
+          "abilities": [
+            "Sand Veil",
+            "Arena Trap",
+            "Sand Force"
+          ],
+          "EVyield": [
+            "Speed", "speed"
+          ],
+          "catchRate": 50,
+          "friendship": 50,
+          "baseExp": 149,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Field"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 35,
+            "attack": 100,
+            "defence": 50,
+            "spAtk": 50,
+            "spDef": 70,
+            "speed": 120
+          },
+          "evolutions": [],
+          "forms":[{
+            "name":"alolan",
+              "types": ["Ground","steel"],
+              "weight": 66.6,
+              "abilities":["Sand Veil", "Tangling Hair","Sand Force"],
+              "baseStats": {
+                "hp": 35,
+                "attack": 100,
+                "defence": 60,
+                "spAtk": 50,
+                "spDef": 70,
+                "speed": 110
+              },
+              "EVyield": [
+                "Attack", "Attack"
+              ]
+          }]
+        },
+        {
+          "name": "Meowth",
+          "types": [
+            "Normal",
+            "-"
+          ],
+          "height": 0.4,
+          "weight": 4.2,
+          "abilities": [
+            "Pickup",
+            "Technician",
+            "Unnerve"
+          ],
+          "EVyield": [
+            "Speed"
+          ],
+          "catchRate": 255,
+          "friendship": 50,
+          "baseExp": 58,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Field"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 40,
+            "attack": 45,
+            "defence": 35,
+            "spAtk": 40,
+            "spDef": 40,
+            "speed": 90
+          },
+          "evolutions": [{"specie":"Persian", "method":"level 28"}],
+          "forms":[
+            {
+              "name":"alolan",
+              "types": [
+                "dark",
+                "-"
+              ],
+              "abilities": [
+                "Pickup",
+                "Technician",
+                "Rattled"
+              ],
+              "baseStats": {
+                "hp": 40,
+                "attack": 35,
+                "defence": 35,
+                "spAtk": 50,
+                "spDef": 40,
+                "speed": 90
+              },
+              "evolutions": [{"specie":"Persian", "method":"friendship", "form":"alolan"}]
+            },
+            {
+              "name":"galarian",
+              "types": [
+                "steel",
+                "-"
+              ],
+              "EVyield": [
+                "Attack"
+              ],
+              "weight":7.5,
+              "abilities": [
+                "Pickup",
+                "Tough Claws",
+                "Unnerve"
+              ],
+              "baseStats": {
+                "hp": 50,
+                "attack": 65,
+                "defence": 55,
+                "spAtk": 40,
+                "spDef": 40,
+                "speed": 40
+              },
+              "evolutions": [{"specie":"Perrserker", "method":"level 28"}]
+            }
+          ]
+        },
+        {
+          "name": "Persian",
+          "types": [
+            "Normal",
+            "-"
+          ],
+          "height": 1,
+          "weight": 32,
+          "abilities": [
+            "Limber",
+            "Technician",
+            "Unnerve"
+          ],
+          "EVyield": [
+            "Speed", "speed"
+          ],
+          "catchRate": 90,
+          "friendship": 50,
+          "baseExp": 154,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Field"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 65,
+            "attack": 70,
+            "defence": 60,
+            "spAtk": 65,
+            "spDef": 65,
+            "speed": 115
+          },
+          "evolutions": [],
+          "forms":[
+            {
+              "name": "alolan",
+          "types": [
+            "dark",
+            "-"
+          ],
+          "height": 1.1,
+          "weight": 33,
+          "abilities": [
+            "Fur Coat",
+            "Technician",
+            "Rattled"
+          ],
+          "baseStats": {
+            "hp": 65,
+            "attack": 60,
+            "defence": 60,
+            "spAtk": 75,
+            "spDef": 65,
+            "speed": 115
+          }
+            }
+          ]
+        },
+        
+        null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,
         
         {
             "name": "mew",
@@ -8046,25 +9442,6 @@
                 "spAtk": 100,
                 "spDef": 100,
                 "speed": 100
-            },
-            "moves":
-            {
-                "level":
-                [
-                    {"level": 1, "move": ["reflect type", "pound"]},
-                    {"level": 10, "move": ["Amnesia"]},
-                    {"level": 20, "move": ["Baton Pass"]},
-                    {"level": 30, "move": ["Ancient Power"]},
-                    {"level": 40, "move": ["Life Dew"]},
-                    {"level": 50, "move": ["Nasty Plot"]},
-                    {"level": 60, "move": ["Metronome"]},
-                    {"level": 70, "move": ["Imprison"]},
-                    {"level": 80, "move": ["Transform"]},
-                    {"level": 90, "move": ["Aura Sphere"]},
-                    {"level": 100, "move": ["Psychic"]}
-                ],
-                "tm":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100],
-                "egg":[]
             }
         },
         

@@ -1,11 +1,8 @@
 const ChannlesList = require('./jsony/channels.json');
-module.exports = async (aMessage, client, con) => //no slash
+module.exports = async (message, arguments, client, con) => //no slash
 {
     try
     {
-        let arguments = aMessage.arguments;
-        let message = aMessage.message;
-    
         if(arguments[1] != undefined)
         {
             text = arguments[1];
@@ -35,5 +32,5 @@ module.exports = async (aMessage, client, con) => //no slash
             
         }
     }
-    catch(error){client.bwe.theError(error, aMessage, interaction)}
+    catch(error){client.bwe.theError(error, message, interaction)}
 }

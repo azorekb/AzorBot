@@ -134,6 +134,22 @@ module.exports = async (message, client, con) =>
 
     try
     {
+        // if(message.author.id == '881213579351699526')
+        // {
+        //     let bonk = false;
+        //     if(message.content.indexOf('http://') > -1)
+        //         bonk = true;
+        //     if(message.content.indexOf('https://') > -1)
+        //         bonk = true;
+        //     if(message.attachments.size > 0)
+        //         bonk = true;
+        //     if(bonk)
+        //     {
+        //         await message.channel.send('<@!881213579351699526> <:EspyBonk:969947560678678558>');
+        //         message.delete();
+        //     }
+            
+        // }
         con.query('select code from connect_channel where channel = "' + message.channel.id + '";', (error, result) =>
         {
             if(error == null)
@@ -149,50 +165,47 @@ module.exports = async (message, client, con) =>
                                 if(message.channel.id != r_channels[i].channel)
                                 {
                                     let channel = client.channels.cache.get(r_channels[i].channel);
-                                    let webhooks = await channel.fetchWebhooks();
-                                    let webhook = webhooks.find(wh => wh.token);
-                                    if (!webhook) 
+                                    if(channel)
                                     {
-                                      await channel.createWebhook('AzorBot', {avatar: ''});
-                                      webhooks = await channel.fetchWebhooks();
-                                      webhook = webhooks.find(wh => wh.token);
-                                    }
-                                    let theFiles = [];
-                                    message.attachments.forEach(att =>
-                                    {
-                                        theFiles[theFiles.length] = att.url;
-                                    });
-                                    if(message.content == ''){message.content = '_ _'}
-                                     let theSticker = '';
-                                    if(message.stickers.size > 0)
-                                    {
-                                        message.content = 'sticker';
-                                        console.log(typeof(message.stickers.firstKey()));
-                                        theSticker = ({
-                                            id: message.stickers.firstKey(),
-                                            description: null,
-                                            type: null,
-                                            format: 'LOTTIE',
-                                            name: 'Sticker',
-                                            packId: null,
-                                            tags: null,
-                                            available: null,
-                                            guildId: null,
-                                            user: null,
-                                            sortValue: null
+                                        let webhooks = await channel.fetchWebhooks();
+                                        let webhook = webhooks.find(wh => wh.token);
+                                        if (!webhook) 
+                                        {
+                                          await channel.createWebhook('AzorBot', {avatar: ''});
+                                          webhooks = await channel.fetchWebhooks();
+                                          webhook = webhooks.find(wh => wh.token);
+                                        }
+                                        let theFiles = [];
+                                        message.attachments.forEach(att =>
+                                        {
+                                            theFiles[theFiles.length] = att.url;
                                         });
-                                    
+                                        if(message.content == ''){message.content = '_ _'}
+                                         let theSticker = '';
+                                        if(message.stickers.size > 0)
+                                        {
+                                            message.content = 'Sticker: **' + message.stickers.first().name + '**';
+                                            theFiles = ['https://cdn.discordapp.com/stickers/' + message.stickers.firstKey() + '.png'];
+                                            // console.log(message.stickers.first().name);
+                                        }
+                                        let replyMsg = '';
+                                        if(message.type == 'REPLY')
+                                        {
+                                            let aChannel = await client.channels.cache.get(message.reference.channelId);
+                                            let aMessage = await aChannel.messages.cache.get(message.reference.messageId);
+                                            replyMsg = '**[' + aMessage.author.username + '](<https://discord.com/channels/' + message.reference.guildId + '/' + message.reference.channelId + '/' + message.reference.messageId + '/>)** said:\n> ' + aMessage.content + '\n';
+                                        }
+                                        
+                                        await webhook.send(
+                                        {
+                                            content: replyMsg + message.content,
+                                            username: message.member.displayName + ' (from ' + message.guild.name + ')',
+                                            avatarURL: message.member.displayAvatarURL(),
+                                            files: theFiles,
+                                            embeds: message.embeds,
+                                        });
                                     }
-                                    
-                                    await webhook.send(
-                                    {
-                                        content: message.content,
-                                        username: message.member.displayName + ' (from ' + message.guild.name + ')',
-                                        avatarURL: message.member.displayAvatarURL(),
-                                        files: theFiles,
-                                        embeds: message.embeds,
-                                        stickers: [theSticker],
-                                    });
+                                    else con.query('delete from connect_channel where channel = ' + r_channels[i].channel);
                                 }
                             }
                         }
@@ -547,17 +560,17 @@ module.exports = async (message, client, con) =>
             const embed = new MessageEmbed().setColor(client.bwe.AzorDefaultColor).setTitle(showInLanguage(progress.language, TEXTS.title))
             .setAuthor({name: message.member.displayName, iconURL: message.member.displayAvatarURL()})
             .setDescription(showInLanguage(progress.language, TEXTS.step) +  ' ' + progress.step + ': ' + showInLanguage(progress.language, TEXTS.steps[progress.step]) + additionalText)
-            .setFooter(showInLanguage(progress.language, TEXTS.makeCancel));
+            .setFooter({text: showInLanguage(progress.language, TEXTS.makeCancel)});
             
             if(progress.data)
             {
                 embed.addFields(embedFields);
                 if(progress.data.img){embed.setThumbnail(progress.data.img);}
             }
-            if(error){embed.setFooter(error);}
+            if(error){embed.setFooter({text: error});}
             
             progress.message.edit({embeds: [embed]});
         }
     }
-    catch(error){client.bwe.theError(error, {message: message}, null)}
+    catch(error){client.bwe.theError(error, message, null)}
 }

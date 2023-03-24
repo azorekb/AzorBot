@@ -11,15 +11,16 @@ function changeCalculationString(string)
     return string;
 }
 
-module.exports = async (aMessage, client, con, interaction = null) => 
+module.exports = async (message, arguments, client, con, interaction = null) => 
 {
-    theArgument = interaction ? interaction.options.getString('calculation') : aMessage.arguments.join('');
-    const reply = (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return aMessage.message.channel.send(stuffs);}}
+    const theArgument = interaction ? interaction.options.getString('calculation') : arguments.join('');
+    const reply = (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return message.channel.send(stuffs);}}
 
     try
     {
         if(theArgument == undefined){reply('tell me what to calculate. ' + EMOJIS.sip); return false;}
         let text = changeCalculationString(theArgument);
+        if(text.indexOf('=') >= 0){reply('i can\'t calculate equations ' + EMOJIS.please); return false;}
         if(text == '2+2*2'){reply('8 ' + EMOJIS.run + ' ||jk 6||'); return false;}
         if(text == '9+10'){reply('21 ' + EMOJIS.think + ' ||jk 19||'); return false;}
         if(text == '0/0'){reply('<a:AzorExplode:982055237378519081>'); return false;}

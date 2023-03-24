@@ -2,15 +2,15 @@ const EMOJIS = require('../jsony/emoji.json');
 const { MessageAttachment } = require('discord.js');
 const Canvas = require('canvas');
 
-module.exports = async (aMessage, client, con, interaction = null) => 
+module.exports = async (message, arguments, client, con, interaction = null) => 
 {
     try
     {
         if(interaction && interaction.guild == null){interaction.reply('It can\'t be used in DM'); return;}
-        const author = interaction ? interaction.member.id : aMessage.message.author.id;
-        const serverID = interaction ? interaction.guildId : aMessage.message.guildId;
-        const reply = (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return aMessage.message.channel.send(stuffs);}}
-        const member = interaction ? interaction.member : aMessage.message.member;
+        const author = interaction ? interaction.member.id : message.author.id;
+        const serverID = interaction ? interaction.guildId : message.guildId;
+        const reply = (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return message.channel.send(stuffs);}}
+        const member = interaction ? interaction.member : message.member;
     
         con.query('select exp,level from levelup_people where member = "' + author + '" and guild = "' + serverID + '"', async (error, result) =>
         {
@@ -65,5 +65,5 @@ module.exports = async (aMessage, client, con, interaction = null) =>
             }
         });
     }
-    catch(error){client.bwe.theError(error, aMessage, interaction)}
+    catch(error){client.bwe.theError(error, message, interaction)}
 }

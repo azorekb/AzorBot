@@ -1,9 +1,9 @@
-module.exports = async (aMessage, client, con, interaction = null) => 
+module.exports = async (message, arguments, client, con, interaction = null) => 
 {
     try
     {
         const run = require('./oc');
-        run(aMessage, client, con, interaction, 'pic');
+        run(message, arguments, client, con, interaction, 'pic');
     }
-    catch(error){client.bwe.theError(error, aMessage, interaction)}
+    catch(error){client.bwe.theError(error, message, interaction)}
 }

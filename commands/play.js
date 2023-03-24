@@ -1,15 +1,16 @@
+const { Playlist } = require('discord-music-player');
 const EMOJIS = require('../jsony/emoji.json');
-module.exports = async (aMessage, client, con, interaction = null) => 
+module.exports = async (message, arguments, client, con, interaction = null) => 
 {
     try
     {
         if(interaction && interaction.guild == null){interaction.reply('It can\'t be used in DM'); return;}
-        const VoiceChannel = interaction ? interaction.member.voice.channel : aMessage.message.member.voice.channel;
-        const reply = (stuffs) => {if(interaction){interaction.reply(stuffs);}else{aMessage.message.channel.send(stuffs);}}
-        const permissions = interaction ? interaction.channel.permissionsFor(interaction.guild.me).toArray() : aMessage.message.member.voice.channel.permissionsFor(aMessage.message.guild.me).toArray();
-        const theArgument = interaction ? interaction.options.getString('song') : aMessage.arguments.join(' ');
-        const serverID = interaction ? interaction.guildId : aMessage.message.guildId;
-        const channel = interaction ? interaction.channel : aMessage.message.channel;
+        const VoiceChannel = interaction ? interaction.member.voice.channel : message.member.voice.channel;
+        const reply = (stuffs) => {if(interaction){interaction.reply(stuffs);}else{message.channel.send(stuffs);}}
+        const permissions = interaction ? interaction.channel.permissionsFor(interaction.guild.me).toArray() : message.member.voice.channel.permissionsFor(message.guild.me).toArray();
+        const theArgument = interaction ? interaction.options.getString('song') : arguments.join(' ');
+        const serverID = interaction ? interaction.guildId : message.guildId;
+        const channel = interaction ? interaction.channel : message.channel;
         let messageToEdit;
      
         if(VoiceChannel == null)
@@ -40,27 +41,35 @@ module.exports = async (aMessage, client, con, interaction = null) =>
         }
         else
         {
-            client.bwe.deleteMessage(aMessage.message);
+            client.bwe.deleteMessage(message);
         }
         messageToEdit = await channel.send('Looking for song... ' + EMOJIS.lagging);
         let queue = client.player.createQueue(serverID);
         await queue.join(VoiceChannel);
         let song = await queue.play(theArgument).catch((_) => {});
-        if(song == undefined)
-        {
-            messageToEdit.edit('Sorry, i couldn\'t find this... ' + EMOJIS.hide);
-        }
-        else
+        if(song)
         {
             messageToEdit.edit('Song added to queue ' + EMOJIS.vibbing);
         }
+        else
+        {
+            let playList = await queue.playlist(theArgument).catch((_) => {});
+            if(playList)
+            {
+                messageToEdit.edit('Songs added to queue ' + EMOJIS.vibbing);
+            }
+            else
+            {
+                messageToEdit.edit('Sorry, i couldn\'t find this... ' + EMOJIS.hide);
+            }
+        }
         setTimeout(() => {client.bwe.deleteMessage(messageToEdit);}, 3000);
-        if(client.queueMessages.get(serverID) == null)
+        if(!client.queueMessages.get(serverID) && (Playlist || song))
         {
             const run = require('./queue');
-            run(aMessage, client, con, interaction);
+            run(message, arguments, client, con, interaction);
             delete require.cache[require.resolve('./queue')];
         }
     }
-    catch(error){client.bwe.theError(error, aMessage, interaction)}
+    catch(error){client.bwe.theError(error, message, interaction)}
 }

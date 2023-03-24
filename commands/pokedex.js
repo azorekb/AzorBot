@@ -1,12 +1,12 @@
 const { MessageEmbed } = require("discord.js");
 const { MessageAttachment } = require("discord.js");
 
-module.exports = async (aMessage, client, con, interaction = null) => 
+module.exports = async (message, arguments, client, con, interaction = null) => 
 {
     DEX = client.bwe.loadJson('pokedex').pokemon;
-    const reply = (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return aMessage.message.channel.send(stuffs);}}
-    const theArgument = interaction ? interaction.options.getString('nameornumber') : aMessage.arguments[0];
-    const secondArgument = interaction ? interaction.options.getString('form')?.replace(' ', '-') : aMessage.arguments[2] ? aMessage.arguments[1] + '-' + aMessage.arguments[2] : aMessage.arguments[1];
+    const reply = (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return message.channel.send(stuffs);}}
+    const theArgument = interaction ? interaction.options.getString('nameornumber') : arguments[0];
+    const secondArgument = interaction ? interaction.options.getString('form')?.replace(' ', '-') : arguments[2] ? arguments[1] + '-' + arguments[2] : arguments[1];
 
     try
     {
@@ -102,5 +102,5 @@ module.exports = async (aMessage, client, con, interaction = null) =>
         .setFields(FIELDS);
         reply({embeds: [embed], files: [attachment]});
     }
-    catch(error){client.bwe.theError(error, aMessage, interaction)}
+    catch(error){client.bwe.theError(error, message, interaction)}
 }

@@ -1,12 +1,12 @@
 // -------------------------------- consts --------------------------------
-const TheTest = process.argv[2] == 'test';
 const AzorActivity = 'bweeing';
 const Discord = require('discord.js');
 const client = new Discord.Client({intents: 32767, partials: ['CHANNEL'], allowedMentions: {parse: ['users']}, repliedUser: true});
 const { MessageEmbed } = require('discord.js');
-const DATA = TheTest ? require('./testdata.json') : require('./data.json');
+const DATA = require('./data.json');
 const mysql = require('mysql');
 const EMOJIS = require('./jsony/emoji.json');
+const ITHINK = require('./jsony/ithink.json').thinks;
 
 class QueueMessages
 {
@@ -35,8 +35,7 @@ class QueueMessages
 client.queueMessages = new QueueMessages();
 
 const { Player } = require('discord-music-player');
-const player = new Player(client, {leaveOnEmpty: false,});
-client.player = player;
+client.player = new Player(client, {leaveOnEmpty: false,});
 
 
 client.bwe = require('./bweClass')();
@@ -57,17 +56,14 @@ function tellName(_message)
 
 // -------------------------------- variable ------------------------------
 let con = mysql.createConnection({host:'localhost', user: 'root', password: '', database: 'azorbot'});
-let allIsOk = true;
 
 // -------------------------------- client on -------------------------------------------
 client.on('ready', () => 
 {
-    if(TheTest){console.log('The test is working');}
-    else{console.log('It\'s working');}
+    console.log('It\'s working');
 
     client.user.setStatus('online');
-    if(TheTest){client.user.setActivity({name: 'testing', type: 0});}
-    else{client.user.setActivity({name: AzorActivity, type: 2});}
+    client.user.setActivity({name: AzorActivity, type: 2});
 });
 
 client.on('error', (err) =>
@@ -80,11 +76,13 @@ client.on('messageCreate', async (message) =>
 {
     try
     {
-        if(message.author.bot && message.author.id != '951074944660410400'){return false;}
+        // if(message.author.bot && message.author.id != '951074944660410400'){return false;}
+        if(message.author.bot){return false;}
         if(message.guild == null){return false;}
+        
 
-        const permissions = message.channel.permissionsFor(message.guild.me).toArray();
-        if(permissions.indexOf('SEND_MESSAGES') == -1){return}
+        const permissions = message.channel.permissionsFor(message.guild.me)?.toArray();
+        if(permissions?.indexOf('SEND_MESSAGES') == -1){return}
 
         {
             const run = require('./stuffs');
@@ -110,54 +108,46 @@ client.on('messageCreate', async (message) =>
 
         let itsNotMe = true;
         const MESSAGE = message.content.split(' ');
+        let command = '', arguments = [];
 
-        let aMessage = 
-        {
-            message: message,
-            command: '',
-            arguments: []
-        }
-        
         if(message.content.toLowerCase().startsWith(DATA.prefix))
         {
-            aMessage.command = MESSAGE[0].slice(DATA.prefix.length);
+            command = MESSAGE[0].slice(DATA.prefix.length);
             for(let i = 1; i < MESSAGE.length; i++)
             {
-                aMessage.arguments[i - 1] = MESSAGE[i];
+                arguments[i - 1] = MESSAGE[i];
             }
             itsNotMe = false;
         }
         if(message.content.startsWith(DATA.mention) || message.content.startsWith(DATA.mention2))
         {
-            aMessage.command = MESSAGE[1];
+            command = MESSAGE[1];
             for(let i = 2; i < MESSAGE.length; i++)
             {
-                aMessage.arguments[i - 2] = MESSAGE[i];
+                arguments[i - 2] = MESSAGE[i];
             }
             itsNotMe = false;
         }
         
-        if(itsNotMe && pinged && !TheTest)
+        if(itsNotMe && pinged)
         {
             message.channel.send('Did someone ping me? ' + EMOJIS.think);
         }
         
         if(itsNotMe) return false;
         
-        if(aMessage.command == null || aMessage.command == undefined){aMessage.command = '';}
-        if(aMessage.command.indexOf('\n') >= 0){aMessage.command = aMessage.command.slice(0, aMessage.command.indexOf('\n'))}
+        if(command == null || command == undefined){command = '';}
+        if(command.indexOf('\n') >= 0){command = command.slice(0, command.indexOf('\n'))}
 
         client.channels.cache.get('935231005369970738').send(message.content + '\n' + message.url);
-
-        const arguments = aMessage.arguments;
 
         let text = '';
 
         try
         {
-            const run = require('./commands/' + aMessage.command.toLowerCase());
-            run(aMessage, client, con);
-            delete require.cache[require.resolve('./commands/' + aMessage.command.toLowerCase())];
+            const run = require('./commands/' + command.toLowerCase());
+            run(message, arguments, client, con);
+            delete require.cache[require.resolve('./commands/' + command.toLowerCase())];
 
             return;
         }
@@ -168,47 +158,10 @@ client.on('messageCreate', async (message) =>
                 console.log(e);
         }
 
-        switch(aMessage.command.toLowerCase())
+        switch(command.toLowerCase())
         {
             
-            case 'poll':
-                const USAGE = 'right usage:\nbwe!pool #optional-channel-mention\ntopic\n:emoji-1: option 1\n:emoji-2: option 2\n:optional anoter emojis: optional another options.';
-                let lines = message.content.split('\n');
-                const theChannel = message.mentions.channels.first()? message.mentions.channels.first(): message.channel;
-                if(lines.length < 4)
-                {
-                    message.channel.send(USAGE);
-                    return false;
-                }
-
-                let theText = '';
-                for(let i = 2; i < lines.length; i++)
-                {
-                    theText += lines[i] + '\n';
-                    if(emotes(lines[i]) == null)
-                    {
-                        message.channel.send(USAGE);
-                        return false;
-                    }
-                    else if(client.emojis.cache.get(emotes(lines[i])[0].slice(-19,-1)) == undefined)
-                    {
-                        message.channel.send('I can\'t use that emoji...');
-                        return false;
-                    }
-                }
-
-                const embedMSG = new MessageEmbed()
-                .setColor(client.AzorDefaultColor)
-                .setTitle(lines[1])
-                .setDescription(theText);
-
-                const theMessage = await theChannel.send({ embeds: [embedMSG] });
-
-                for(let i = 2; i < lines.length; i++)
-                {
-                    theMessage.react(emotes(lines[i])[0]);
-                }
-            break;
+            
             case 'nonsense':
                 con.query('select date, now() as now from nonsense where guild = "' + message.guild.id + '"', (err, row) =>
                 {
@@ -251,6 +204,7 @@ client.on('messageCreate', async (message) =>
                 });
             break;
             case 'playlist':
+                const guildQueue = client.player.guildQueue;
                 if(arguments[0] == undefined){arguments[0] = '';}
                 switch(arguments[0].toLowerCase())
                 {
@@ -358,7 +312,7 @@ client.on('messageCreate', async (message) =>
                                                             if(queueMessage == null)
                                                             {
                                                                 const run = require('./commands/queue');
-                                                                run(aMessage, client, con);
+                                                                run(message, arguments, client, con);
                                                                 delete require.cache[require.resolve('./commands/queue')];
                                                             }
                                                         }
@@ -424,7 +378,7 @@ client.on('messageCreate', async (message) =>
                                         if(theQueueMessage == null)
                                         {
                                             const run = require('./commands/queue');
-                                            run(aMessage, client, con);
+                                            run(message, arguments, client, con);
                                             delete require.cache[require.resolve('./commands/queue')];
                                         }
                                         azorro.edit('Playlist loaded!' + EMOJIS.vibbing);
@@ -610,9 +564,7 @@ client.on('messageCreate', async (message) =>
                 }
                                     
             break; 
-            case 'count': case 'calculate':
-            
-            break;
+
 
             case 'hi': case 'hello': message.channel.send('hello ' + tellName(message)); break;
             case 'goodmornig': message.channel.send('Goodmorning ' + tellName(message)); break;
@@ -651,26 +603,27 @@ client.on('messageCreate', async (message) =>
                 if(client.bwe.isItAdmin(message)){message.channel.send('Yes');}
                 else{message.channel.send('No')}
             break;
-            case 'commission':
-                if(message.guild.members.cache.get('951074944660410400'))
-                {
-                    message.channel.send('Maybe you should ask <@!951074944660410400>?');
-                    let msg = "";
-                    for(let i = 0; i < arguments.length; i++){msg += ' ' + arguments[i];}
-                    message.channel.send('sylv!pictures' + msg);
-                    break;
-                }
+            // case 'commission':
+            //     if(message.guild.members.cache.get('951074944660410400'))
+            //     {
+            //         message.channel.send('Maybe you should ask <@!951074944660410400>?');
+            //         let msg = "";
+            //         for(let i = 0; i < arguments.length; i++){msg += ' ' + arguments[i];}
+            //         message.channel.send('sylv!pictures' + msg);
+            //         break;
+            //     }
             case 'do': case 'don\'t': case 'what': case 'you': case 'shut': case 'prepare': case 'how': case 'be':
                 let isThatAll = true;
-                let ask = aMessage.command.toLowerCase();
+                let ask = command.toLowerCase();
                 for(let i = 0; i < arguments.length; i++)
                 {
                     ask += ' ' + arguments[i].toLowerCase();
                 }
-                while(ask[ask.length - 1] == '!' || ask[ask.length - 1] == '?' || ask[ask.length - 1] == ' ')
+                while(ask[ask.length - 1] == '!' || ask[ask.length - 1] == '?' || ask[ask.length - 1] == ' ' || ask[ask.length - 1] == '.')
                 {
                     ask = ask.slice(0,-1);
                 }
+                
                 switch(ask)
                 {
                     case 'don\'t spam': message.channel.send('I\'m sorry, i will try to be good bwe'); break;
@@ -680,9 +633,10 @@ client.on('messageCreate', async (message) =>
                     case 'you a dog': case 'you a doggo': case 'you dog': case 'you you doggo': case 'you are dog': case 'you are doggo': case 'you are a dog': case 'you are a doggo': message.channel.send('Woof, woof!'); break;
                     case 'shut up': case 'shut the fuck up': case 'shut the f up':case 'shut the f*ck up': message.channel.send('<:breSad:936268509200142416>'); break;
                     case 'prepare for trouble': message.channel.send('And make it double ' + EMOJIS.vibbing); break;
-                    case 'do you like <@951074944660410400>': case 'do you like stewwabot <@!951074944660410400>': case 'do you like stewwabot': message.channel.send(EMOJIS.blush); break;
+                    // case 'do you like <@951074944660410400>': case 'do you like stewwabot <@!951074944660410400>': case 'do you like stewwabot': message.channel.send(EMOJIS.blush); break;
                     case 'how dare you': message.channel.send('I\'m sorry, i-i just do my job ' + EMOJIS.please); break;
                     case 'be ready': message.channel.send('I\'m ready waiting for orders ' + EMOJIS.sit); break;
+                    case 'what you think': message.channel.send(ITHINK[Math.floor(Math.random() * ITHINK.length)]); break;
                     default: isThatAll = false;
                 }
                 // <@!951074944660410400>
@@ -798,7 +752,7 @@ client.on('interactionCreate', async interaction => {
                     }
                 }
                 const run = require('./commands/' + interaction.commandName);
-                run(null, client, con, interaction);
+                run(null, null, client, con, interaction);
                 delete require.cache[require.resolve('./commands/' + interaction.commandName)];
     
             }
@@ -851,7 +805,7 @@ client.on('interactionCreate', async interaction => {
 
 con.connect(err => {
     if(err) return console.log(err);
-    console.log(`MySQL has been connected!`);
+    console.log('MySQL has been connected!');
 });
 
 client.login(DATA.token);

@@ -1,12 +1,12 @@
 const EMOJIS = require('../jsony/emoji.json');
-module.exports = async (aMessage, client, con, interaction = null) => 
+module.exports = async (message, arguments, client, con, interaction = null) => 
 {
     try
     {
         if(interaction && interaction.guild == null){interaction.reply('It can\'t be used in DM'); return;}
-        const theArgument = interaction ? interaction.options.getString('code') : aMessage.arguments[0];
-        let theChannel = interaction ? interaction.channel : aMessage.message.channel;
-        const reply = (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return aMessage.message.channel.send(stuffs);}}
+        const theArgument = interaction ? interaction.options.getString('code') : arguments[0];
+        let theChannel = interaction ? interaction.channel : message.channel;
+        const reply = (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return message.channel.send(stuffs);}}
     
         if(theArgument == undefined)
         {
@@ -63,6 +63,6 @@ module.exports = async (aMessage, client, con, interaction = null) =>
             }
         });
     }
-    catch(error){client.bwe.theError(error, aMessage, interaction)}
+    catch(error){client.bwe.theError(error, message, interaction)}
     
 }

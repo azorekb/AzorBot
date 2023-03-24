@@ -1,10 +1,10 @@
 const { MessageEmbed } = require('discord.js');
-module.exports = async (aMessage, client, con, interaction = null) => 
+module.exports = async (message, arguments, client, con, interaction = null) => 
 {
     const TEXTS = client.bwe.loadJson('texts').newCharacter;
-    const reply = (stuffs) => {if(interaction){return interaction.channel.send(stuffs);}else{return aMessage.message.channel.send(stuffs);}}
-    const member = interaction ? interaction.member : aMessage.message.member;
-    const author = interaction ? interaction.member.id : aMessage.message.author.id;
+    const reply = (stuffs) => {if(interaction){return interaction.channel.send(stuffs);}else{return message.channel.send(stuffs);}}
+    const member = interaction ? interaction.member : message.member;
+    const author = interaction ? interaction.member.id : message.author.id;
     
     try
     {
@@ -25,5 +25,5 @@ module.exports = async (aMessage, client, con, interaction = null) =>
             client.bwe.creatingCharacter.add(theMessage, author, theMessage.channel.id);
         }
     }
-    catch(error){client.bwe.theError(error, aMessage, interaction)}
+    catch(error){client.bwe.theError(error, message, interaction)}
 }

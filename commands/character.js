@@ -13,13 +13,13 @@ const getPokemonNumberByName = (_name) =>
     return -1;
 }
 
-module.exports = async (aMessage, client, con, interaction = null) => 
+module.exports = async (message, arguments, client, con, interaction = null) => 
 {
     try
     {
-        const reply = (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return aMessage.message.channel.send(stuffs);}}
-        const member = interaction ? interaction.member : aMessage.message.member;
-        // const theArgument = interaction ? interaction.options.getInteger('number') : aMessage.arguments[0]*1;
+        const reply = (stuffs) => {if(interaction){return interaction.reply(stuffs);}else{return message.channel.send(stuffs);}}
+        const member = interaction ? interaction.member : message.member;
+        // const theArgument = interaction ? interaction.options.getInteger('number') : arguments[0]*1;
         con.query('select * from players where user = "' + member.id + '";', async (error, result) =>
         {
             if(error)
@@ -153,5 +153,5 @@ module.exports = async (aMessage, client, con, interaction = null) =>
 
 
     }
-    catch(error){client.bwe.theError(error, aMessage, interaction)}
+    catch(error){client.bwe.theError(error, message, interaction)}
 }
