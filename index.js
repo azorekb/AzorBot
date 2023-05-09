@@ -131,7 +131,16 @@ client.on('messageCreate', async (message) =>
         
         if(itsNotMe && pinged)
         {
-            message.channel.send('Did someone ping me? ' + EMOJIS.think);
+            switch(MESSAGE[0].toLowerCase())
+            {
+                case 'hi': command = 'hi'; itsNotMe = false; break;
+                case 'hello': command = 'hello'; itsNotMe = false; break;
+                case 'hewwo': command = 'hewwo'; itsNotMe = false; break;
+                case 'goodmorning': command = 'goodmorning'; itsNotMe = false; break;
+                case 'goodnight': command = 'goodnight'; itsNotMe = false; break;
+
+                default: message.channel.send('Did someone ping me? ' + EMOJIS.think);
+            }
         }
         
         if(itsNotMe) return false;
@@ -566,7 +575,7 @@ client.on('messageCreate', async (message) =>
             break; 
 
 
-            case 'hi': case 'hello': message.channel.send('hello ' + tellName(message)); break;
+            
             case 'goodmornig': message.channel.send('Goodmorning ' + tellName(message)); break;
             case 'goodnight': message.channel.send('Goodnight ' + tellName(message)); break;
             case 'apple': message.channel.send(':apple:'); break;

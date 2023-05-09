@@ -9417,8 +9417,1056 @@
             }
           ]
         },
-        
-        null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,
+        {
+          "name": "Psyduck",
+          "types": [
+            "Water",
+            "-"
+          ],
+          "height": 0.8,
+          "weight": 19.6,
+          "abilities": [
+            "Damp",
+            "Cloud Nine",
+            "Swift Swim"
+          ],
+          "EVyield": [
+            "1 Special Attack"
+          ],
+          "catchRate": 190,
+          "friendship": 50,
+          "baseExp": 64,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Field",
+            "Water 1"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 50,
+            "attack": 52,
+            "defence": 48,
+            "spAtk": 65,
+            "spDef": 50,
+            "speed": 55
+          },
+          "evolutions":  [{"specie":"Golduck", "method":"level 33"}]
+        },
+        {
+          "name": "Golduck",
+          "types": [
+            "Water",
+            "-"
+          ],
+          "height": 1.7,
+          "weight": 76.6,
+          "abilities": [
+            "Damp",
+            "Cloud Nine",
+            "Swift Swim"
+          ],
+          "EVyield": [
+            "2 Special Attack"
+          ],
+          "catchRate": 75,
+          "friendship": 50,
+          "baseExp": 175,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Field",
+            "Water 1"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 80,
+            "attack": 82,
+            "defence": 78,
+            "spAtk": 95,
+            "spDef": 80,
+            "speed": 85
+          },
+          "evolutions": []
+        },
+        {
+          "name": "Mankey",
+          "types": [
+            "Fighting",
+            "-"
+          ],
+          "height": 0.5,
+          "weight": 28,
+          "abilities": [
+            "Vital Spirit",
+            "Anger Point",
+            "Defiant"
+          ],
+          "EVyield": [
+            "1 Attack"
+          ],
+          "catchRate": 190,
+          "friendship": 50,
+          "baseExp": 61,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Field"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 40,
+            "attack": 80,
+            "defence": 35,
+            "spAtk": 35,
+            "spDef": 45,
+            "speed": 70
+          },
+          "evolutions": [{"method": "level 28", "specie": "Primeape"}]
+        },
+        {
+          "name": "Primeape",
+          "types": [
+            "Fighting",
+            "-"
+          ],
+          "height": 1,
+          "weight": 32,
+          "abilities": [
+            "Vital Spirit",
+            "Anger Point",
+            "Defiant"
+          ],
+          "EVyield": [
+            "2 Attack"
+          ],
+          "catchRate": 75,
+          "friendship": 50,
+          "baseExp": 159,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Field"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 65,
+            "attack": 105,
+            "defence": 60,
+            "spAtk": 60,
+            "spDef": 70,
+            "speed": 95
+          },
+          "evolutions": [{"specie": "Annihilape", "method": "Use Rage Fist 20 times"}]
+        },
+        {
+          "name": "Growlithe",
+          "types": [
+            "Fire",
+            "-"
+          ],
+          "height": 0.7,
+          "weight": 19,
+          "abilities": [
+            "Intimidate",
+            "Flash Fire",
+            "Justified"
+          ],
+          "EVyield": [
+            "1 Attack"
+          ],
+          "catchRate": 190,
+          "friendship": 50,
+          "baseExp": 70,
+          "growthRate": "Slow",
+          "eggGroups": [
+            "Field"
+          ],
+          "femaleRate": 25,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 55,
+            "attack": 70,
+            "defence": 45,
+            "spAtk": 70,
+            "spDef": 50,
+            "speed": 60
+          },
+          "evolutions": [{"specie":"Arcanine", "method": "fire stone"}],
+          "forms":[{
+            "name": "Hisuian",
+            "types": [
+              "Fire",
+              "Rock"
+            ],
+            "height": 0.8,
+            "weight": 22.7,
+            "abilities": [
+              "Intimidate",
+              "Flash Fire",
+              "Rock Head"
+            ],
+            "baseStats": {
+              "hp": 60,
+              "attack": 75,
+              "defence": 45,
+              "spAtk": 65,
+              "spDef": 50,
+              "speed": 55
+            },
+            "evolutions": [{"specie":"Arcanine", "method": "fire stone", "form":"Hisuian"}]
+          }]
+        },
+        {
+          "name": "Arcanine",
+          "types": [
+            "Fire",
+            "-"
+          ],
+          "height": 1.9,
+          "weight": 155,
+          "abilities": [
+            "Intimidate",
+            "Flash Fire",
+            "Justified"
+          ],
+          "EVyield": [
+            "2 Attack"
+          ],
+          "catchRate": 75,
+          "friendship": 50,
+          "baseExp": 194,
+          "growthRate": "Slow",
+          "eggGroups": [
+            "Field"
+          ],
+          "femaleRate": 25,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 90,
+            "attack": 110,
+            "defence": 80,
+            "spAtk": 100,
+            "spDef": 80,
+            "speed": 95
+          },
+          "evolutions": [],
+          "forms":[
+            {"name": "Hisuian",
+          "types": [
+            "Fire",
+            "Rock"
+          ],
+          "height": 2,
+          "weight": 168,
+          "abilities": [
+            "Intimidate",
+            "Flash Fire",
+            "Rock Head"
+          ],
+          "baseStats": {
+            "hp": 95,
+            "attack": 115,
+            "defence": 80,
+            "spAtk": 95,
+            "spDef": 80,
+            "speed": 90
+          }
+          }]
+        },
+        {
+          "name": "Poliwag",
+          "types": [
+            "Water",
+            "-"
+          ],
+          "height": 0.6,
+          "weight": 12.4,
+          "abilities": [
+            "Water Absorb",
+            "Damp",
+            "Swift Swim"
+          ],
+          "EVyield": [
+            "1 Speed"
+          ],
+          "catchRate": 255,
+          "friendship": 50,
+          "baseExp": 60,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Water 1"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 40,
+            "attack": 50,
+            "defence": 40,
+            "spAtk": 40,
+            "spDef": 40,
+            "speed": 90
+          },
+          "evolutions": [{"specie":"Poliwhirl", "method":"level 25"}]
+        },
+        {
+          "name": "Poliwhirl",
+          "types": [
+            "Water",
+            "-"
+          ],
+          "height": 1,
+          "weight": 20,
+          "abilities": [
+            "Water Absorb",
+            "Damp",
+            "Swift Swim"
+          ],
+          "EVyield": [
+            "2 Speed"
+          ],
+          "catchRate": 120,
+          "friendship": 50,
+          "baseExp": 135,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Water 1"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 65,
+            "attack": 65,
+            "defence": 65,
+            "spAtk": 50,
+            "spDef": 50,
+            "speed": 90
+          },
+          "evolutions": [{"specie":"Poliwrath", "method":"water stone"},{"specie":"Politoed", "method": "trade with Kings Rock"}]
+        },
+        {
+          "name": "Poliwrath",
+          "types": [
+            "Water",
+            "Fighting"
+          ],
+          "height": 1.3,
+          "weight": 54,
+          "abilities": [
+            "Water Absorb",
+            "Damp",
+            "Swift Swim"
+          ],
+          "EVyield": [
+            "3 Defense"
+          ],
+          "catchRate": 45,
+          "friendship": 50,
+          "baseExp": 230,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Water 1"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 90,
+            "attack": 95,
+            "defence": 95,
+            "spAtk": 70,
+            "spDef": 90,
+            "speed": 70
+          },
+          "evolutions": []
+        },
+        {
+          "name": "Abra",
+          "types": [
+            "Psychic",
+            "-"
+          ],
+          "height": 0.9,
+          "weight": 19.5,
+          "abilities": [
+            "Synchronize",
+            "Inner Focus",
+            "Magic Guard"
+          ],
+          "EVyield": [
+            "1 Special Attack"
+          ],
+          "catchRate": 200,
+          "friendship": 50,
+          "baseExp": 62,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Human-Like"
+          ],
+          "femaleRate": 25,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 25,
+            "attack": 20,
+            "defence": 15,
+            "spAtk": 105,
+            "spDef": 55,
+            "speed": 90
+          },
+          "evolutions": [{"specie":"Kadabra", "method":"level 16"}]
+        },
+        {
+          "name": "Kadabra",
+          "types": [
+            "Psychic",
+            "-"
+          ],
+          "height": 1.3,
+          "weight": 56.5,
+          "abilities": [
+            "Synchronize",
+            "Inner Focus",
+            "Magic Guard"
+          ],
+          "EVyield": [
+            "2 Special Attack"
+          ],
+          "catchRate": 100,
+          "friendship": 50,
+          "baseExp": 140,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Human-Like"
+          ],
+          "femaleRate": 25,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 40,
+            "attack": 35,
+            "defence": 30,
+            "spAtk": 120,
+            "spDef": 70,
+            "speed": 105
+          },
+          "evolutions": [{"specie":"Alakazam","method":"trade"}]
+        },
+        {
+          "name": "Alakazam",
+          "types": [
+            "Psychic",
+            "-"
+          ],
+          "height": 1.5,
+          "weight": 48,
+          "abilities": [
+            "Synchronize",
+            "Inner Focus",
+            "Magic Guard"
+          ],
+          "EVyield": [
+            "3 Special Attack"
+          ],
+          "catchRate": 50,
+          "friendship": 50,
+          "baseExp": 225,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Human-Like"
+          ],
+          "femaleRate": 25,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 55,
+            "attack": 50,
+            "defence": 45,
+            "spAtk": 135,
+            "spDef": 95,
+            "speed": 120
+          },
+          "evolutions": [],
+          "forms":[{
+            "name":"mega",
+            "height": 1.2,
+            "abilities": [
+              "Trace"
+            ],
+            "baseStats": {
+              "hp": 55,
+              "attack": 50,
+              "defence": 65,
+              "spAtk": 175,
+              "spDef": 105,
+              "speed": 150
+            }
+          }]
+        },
+        {
+          "name": "Machop",
+          "types": [
+            "Fighting",
+            "-"
+          ],
+          "height": 0.8,
+          "weight": 19.5,
+          "abilities": [
+            "Guts",
+            "No Guard",
+            "Steadfast"
+          ],
+          "EVyield": [
+            "1 Attack"
+          ],
+          "catchRate": 180,
+          "friendship": 50,
+          "baseExp": 61,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Human-Like"
+          ],
+          "femaleRate": 25,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 70,
+            "attack": 80,
+            "defence": 50,
+            "spAtk": 35,
+            "spDef": 35,
+            "speed": 35
+          },
+          "evolutions": [{"specie":"Machoke","method":"level 28"}]
+        },
+        {
+          "name": "Machoke",
+          "types": [
+            "Fighting",
+            "-"
+          ],
+          "height": 1.5,
+          "weight": 70.5,
+          "abilities": [
+            "Guts",
+            "No Guard",
+            "Steadfast"
+          ],
+          "EVyield": [
+            "2 Attack"
+          ],
+          "catchRate": 90,
+          "friendship": 50,
+          "baseExp": 142,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Human-Like"
+          ],
+          "femaleRate": 25,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 80,
+            "attack": 100,
+            "defence": 70,
+            "spAtk": 50,
+            "spDef": 60,
+            "speed": 45
+          },
+          "evolutions": [{"specie":"Machamp", "method":"trade"}]
+        },
+        {
+          "name": "Machamp",
+          "types": [
+            "Fighting",
+            "-"
+          ],
+          "height": 1.6,
+          "weight": 130,
+          "abilities": [
+            "Guts",
+            "No Guard",
+            "Steadfast"
+          ],
+          "EVyield": [
+            "3 Attack"
+          ],
+          "catchRate": 45,
+          "friendship": 50,
+          "baseExp": 227,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Human-Like"
+          ],
+          "femaleRate": 25,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 90,
+            "attack": 130,
+            "defence": 80,
+            "spAtk": 65,
+            "spDef": 85,
+            "speed": 55
+          },
+          "evolutions": []
+        },
+        {
+          "name": "Bellsprout",
+          "types": [
+            "Grass",
+            "Poison"
+          ],
+          "height": 0.7,
+          "weight": 4,
+          "abilities": [
+            "Chlorophyll",
+            "-",
+            "-"
+          ],
+          "EVyield": [
+            "1 Attack"
+          ],
+          "catchRate": 255,
+          "friendship": 50,
+          "baseExp": 60,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Grass"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 50,
+            "attack": 75,
+            "defence": 35,
+            "spAtk": 70,
+            "spDef": 30,
+            "speed": 40
+          },
+          "evolutions": [{"specie":"Weepinbell", "method":"level 21"}]
+        },
+        {
+          "name": "Weepinbell",
+          "types": [
+            "Grass",
+            "Poison"
+          ],
+          "height": 1,
+          "weight": 6.4,
+          "abilities": [
+            "Chlorophyll",
+            "-",
+            "-"
+          ],
+          "EVyield": [
+            "2 Attack"
+          ],
+          "catchRate": 120,
+          "friendship": 50,
+          "baseExp": 137,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Grass"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 65,
+            "attack": 90,
+            "defence": 50,
+            "spAtk": 85,
+            "spDef": 45,
+            "speed": 55
+          },
+          "evolutions": [{"specie":"Victreebel","method":"leaf stone"}]
+        },
+        {
+          "name": "Victreebel",
+          "types": [
+            "Grass",
+            "Poison"
+          ],
+          "height": 1.7,
+          "weight": 15.5,
+          "abilities": [
+            "Chlorophyll",
+            "-",
+            "-"
+          ],
+          "EVyield": [
+            "3 Attack"
+          ],
+          "catchRate": 45,
+          "friendship": 50,
+          "baseExp": 221,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Grass"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 80,
+            "attack": 105,
+            "defence": 65,
+            "spAtk": 100,
+            "spDef": 70,
+            "speed": 70
+          },
+          "evolutions": []
+        },
+        {
+          "name": "Tentacool",
+          "types": [
+            "Water",
+            "Poison"
+          ],
+          "height": 0.9,
+          "weight": 45.5,
+          "abilities": [
+            "Clear Body",
+            "Liquid Ooze",
+            "Rain Dish"
+          ],
+          "EVyield": [
+            "1 Special Defense"
+          ],
+          "catchRate": 190,
+          "friendship": 50,
+          "baseExp": 67,
+          "growthRate": "Slow",
+          "eggGroups": [
+            "Water 3"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 40,
+            "attack": 40,
+            "defence": 35,
+            "spAtk": 50,
+            "spDef": 100,
+            "speed": 70
+          },
+          "evolutions": [{"specie":"Tentacruel", "method":"level 30"}]
+        },
+        {
+          "name": "Tentacruel",
+          "types": [
+            "Water",
+            "Poison"
+          ],
+          "height": 1.6,
+          "weight": 55,
+          "abilities": [
+            "Clear Body",
+            "Liquid Ooze",
+            "Rain Dish"
+          ],
+          "EVyield": [
+            "2 Special Defense"
+          ],
+          "catchRate": 60,
+          "friendship": 50,
+          "baseExp": 180,
+          "growthRate": "Slow",
+          "eggGroups": [
+            "Water 3"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 80,
+            "attack": 70,
+            "defence": 65,
+            "spAtk": 80,
+            "spDef": 120,
+            "speed": 100
+          },
+          "evolutions": []
+        },
+        {
+          "name": "Geodude",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "height": 0.4,
+          "weight": 20,
+          "abilities": [
+            "Rock Head",
+            "Sturdy",
+            "Sand Veil"
+          ],
+          "EVyield": [
+            "1 Defense"
+          ],
+          "catchRate": 255,
+          "friendship": 50,
+          "baseExp": 60,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Mineral"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 15,
+          "baseStats": {
+            "hp": 40,
+            "attack": 80,
+            "defence": 100,
+            "spAtk": 30,
+            "spDef": 30,
+            "speed": 20
+          },
+          "evolutions": [{"specie":"Graveler","method":"level 25"}],
+          "forms":[{
+            "name": "alolan",
+          "types": [
+            "Rock",
+            "Electric"
+          ],
+          "weight": 20.3,
+          "abilities": [
+            "Magnet Pull",
+            "Sturdy",
+            "Galvanize"
+          ],
+          "EVyield": [
+            "1 Defense"
+          ],
+          "evolutions": [{"specie":"Graveler","method":"level 25", "form":"alolan"}]
+          }]
+        },
+        {
+          "name": "Graveler",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "height": 1,
+          "weight": 105,
+          "abilities": [
+            "Rock Head",
+            "Sturdy",
+            "Sand Veil"
+          ],
+          "EVyield": [
+            "2 Defense"
+          ],
+          "catchRate": 120,
+          "friendship": 50,
+          "baseExp": 137,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Mineral"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 15,
+          "baseStats": {
+            "hp": 55,
+            "attack": 95,
+            "defence": 115,
+            "spAtk": 45,
+            "spDef": 45,
+            "speed": 35
+          },
+          "evolutions": [{"method":"trade", "specie":"Golem"}],
+          "forms":[{"name": "alolan",
+          "types": [
+            "Rock",
+            "Electric"
+          ],
+          "weight": 110,
+          "abilities": [
+            "Magnet Pull",
+            "Sturdy",
+            "Galvanize"
+          ],
+          "evolutions": [{"method":"trade", "specie":"Golem", "form":"alolan"}]}]
+        },
+        {
+          "name": "Golem",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "height": 1.4,
+          "weight": 300,
+          "abilities": [
+            "Rock Head",
+            "Sturdy",
+            "Sand Veil"
+          ],
+          "EVyield": [
+            "3 Defense"
+          ],
+          "catchRate": 45,
+          "friendship": 50,
+          "baseExp": 223,
+          "growthRate": "Medium Slow",
+          "eggGroups": [
+            "Mineral"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 15,
+          "baseStats": {
+            "hp": 80,
+            "attack": 120,
+            "defence": 130,
+            "spAtk": 55,
+            "spDef": 65,
+            "speed": 45
+          },
+          "forms": [{"name": "alolan",
+          "types": [
+            "Rock",
+            "Electric"
+          ],
+          "height": 1.7,
+          "weight": 316,
+          "abilities": [
+            "Magnet Pull",
+            "Sturdy",
+            "Galvanize"
+          ]}]
+        },
+        {
+          "name": "Ponyta",
+          "types": [
+            "Fire",
+            "-"
+          ],
+          "height": 1,
+          "weight": 30,
+          "abilities": [
+            "Run Away",
+            "Flash Fire",
+            "Flame Body"
+          ],
+          "EVyield": [
+            "1 Speed"
+          ],
+          "catchRate": 190,
+          "friendship": 50,
+          "baseExp": 82,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Field"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 50,
+            "attack": 85,
+            "defence": 55,
+            "spAtk": 65,
+            "spDef": 65,
+            "speed": 90
+          },
+          "evolutions": [{"specie":"Rapidash", "method":"level 40"}],
+          "forms":[{
+            "name": "galarian",
+          "types": [
+            "psychic",
+            "-"
+          ],
+          "height": 0.8,
+          "weight": 24,
+          "abilities": [
+            "Run Away",
+            "Pastel Veil",
+            "Anticipation"
+          ],
+          "evolutions": [{"specie":"Rapidash", "method":"level 40", "form":"galarian"}]
+          }]
+        },
+        {
+          "name": "Rapidash",
+          "types": [
+            "Fire",
+            "-"
+          ],
+          "height": 1.7,
+          "weight": 95,
+          "abilities": [
+            "Run Away",
+            "Flash Fire",
+            "Flame Body"
+          ],
+          "EVyield": [
+            "2 Speed"
+          ],
+          "catchRate": 60,
+          "friendship": 50,
+          "baseExp": 175,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Field"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 65,
+            "attack": 100,
+            "defence": 70,
+            "spAtk": 80,
+            "spDef": 80,
+            "speed": 105
+          },
+          "forms": [{"name": "Rapidash",
+          "types": [
+            "Psychic",
+            "Fairy"
+          ],
+          "weight": 80,
+          "abilities": [
+            "Run Away",
+            "Pastel Veil",
+            "Anticipation"
+          ]}]
+        },
+        {
+          "name": "Slowpoke",
+          "types": [
+            "Water",
+            "Psychic"
+          ],
+          "height": 1.2,
+          "weight": 36,
+          "abilities": [
+            "Oblivious",
+            "Own Tempo",
+            "Regenerator"
+          ],
+          "EVyield": [
+            "1 HP"
+          ],
+          "catchRate": 190,
+          "friendship": 50,
+          "baseExp": 63,
+          "growthRate": "Medium Fast",
+          "eggGroups": [
+            "Monster",
+            "Water 1"
+          ],
+          "femaleRate": 50,
+          "eggCycles": 20,
+          "baseStats": {
+            "hp": 90,
+            "attack": 65,
+            "defence": 65,
+            "spAtk": 40,
+            "spDef": 40,
+            "speed": 15
+          },
+          "evolutions": [{"specie":"Slowbro", "method":"level 37"}, {"specie":"Slowking","method":"trade with Kings Rock"}],
+          "forms":[{"name": "galarian",
+          "types": [
+            "Psychic",
+            "-"
+          ],
+          "abilities": [
+            "Gluttony",
+            "Own Tempo",
+            "Regenerator"
+          ],
+          "evolutions": [{"specie":"Slowbro", "method":"Galarica Cuff", "form":"galarian"}, {"specie":"Slowking","method":"Galarica Wreath","form":"galarian"}]}]
+        },
+        null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,
         
         {
             "name": "mew",

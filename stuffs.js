@@ -296,26 +296,41 @@ module.exports = async (message, client, con) =>
         //     message.channel.send('Hi ' + message.content.slice(4) + '! I\'m Azor.');
         // }
 
-        if(message.content.toLocaleLowerCase().startsWith('bwe') && message.content.toLocaleLowerCase() != 'bwe!')
+        if(!message.content.toLocaleLowerCase().startsWith('bwe!'))
         {
-            let msg = message.content;
-            let bweing = true;
-            let wykrzyknik = '';
-            while(msg[msg.length - 1] == '!' || msg[msg.length - 1] == '?')
+            let bweing = '';
+            let lastBwe = -1;
+            let msg = message.content + ' ';
+            while((lastBwe = message.content.toLocaleLowerCase().indexOf('bwe', lastBwe + 1)) >= 0)
             {
-                msg = msg.slice(0, -1);
-                wykrzyknik += '!';
-            }
-            let e_E = msg[msg.length -1];
-            for(let i = 3; i < msg.length; i++)
-            {
-                if(msg[i] != 'e' && msg[i] != 'E'){bweing = false;}
-                e_E = msg[i];
+                let e_E = 'e';
+                for(let i = lastBwe + 3; i < msg.length; i++)
+                {
+                    if(msg[i] == 'e' || msg[i] == 'E'){e_E = msg[i];}
+                    const IS_GOOD = (msg[i] == 'e' || msg[i] == 'E' || msg[i] == '!' || msg[i] == '.') || msg[i] == '?';
+                    if(IS_GOOD && i < msg.length -1){continue;}
+                    if(IS_GOOD){i++}
+                    let theBweText = msg.slice(lastBwe, i);
+                    
+                    while(theBweText.indexOf('B') >= 0){theBweText = theBweText.replace('B', '<:L1:1101609246744916089>');}
+                    while(theBweText.indexOf('b') >= 0){theBweText = theBweText.replace('b', '<:L1:1101609246744916089>');}
+                    while(theBweText.indexOf('W') >= 0){theBweText = theBweText.replace('W', '<:L2:1101609248099668018>');}
+                    while(theBweText.indexOf('w') >= 0){theBweText = theBweText.replace('w', '<:L2:1101609248099668018>');}
+                    while(theBweText.indexOf('E') >= 0){theBweText = theBweText.replace('E', '<:L3:1101609250700132443>');}
+                    while(theBweText.indexOf('e') >= 0){theBweText = theBweText.replace('e', '<:L3:1101609250700132443>');}
+                    while(theBweText.indexOf('!') >= 0){theBweText = theBweText.replace('!', '<:L4:1101609253350940683>');}
+                    while(theBweText.indexOf('?') >= 0){theBweText = theBweText.replace('?', '<:L4:1101609253350940683>');}
+                    while(theBweText.indexOf('.') >= 0){theBweText = theBweText.replace('.', '<:L4:1101609253350940683>');}
+                    if(msg[i] == ' ') theBweText += ' ';
+
+                    bweing += theBweText;
+                    break;
+                }
             }
             if(bweing)
             {
-                if(message.content.length >= 2000){message.channel.send('*Dies of too many bweeing*');}
-                else{message.channel.send(msg + e_E + wykrzyknik);}
+                if(bweing.length > 2000){message.channel.send('*Dies of too many bweeing*');}
+                else{message.channel.send(bweing);}
             }
         }
 
